@@ -129,6 +129,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MonedasController.cs" />
+    <Compile Include="Controllers\OpcionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2851,6 +2853,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Opcions\Create.cshtml" />
+    <Content Include="Views\Opcions\Delete.cshtml" />
+    <Content Include="Views\Opcions\Details.cshtml" />
+    <Content Include="Views\Opcions\Edit.cshtml" />
+    <Content Include="Views\Opcions\Index.cshtml" />
+    <Content Include="Views\Monedas\Create.cshtml" />
+    <Content Include="Views\Monedas\Delete.cshtml" />
+    <Content Include="Views\Monedas\Details.cshtml" />
+    <Content Include="Views\Monedas\Edit.cshtml" />
+    <Content Include="Views\Monedas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

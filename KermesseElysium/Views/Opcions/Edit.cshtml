@@ -1,0 +1,66 @@
+﻿@model KermesseElysium.Models.Opcion
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Opción</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="Index">Opción</a></li>
+                    <li class="breadcrumb-item active">Editar</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Crear opción</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="card-body">
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.idOpcion)
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Descripción <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.opcionDescripcion, new { htmlAttributes = new { @class = "form-control", @required = "required", @maxlenght = "70", @placeholder = "Escriba una descripción de la opción" } })
+                    @Html.ValidationMessageFor(model => model.opcionDescripcion, "", new { @class = "text-danger", data_val_required = "El campo descripción es obligatorio." })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Estado <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control", @min = 0, @max = 3 } })
+                    @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <input type="submit" value="Actualizar" class="btn btn-secondary" />     
+    </div>
+    }
+</div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

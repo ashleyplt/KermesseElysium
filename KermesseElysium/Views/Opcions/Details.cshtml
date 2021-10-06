@@ -1,0 +1,54 @@
+﻿@model KermesseElysium.Models.Opcion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Opción</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="Index">Opción</a></li>
+                    <li class="breadcrumb-item active">Detalles</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Detalles opción</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                <span class="info-box-number mb-0">Descripción</span>
+                <span class="info-box-text">@Html.DisplayFor(model => model.opcionDescripcion)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                <span class="info-box-number mb-0">Estado</span>
+                <span class="info-box-text">@Html.DisplayFor(model => model.estado)</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-secondary" href="Edit/"+@model.idMoneda>Editar</a>
+        <a class="btn btn-default" href="../Index">Volver</a>
+
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.idOpcion }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

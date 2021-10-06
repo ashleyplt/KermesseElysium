@@ -1,0 +1,60 @@
+﻿@model KermesseElysium.Models.Moneda
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Opción</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="Index">Moneda</a></li>
+                    <li class="breadcrumb-item active">Detalles</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Detalles de moneda</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                <span class="info-box-number mb-0">Nombre</span>
+                <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                <span class="info-box-number mb-0">Símbolo</span>
+                <span class="info-box-text">@Html.DisplayFor(model => model.simbolo)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                <span class="info-box-number mb-0">Estado</span>
+                <span class="info-box-text">@Html.DisplayFor(model => model.estado)</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-secondary" href="Edit/"+@Model.idMoneda>Editar</a>
+        <a class="btn btn-default" href="../Index">Volver</a>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idMoneda }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
