@@ -11,7 +11,8 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,13 +34,26 @@ namespace KermesseElysium.Models
         }
     
         public int idUsuario { get; set; }
+
+        [StringLength(8, ErrorMessage = "La longitud máxima es de 8 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string userName { get; set; }
+        [StringLength(25, ErrorMessage = "La longitud máxima es de 25 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string pwd { get; set; }
+        [StringLength(25, ErrorMessage = "La longitud máxima es de 25 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string nombres { get; set; }
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string apellidos { get; set; }
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string email { get; set; }
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public int estado { get; set; }
-    
+       
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArqueoCaja> ArqueoCaja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

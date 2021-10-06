@@ -13,8 +13,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="Index">Opción</a></li>
+                    <li class="breadcrumb-item"><a href="/../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../">Opción</a></li>
                     <li class="breadcrumb-item active">Editar</li>
                 </ol>
             </div><!-- /.col -->
@@ -41,8 +41,8 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Descripción <span class="text-danger">*</span></label>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.opcionDescripcion, new { htmlAttributes = new { @class = "form-control", @required = "required", @maxlenght = "70", @placeholder = "Escriba una descripción de la opción" } })
-                    @Html.ValidationMessageFor(model => model.opcionDescripcion, "", new { @class = "text-danger", data_val_required = "El campo descripción es obligatorio." })
+                    @Html.EditorFor(model => model.opcionDescripcion, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripción de la opción" } })
+                    @Html.ValidationMessageFor(model => model.opcionDescripcion, "", new { @class = "text-danger"})
                 </div>
             </div>
 
@@ -61,6 +61,6 @@
     }
 </div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

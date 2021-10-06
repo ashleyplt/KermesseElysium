@@ -11,6 +11,7 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Opcion
     {
@@ -21,7 +22,11 @@ namespace KermesseElysium.Models
         }
     
         public int idOpcion { get; set; }
+
+        [StringLength(70, ErrorMessage = "La longitud máxima es de 70 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string opcionDescripcion { get; set; }
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

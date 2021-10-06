@@ -25,9 +25,13 @@ namespace KermesseElysium.Models
         }
     
         public int idMoneda { get; set; }
-        [Required(ErrorMessage = "Campo nombre obligatorio.")]
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string nombre { get; set; }
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string simbolo { get; set; }
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
