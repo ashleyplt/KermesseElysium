@@ -1,0 +1,100 @@
+﻿@model KermesseElysium.Models.Parroquia
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Parroquia</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="./">Parroquia</a></li>
+                    <li class="breadcrumb-item active">Crear</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Crear una Parroquia</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card-body">
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Nombre <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el nombre de la categoria" } })
+                        @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Dirección <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripcion" } })
+                        @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Teléfono <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripcion" } })
+                        @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Parroco <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.parroco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripcion" } })
+                        @Html.ValidationMessageFor(model => model.parroco, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Logo <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.logo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripcion" } })
+                        @Html.ValidationMessageFor(model => model.logo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Sitio Web <span class="text-danger">*</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.sitioWeb, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba una descripcion" } })
+                        @Html.ValidationMessageFor(model => model.sitioWeb, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Crear" class="btn btn-secondary" />
+        </div>
+    }
+</div>
+
+
+ 
+
+ 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

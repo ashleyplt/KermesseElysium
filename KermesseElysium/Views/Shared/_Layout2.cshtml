@@ -1,0 +1,22 @@
+﻿ 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title  </title>
+
+    <link rel="stylesheet" href="~/Content/dist/main.css">
+
+</head>
+<body>
+    <div class="container body-content mt-5">
+        @RenderBody()
+
+    </div>
+    <script type="text/javascript" src="~/Content/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/dist/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

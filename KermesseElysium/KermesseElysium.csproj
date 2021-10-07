@@ -128,10 +128,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaGastoesController.cs" />
+    <Compile Include="Controllers\CategoriaProductoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KermessesController.cs" />
+    <Compile Include="Controllers\ListaPreciosController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonedasController.cs" />
     <Compile Include="Controllers\OpcionsController.cs" />
+    <Compile Include="Controllers\ParroquiasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Filters\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -296,12 +303,15 @@
     <Content Include="Content\dist\img\user6-128x128.jpg" />
     <Content Include="Content\dist\img\user7-128x128.jpg" />
     <Content Include="Content\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\dist\jquery.min.js" />
     <Content Include="Content\dist\js\adminlte.js" />
     <Content Include="Content\dist\js\adminlte.min.js" />
     <Content Include="Content\dist\js\demo.js" />
     <Content Include="Content\dist\js\pages\dashboard.js" />
     <Content Include="Content\dist\js\pages\dashboard2.js" />
     <Content Include="Content\dist\js\pages\dashboard3.js" />
+    <Content Include="Content\dist\main.css" />
+    <Content Include="Content\dist\main.js" />
     <Content Include="Content\docs\404.html" />
     <Content Include="Content\docs\assets\css\adminlte.css" />
     <Content Include="Content\docs\assets\css\adminlte.min.css" />
@@ -2869,6 +2879,35 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Parroquias\Create.cshtml" />
+    <Content Include="Views\Parroquias\Delete2.cshtml" />
+    <Content Include="Views\Parroquias\Details.cshtml" />
+    <Content Include="Views\Parroquias\Edit.cshtml" />
+    <Content Include="Views\Parroquias\Index.cshtml" />
+    <Content Include="Views\CategoriaProductoes\Create.cshtml" />
+    <Content Include="Views\CategoriaProductoes\Delete.cshtml" />
+    <Content Include="Views\CategoriaProductoes\Details.cshtml" />
+    <Content Include="Views\CategoriaProductoes\Edit.cshtml" />
+    <Content Include="Views\CategoriaProductoes\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\ListaPrecios\Create.cshtml" />
+    <Content Include="Views\ListaPrecios\Delete.cshtml" />
+    <Content Include="Views\ListaPrecios\Details.cshtml" />
+    <Content Include="Views\ListaPrecios\Edit.cshtml" />
+    <Content Include="Views\ListaPrecios\Index.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Create.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Delete.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Details.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Edit.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Index.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Creat2.cshtml" />
+    <Content Include="Views\Kermesses\Create.cshtml" />
+    <Content Include="Views\Kermesses\Delete.cshtml" />
+    <Content Include="Views\Kermesses\Details.cshtml" />
+    <Content Include="Views\Kermesses\Edit.cshtml" />
+    <Content Include="Views\Kermesses\Index.cshtml" />
+    <Content Include="Views\Parroquias\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

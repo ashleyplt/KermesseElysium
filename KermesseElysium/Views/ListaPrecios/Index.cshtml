@@ -1,0 +1,84 @@
+﻿@model IEnumerable<KermesseElysium.Models.ListaPrecio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Lista de precios</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item active">Lista de precios</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div style="text-align:right;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='ListaPrecios/Create'">
+                <i class="fas fa-plus"></i> Registrar nueva Lista
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción </th>
+                    <th>Estado</th>
+                    <th>Kermesse</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                    </td>
+                    <td>
+                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='ListaPrecios/Details/' + @item.idListaPrecio"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='ListaPrecios/Edit/' +  @item.idListaPrecio"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='ListaPrecios/Delete/' + @item.idListaPrecio"><i class="fas fa-trash"></i></a></span>
+                    </td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+
+                    <th>Nombre</th>
+                    <th>Descripción </th>
+                    <th>Estado</th>
+                    <th>Kermesse</th>
+                    <th>Acciones</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
