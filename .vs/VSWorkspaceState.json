@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\KermesseElysium",
-    "\\KermesseElysium\\Controllers",
-    "\\KermesseElysium\\Models",
-    "\\KermesseElysium\\Views",
-    "\\KermesseElysium\\Views\\Parroquias"
+    ""
   ],
-  "SelectedNode": "\\KermesseElysium\\Controllers\\MonedasController.cs",
+  "SelectedNode": "\\KermesseElysium.sln",
   "PreviewInSolutionExplorer": false
 }

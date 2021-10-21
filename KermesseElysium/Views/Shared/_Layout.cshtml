@@ -26,7 +26,13 @@
     <link rel="stylesheet" href="~/Content/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="~/Content/plugins/summernote/summernote-bs4.min.css">
-    
+
+
+
+    <link rel="stylesheet" href="~/table/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="~/table/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/table/datatables-buttons/css/buttons.bootstrap4.min.css">
+
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -210,7 +216,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -246,12 +252,12 @@
                                     @Html.ActionLink("Precios", "index", "ListaPrecios", new { area = "" }, new { @class = "nav-link " })
                                 </li>
 
-                                
+
                             </ul>
-                        </li> 
+                        </li>
                         <li class="nav-item">
                             @Html.ActionLink("Cerrar Sesión", "Borrar", "Login", new { area = "" }, new { @class = "nav-link " })
-                        </li> 
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -267,46 +273,47 @@
             <section class="content">
                 <div class="container-fluid">
                     @RenderBody()
+
                 </div><!-- /.container-fluid -->
             </section>
-            <script>
-                $(function () {
-                    $("#example1").DataTable({
-                        "responsive": true, "lengthChange": false, "autoWidth": false,
-                        "buttons": [{
-                            extend: 'copy',
-                            text: 'Copiar'
-                        }, "csv", "excel", "pdf", {
-                            extend: 'print',
-                            text: 'Imprimir'
-                        }, {
-                            extend: 'colvis',
-                            text: 'Columnas'
-                        }],
-                        "language": {
-                            "search": "Buscar:",
-                            "zeroRecords": "No hay Registros en esta tabla.",
-                            "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                            "infoEmpty": "Mostrando 0 de 0 registros",
-                            paginate: {
-                                previous: 'Atrás',
-                                next: 'Siguiente'
-                            }
-                        }
-                    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-                    $('#example2').DataTable({
-                        "paging": true,
-                        "lengthChange": false,
-                        "searching": false,
-                        "ordering": true,
-                        "info": true,
-                        "autoWidth": false,
-                        "responsive": true,
-                    });
-                });
-            </script>
-            <!-- /.content -->
-        </div> 
+            <!----      <script>
+                      $(function () {
+                          $("#example1").DataTable({
+                              "responsive": true, "lengthChange": false, "autoWidth": false,
+                              "buttons": [{
+                                  extend: 'copy',
+                                  text: 'Copiar'
+                              }, "csv", "excel", "pdf", {
+                                  extend: 'print',
+                                  text: 'Imprimir'
+                              }, {
+                                  extend: 'colvis',
+                                  text: 'Columnas'
+                              }],
+                              "language": {
+                                  "search": "Buscar:",
+                                  "zeroRecords": "No hay Registros en esta tabla.",
+                                  "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                                  "infoEmpty": "Mostrando 0 de 0 registros",
+                                  paginate: {
+                                      previous: 'Atrás',
+                                      next: 'Siguiente'
+                                  }
+                              }
+                          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                          $('#example2').DataTable({
+                              "paging": true,
+                              "lengthChange": false,
+                              "searching": false,
+                              "ordering": true,
+                              "info": true,
+                              "autoWidth": false,
+                              "responsive": true,
+                          });
+                      });
+                  </script>
+                   /.content -->
+        </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">Elysium</a>.</strong>
@@ -355,6 +362,60 @@
     <script src="~/Content/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="~/Content/dist/js/pages/dashboard.js"></script>
+
+
+    <script src="~/Content/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/Content/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+    <!-- script tablas -->
+    <script src="~/table/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/table/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/table/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/table/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/table/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/table/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/table/jszip/jszip.min.js"></script>
+    <script src="~/table/pdfmake/pdfmake.min.js"></script>
+    <script src="~/table/pdfmake/vfs_fonts.js"></script>
+    <script src="~/table/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/table/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/table/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": [{
+                    extend: 'copy',
+                    text: 'Copiar'
+                }, "csv", "excel", "pdf", {
+                    extend: 'print',
+                    text: 'Imprimir'
+                }, {
+                    extend: 'colvis',
+                    text: 'Columnas'
+                }],
+                "language": {
+                    "search": "Buscar:",
+                    "zeroRecords": "No hay Registros disponibles.",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando 0 de 0 registros",
+                    paginate: {
+                        previous: 'Atrás',
+                        next: 'Siguiente'
+                    }
+                }
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });</script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

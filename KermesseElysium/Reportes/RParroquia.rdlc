@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.9045cm</Width>
+              <Width>3.66638cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.37533cm</Width>
+              <Width>3.13721cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.37533cm</Width>
+              <Width>3.13721cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.63651cm</Width>
+              <Width>4.39839cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -290,10 +290,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSParroquia</DataSetName>
-        <Top>1.21391cm</Top>
-        <Left>1.58433cm</Left>
+        <Top>0.36724cm</Top>
+        <Left>0.47307cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.29167cm</Width>
+        <Width>14.33918cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -301,13 +301,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.73161in</Height>
     <Style />
   </Body>
-  <Width>7.51425in</Width>
+  <Width>6.03508in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>1.5875cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -320,6 +320,7 @@
                 <TextRun>
                   <Value>Reporte de Parroquias</Value>
                   <Style>
+                    <FontFamily>Arial Narrow</FontFamily>
                     <FontSize>20pt</FontSize>
                   </Style>
                 </TextRun>
@@ -331,12 +332,14 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.28787cm</Top>
-          <Height>1.76417cm</Height>
-          <Width>18.06662cm</Width>
+          <Left>0.47307cm</Left>
+          <Height>0.94396cm</Height>
+          <Width>14.33918cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>DarkBlue</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -351,7 +354,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.50812cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -370,8 +373,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.63724cm</Top>
-          <Left>15.56662cm</Left>
+          <Top>0.36724cm</Top>
+          <Left>12.31225cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -403,7 +406,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.63724cm</Top>
+          <Top>0.36724cm</Top>
           <Left>0.47307cm</Left>
           <Height>0.6cm</Height>
           <Width>6.65396cm</Width>
@@ -478,6 +481,7 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>1e1d5988-3a1a-42e4-bfdb-19324436af66</rd:ReportID>
 </Report>

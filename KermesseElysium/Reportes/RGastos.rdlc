@@ -55,7 +55,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion</Value>
+                              <Value>Descripción</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -176,10 +176,10 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.27628in</Width>
+  <Width>6.26568in</Width>
   <Page>
     <PageHeader>
-      <Height>2.82222cm</Height>
+      <Height>4.11868cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -202,8 +202,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Height>2.82222cm</Height>
-          <Width>18.48176cm</Width>
+          <Top>0.70556cm</Top>
+          <Left>1.19063cm</Left>
+          <Height>1.65805cm</Height>
+          <Width>12.81921cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -275,7 +277,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>1.44625cm</Top>
-          <Left>15.13463cm</Left>
+          <Left>10.79546cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
