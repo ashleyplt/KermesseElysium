@@ -20,12 +20,15 @@ namespace KermesseElysium.Models
         {
             this.RolOpcion = new HashSet<RolOpcion>();
         }
-    
-        public int idOpcion { get; set; }
 
+        [Display(Name = "ID")]
+        public int idOpcion { get; set; }
+        [Display(Name = "Descripción")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         [StringLength(70, ErrorMessage = "La longitud máxima es de 70 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
         public string opcionDescripcion { get; set; }
+        [Display(Name = "Estado")]
         [Required(ErrorMessage = "Este campo es requerido.")]
         public int estado { get; set; }
     

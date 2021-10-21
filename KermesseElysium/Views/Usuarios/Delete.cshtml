@@ -13,8 +13,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/../">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="../">Usuario</a></li>
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Usuario", "Index", "Usuarios")</li>
                     <li class="breadcrumb-item active">Eliminar</li>
                 </ol>
             </div><!-- /.col -->
@@ -32,32 +32,26 @@
     <div class="card-body">
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Usuario</span>
+                @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.userName)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Nombres</span>
+                @Html.LabelFor(model => model.nombres, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.nombres)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Apellidos</span>
+                @Html.LabelFor(model => model.apellidos, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.apellidos)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Email</span>
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.email)</span>
-            </div>
-        </div>
-        <div class="info-box bg-light">
-            <div class="info-box-content">
-                <span class="info-box-number mb-0">Estado</span>
-                <span class="info-box-text">@Html.DisplayFor(model => model.estado)</span>
             </div>
         </div>
     </div>

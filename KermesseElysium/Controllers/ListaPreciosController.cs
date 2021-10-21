@@ -48,11 +48,18 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idListaPrecio,kermesse,nombre,descripcion,estado")] ListaPrecio listaPrecio)
+        public ActionResult Create(ListaPrecio listaPrecio)
         {
             if (ModelState.IsValid)
             {
-                db.ListaPrecio.Add(listaPrecio);
+                var lp = new ListaPrecio();
+                lp.idListaPrecio = 0;
+                lp.nombre = listaPrecio.nombre;
+                lp.descripcion = listaPrecio.descripcion;
+                lp.estado = 1;
+                lp.Kermesse1.idKermesse = listaPrecio.Kermesse1.idKermesse;
+
+                db.ListaPrecio.Add(lp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -82,11 +89,18 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idListaPrecio,kermesse,nombre,descripcion,estado")] ListaPrecio listaPrecio)
+        public ActionResult Edit(ListaPrecio listaPrecio)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(listaPrecio).State = EntityState.Modified;
+                var lp = new ListaPrecio();
+                lp.idListaPrecio = listaPrecio.idListaPrecio;
+                lp.nombre = listaPrecio.nombre;
+                lp.descripcion = listaPrecio.descripcion;
+                lp.estado = 2;
+                lp.Kermesse1.idKermesse = listaPrecio.Kermesse1.idKermesse;
+
+                db.Entry(lp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -115,7 +129,10 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ListaPrecio listaPrecio = db.ListaPrecio.Find(id);
-            db.ListaPrecio.Remove(listaPrecio);
+
+            listaPrecio.estado = 3;
+
+            db.Entry(listaPrecio).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

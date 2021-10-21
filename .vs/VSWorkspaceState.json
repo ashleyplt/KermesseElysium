@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\KermesseElysium",
-    "\\KermesseElysium\\Models"
+    "\\KermesseElysium\\Views",
+    "\\KermesseElysium\\Views\\Parroquias"
   ],
-  "SelectedNode": "\\KermesseElysium\\Models\\Opcion.cs",
+  "SelectedNode": "\\KermesseElysium\\Views\\Parroquias\\Delete.cshtml",
   "PreviewInSolutionExplorer": false
 }

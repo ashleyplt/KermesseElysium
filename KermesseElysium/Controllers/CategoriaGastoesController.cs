@@ -46,11 +46,18 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idCatGasto,nombreCategoria,descripcion,estado")] CategoriaGasto categoriaGasto)
+        public ActionResult Create(CategoriaGasto categoriaGasto)
         {
             if (ModelState.IsValid)
             {
-                db.CategoriaGasto.Add(categoriaGasto);
+                var cg = new CategoriaGasto();
+                cg.idCatGasto = 0;
+                cg.nombreCategoria = categoriaGasto.nombreCategoria;
+                cg.descripcion = categoriaGasto.descripcion;
+                cg.estado = 1;
+
+
+                db.CategoriaGasto.Add(cg);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -78,11 +85,17 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idCatGasto,nombreCategoria,descripcion,estado")] CategoriaGasto categoriaGasto)
+        public ActionResult Edit(CategoriaGasto categoriaGasto)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categoriaGasto).State = EntityState.Modified;
+                var cg = new CategoriaGasto();
+                cg.idCatGasto = categoriaGasto.idCatGasto;
+                cg.nombreCategoria = categoriaGasto.nombreCategoria;
+                cg.descripcion = categoriaGasto.descripcion;
+                cg.estado = 2;
+
+                db.Entry(cg).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -110,7 +123,8 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             CategoriaGasto categoriaGasto = db.CategoriaGasto.Find(id);
-            db.CategoriaGasto.Remove(categoriaGasto);
+            categoriaGasto.estado = 3;
+            db.Entry(categoriaGasto).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

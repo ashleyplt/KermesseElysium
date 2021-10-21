@@ -46,16 +46,19 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idOpcion,opcionDescripcion,estado")] Opcion opcion)
+        public ActionResult Create(Opcion o)
         {
             if (ModelState.IsValid)
             {
+                var opcion = new Opcion();
+                opcion.idOpcion = 0;
+                opcion.opcionDescripcion = o.opcionDescripcion;
+                opcion.estado = 1;
                 db.Opcion.Add(opcion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(opcion);
+            return View(o);
         }
 
         // GET: Opcions/Edit/5
@@ -78,11 +81,16 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idOpcion,opcionDescripcion,estado")] Opcion opcion)
+        public ActionResult Edit(Opcion opcion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(opcion).State = EntityState.Modified;
+                var o = new Opcion();
+                o.idOpcion = opcion.idOpcion;
+                o.opcionDescripcion = opcion.opcionDescripcion;
+                o.estado = 2;
+
+                db.Entry(o).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -110,7 +118,9 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Opcion opcion = db.Opcion.Find(id);
-            db.Opcion.Remove(opcion);
+            opcion.estado = 3;
+
+            db.Entry(opcion).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

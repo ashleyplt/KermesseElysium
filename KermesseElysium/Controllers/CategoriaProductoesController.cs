@@ -46,11 +46,16 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idCatProd,nombre,descripcion,estado")] CategoriaProducto categoriaProducto)
+        public ActionResult Create(CategoriaProducto categoriaProducto)
         {
             if (ModelState.IsValid)
             {
-                db.CategoriaProducto.Add(categoriaProducto);
+                var cp = new CategoriaProducto();
+                cp.idCatProd = 0;
+                cp.nombre = categoriaProducto.nombre;
+                cp.descripcion = categoriaProducto.descripcion;
+                cp.estado = 1;
+                db.CategoriaProducto.Add(cp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -78,11 +83,16 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idCatProd,nombre,descripcion,estado")] CategoriaProducto categoriaProducto)
+        public ActionResult Edit(CategoriaProducto categoriaProducto)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categoriaProducto).State = EntityState.Modified;
+                var cp = new CategoriaProducto();
+                cp.idCatProd = categoriaProducto.idCatProd;
+                cp.nombre = categoriaProducto.nombre;
+                cp.descripcion = categoriaProducto.descripcion;
+                cp.estado = 2;
+                db.Entry(cp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -110,7 +120,8 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             CategoriaProducto categoriaProducto = db.CategoriaProducto.Find(id);
-            db.CategoriaProducto.Remove(categoriaProducto);
+            categoriaProducto.estado = 3;
+            db.Entry(categoriaProducto).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

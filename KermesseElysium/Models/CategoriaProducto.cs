@@ -20,16 +20,24 @@ namespace KermesseElysium.Models
         {
             this.Producto = new HashSet<Producto>();
         }
-    
+
+        [Display(Name = "ID")]
         public int idCatProd { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+
+        [Display(Name = "Categoría")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
 
         public string nombre { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
 
-        public string descripcion { get; set; } 
+        [Display(Name = "Descripción")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
+        public string descripcion { get; set; }
+
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

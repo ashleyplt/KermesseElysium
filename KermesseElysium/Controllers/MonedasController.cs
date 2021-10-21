@@ -45,17 +45,20 @@ namespace KermesseElysium.Controllers
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idMoneda,nombre,simbolo,estado")] Moneda moneda)
+        public ActionResult Create(Moneda m)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
+                var moneda = new Moneda();
+                moneda.idMoneda = 0;
+                moneda.nombre = m.nombre;
+                moneda.simbolo = m.simbolo;
+                moneda.estado = 1;
                 db.Moneda.Add(moneda);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(moneda);
+            return View(m);
         }
 
         // GET: Monedas/Edit/5
@@ -78,15 +81,20 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idMoneda,nombre,simbolo,estado")] Moneda moneda)
+        public ActionResult Edit(Moneda m)
         {
             if (ModelState.IsValid)
             {
+                var moneda = new Moneda();
+                moneda.idMoneda = m.idMoneda;
+                moneda.nombre = m.nombre;
+                moneda.simbolo = m.simbolo;
+                moneda.estado = 2;
                 db.Entry(moneda).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(moneda);
+            return View(m);
         }
 
         // GET: Monedas/Delete/5
@@ -110,8 +118,11 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Moneda moneda = db.Moneda.Find(id);
-            db.Moneda.Remove(moneda);
+            moneda.estado = 3;
+
+            db.Entry(moneda).State = EntityState.Modified;
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

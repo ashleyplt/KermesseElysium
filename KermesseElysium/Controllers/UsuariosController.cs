@@ -46,11 +46,19 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idUsuario,userName,pwd,Nombres,Apellidos,Email,Estado")] Usuario usuario)
+        public ActionResult Create(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Usuario.Add(usuario);
+                var u = new Usuario();
+                u.idUsuario = 0;
+                u.userName = usuario.userName;
+                u.pwd = usuario.pwd;
+                u.nombres = usuario.nombres;
+                u.apellidos = usuario.apellidos;
+                u.email = usuario.email;
+                u.estado = 1;
+                db.Usuario.Add(u);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -78,11 +86,19 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idUsuario,userName,pwd,Nombres,Apellidos,Email,Estado")] Usuario usuario)
+        public ActionResult Edit(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                var u = new Usuario();
+                u.idUsuario = usuario.idUsuario;
+                u.userName = usuario.userName;
+                u.pwd = usuario.pwd;
+                u.nombres = usuario.nombres;
+                u.apellidos = usuario.apellidos;
+                u.email = usuario.email;
+                u.estado = 2;
+                db.Entry(u).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -110,7 +126,8 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Usuario usuario = db.Usuario.Find(id);
-            db.Usuario.Remove(usuario);
+            usuario.estado = 3;
+            db.Entry(usuario).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
