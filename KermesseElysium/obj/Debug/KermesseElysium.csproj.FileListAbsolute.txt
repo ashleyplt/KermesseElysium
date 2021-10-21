@@ -520,7 +520,9 @@ C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\bin\pt\Microsoft.Re
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.csproj.AssemblyReference.cache
+C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\RdlCompile.cache
+C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\RdlCompile.compiled
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.csproj.CoreCompileInputs.cache
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.dll
 C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.pdb
+C:\Users\isi24\Source\Repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.csproj.AssemblyReference.cache

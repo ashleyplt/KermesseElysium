@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -14,6 +16,9 @@ namespace KermesseElysium.Controllers
     {
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
+
+
+      
         // GET: Monedas
         public ActionResult Index()
         {
@@ -125,6 +130,34 @@ namespace KermesseElysium.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult CrearMoneda(string tipo)
+        {
+
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RMoneda.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            List<Moneda> listaMon = new List<Moneda>();
+            listaMon = modelo.Moneda.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DTMoneda", listaMon);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+
+
+        }
+
 
         protected override void Dispose(bool disposing)
         {

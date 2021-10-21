@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -128,7 +129,32 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult ReporteGastos(string tipo)
+        {
 
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = System.IO.Path.Combine(Server.MapPath("~/Reportes"), "RGastos.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            List<CategoriaGasto> listacat = new List<CategoriaGasto>();
+            listacat = modelo.CategoriaGasto.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSGastos", listacat);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+
+
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
