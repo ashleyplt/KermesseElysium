@@ -57,7 +57,6 @@ namespace KermesseElysium.Controllers
                 cg.descripcion = categoriaGasto.descripcion;
                 cg.estado = 1;
 
-
                 db.CategoriaGasto.Add(cg);
                 db.SaveChanges();
                 return RedirectToAction("Index");

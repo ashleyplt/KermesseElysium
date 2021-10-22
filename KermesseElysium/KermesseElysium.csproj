@@ -248,10 +248,10 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\Dataset\DSreportes.Designer.cs">
+    <Compile Include="Reportes\DataSet\DSReportes1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSreportes.xsd</DependentUpon>
+      <DependentUpon>DSReportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
@@ -2866,16 +2866,16 @@
     <Content Include="Content\plugins\summernote\summernote.js.map" />
     <Content Include="Content\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\plugins\toastr\toastr.js.map" />
-    <Content Include="Reportes\Dataset\DSreportes.xsc">
-      <DependentUpon>DSreportes.xsd</DependentUpon>
+    <Content Include="Reportes\DataSet\DSReportes.xsc">
+      <DependentUpon>DSReportes.xsd</DependentUpon>
     </Content>
-    <None Include="Reportes\Dataset\DSreportes.xsd">
+    <None Include="Reportes\DataSet\DSReportes.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSreportes.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSReportes1.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Reportes\Dataset\DSreportes.xss">
-      <DependentUpon>DSreportes.xsd</DependentUpon>
+    <Content Include="Reportes\DataSet\DSReportes.xss">
+      <DependentUpon>DSReportes.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -3049,7 +3049,6 @@
     <Content Include="Views\CategoriaGastoes\Details.cshtml" />
     <Content Include="Views\CategoriaGastoes\Edit.cshtml" />
     <Content Include="Views\CategoriaGastoes\Index.cshtml" />
-    <Content Include="Views\CategoriaGastoes\Creat2.cshtml" />
     <Content Include="Views\Kermesses\Create.cshtml" />
     <Content Include="Views\Kermesses\Delete.cshtml" />
     <Content Include="Views\Kermesses\Details.cshtml" />
@@ -3079,6 +3078,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
+    <EmbeddedResource Include="Reportes\ROpcion.rdlc" />
+    <EmbeddedResource Include="Reportes\RUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\RListaPrecio.rdlc" />
     <EmbeddedResource Include="Reportes\RGastos.rdlc" />
     <EmbeddedResource Include="Reportes\RMoneda.rdlc" />
     <EmbeddedResource Include="Reportes\RParroquia.rdlc" />

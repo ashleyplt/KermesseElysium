@@ -15,10 +15,6 @@ namespace KermesseElysium.Controllers
     public class MonedasController : Controller
     {
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
-
-
-
-      
         // GET: Monedas
         public ActionResult Index()
         {
@@ -131,7 +127,7 @@ namespace KermesseElysium.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult CrearMoneda(string tipo)
+        public ActionResult VerReporteMoneda(string tipo)
         {
 
             LocalReport rpt = new LocalReport();
@@ -148,17 +144,13 @@ namespace KermesseElysium.Controllers
             List<Moneda> listaMon = new List<Moneda>();
             listaMon = modelo.Moneda.ToList();
 
-            ReportDataSource rds = new ReportDataSource("DTMoneda", listaMon);
+            ReportDataSource rds = new ReportDataSource("DSMoneda", listaMon);
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
 
             return File(b, mt);
-
-
         }
-
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

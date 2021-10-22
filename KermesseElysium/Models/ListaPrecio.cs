@@ -22,19 +22,23 @@ namespace KermesseElysium.Models
         }
 
         [Display(Name = "ID")]
-        public int idListaPrecio { get; set; }
-        [Display(Name = "Kermesse")]
-        
+        public int idListaPrecio { get; set; }    
         public Nullable<int> kermesse { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
-
+        [Display(Name = "ListaPrecio")]
         public string nombre { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
-        public string descripcion { get; set; } 
-        public int estado { get; set; } 
-
+        [Display(Name = "Descripcion")]
+        public string descripcion { get; set; }
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
+        
+        [Display(Name = "Estado")]
+        public int estado { get; set; }
+        [Display(Name = "Kermesse")]
         public virtual Kermesse Kermesse1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListaPrecioDet> ListaPrecioDet { get; set; }

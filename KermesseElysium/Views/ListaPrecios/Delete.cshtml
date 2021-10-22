@@ -12,8 +12,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/../">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="../">Lista de precios</a></li>
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Lista Precio", "Index", "ListaPrecios")</li>
                     <li class="breadcrumb-item active">Eliminar</li>
                 </ol>
             </div><!-- /.col -->
@@ -23,8 +23,6 @@
         </div>
     </div><!-- /.container-fluid -->
 </div>
-
-
 <div class="card card-secondary">
     <div class="card-header">
         <h3 class="card-title">¿Estás seguro que deseas eliminar esta Lista?</h3>
@@ -32,26 +30,20 @@
     <div class="card-body">
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Nombre</span>
+                @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Descripción</span>
+                @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.descripcion)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Kermesse</span>
+                @Html.LabelFor(model => model.Kermesse1, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.kermesse)</span>
-            </div>
-        </div>
-        <div class="info-box bg-light">
-            <div class="info-box-content">
-                <span class="info-box-number mb-0">Estado</span>
-                <span class="info-box-text">@Html.DisplayFor(model => model.estado)</span>
             </div>
         </div>
     </div>

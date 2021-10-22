@@ -14,13 +14,13 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li class="breadcrumb-item active">Lista de precios</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row mb-2">
-
+            @Html.ActionLink("Crear Reporte", "VerReporteListaPrecio", new { tipo = "PDF" })
         </div>
     </div><!-- /.container-fluid -->
 </div>
@@ -38,10 +38,9 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Descripción </th>
-                    <th>Estado</th>
-                    <th>Kermesse</th>
+                    <th>@Html.DisplayNameFor(model => model.nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+                    <th>@Html.DisplayNameFor(model => model.Kermesse1)</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -54,9 +53,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.descripcion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.estado)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
@@ -72,10 +68,9 @@
             <tfoot>
                 <tr>
 
-                    <th>Nombre</th>
-                    <th>Descripción </th>
-                    <th>Estado</th>
-                    <th>Kermesse</th>
+                    <th>@Html.DisplayNameFor(model => model.nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+                    <th>@Html.DisplayNameFor(model => model.Kermesse1)</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>
