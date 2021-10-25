@@ -28,8 +28,8 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='./ListaPrecios/Create'">
-                <i class="fas fa-plus"></i> Registrar nueva Lista
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "ListaPrecios")'">
+                <i class="fas fa-plus"></i> Registrar nueva lista
             </button>
         </div>
     </div>
@@ -58,9 +58,9 @@
                         @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
                     </td>
                     <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='./ListaPrecios/Details/' + @item.idListaPrecio"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='./ListaPrecios/Edit/' +  @item.idListaPrecio"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='./ListaPrecios/Delete/' + @item.idListaPrecio"><i class="fas fa-trash"></i></a></span>
+                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ListaPrecios", new { id = item.idListaPrecio })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
                     </td>
                 </tr>
                 }

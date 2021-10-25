@@ -19,7 +19,11 @@ namespace KermesseElysium.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
-            return View(db.Usuario.ToList());
+            var usuario = from u in db.Usuario select u;
+
+            usuario = usuario.Where(u => u.estado.Equals(2) || u.estado.Equals(1));
+
+            return View(usuario.ToList());
         }
 
         // GET: Usuarios/Details/5

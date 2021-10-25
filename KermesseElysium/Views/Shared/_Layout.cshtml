@@ -232,7 +232,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Tablas Entrega 3
+                                    Datos Kermesse
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -245,16 +245,16 @@
                                     @Html.ActionLink("Moneda", "index", "Monedas", new { area = "" }, new { @class = "nav-link " })
                                 </li>
                                 <li class="nav-item">
-                                    @Html.ActionLink("Opcion", "index", "Opcions", new { area = "" }, new { @class = "nav-link " })
+                                    @Html.ActionLink("Opción", "index", "Opcions", new { area = "" }, new { @class = "nav-link " })
                                 </li>
 
 
 
                                 <li class="nav-item">
-                                    @Html.ActionLink("Categoria de Productos", "index", "CategoriaProductoes", new { area = "" }, new { @class = "nav-link " })
+                                    @Html.ActionLink("Categoría de Productos", "index", "CategoriaProductoes", new { area = "" }, new { @class = "nav-link " })
                                 </li>
                                 <li class="nav-item">
-                                    @Html.ActionLink("Categoria de gastos", "index", "CategoriaGastoes", new { area = "" }, new { @class = "nav-link " })
+                                    @Html.ActionLink("Categoría de Gastos", "index", "CategoriaGastoes", new { area = "" }, new { @class = "nav-link " })
                                 </li>
                                 <li class="nav-item">
                                     @Html.ActionLink("Parroquias", "index", "Parroquias", new { area = "" }, new { @class = "nav-link " })
@@ -267,7 +267,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Cerrar Sesión", "Borrar", "Login", new { area = "" }, new { @class = "nav-link " })
+                            @Html.ActionLink("Cerrar sesión", "Borrar", "Login", new { area = "" }, new { @class = "nav-link " })
                         </li>
                     </ul>
                 </nav>
@@ -396,7 +396,7 @@
                 }],
                 "language": {
                     "search": "Buscar:",
-                    "zeroRecords": "No hay Registros disponibles.",
+                    "zeroRecords": "No hay registros disponibles.",
                     "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
                     "infoEmpty": "Mostrando 0 de 0 registros",
                     paginate: {
@@ -414,7 +414,8 @@
                 "autoWidth": false,
                 "responsive": true,
             });
-        });</script>
+        });
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

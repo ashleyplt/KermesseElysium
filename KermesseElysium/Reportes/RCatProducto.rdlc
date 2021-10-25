@@ -125,14 +125,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nombre1">
+                    <Textbox Name="descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nombre.Value</Value>
+                              <Value>=Fields!descripcion.Value</Value>
                               <Style>
                                 <Color>#858585</Color>
                               </Style>
@@ -141,7 +141,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nombre1</rd:DefaultName>
+                      <rd:DefaultName>descripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -178,7 +178,7 @@
         <DataSetName>DSCatProducto</DataSetName>
         <Top>0.17639cm</Top>
         <Left>3.93912cm</Left>
-        <Height>1.62333cm</Height>
+        <Height>1.62334cm</Height>
         <Width>7.56646cm</Width>
         <Style>
           <Border>
@@ -209,6 +209,7 @@
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <TextDecoration>None</TextDecoration>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -218,14 +219,15 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.33624cm</Top>
-          <Left>8.18239cm</Left>
+          <Top>0.39522cm</Top>
+          <Left>4.34593cm</Left>
           <Height>1.10271cm</Height>
           <Width>8.08271cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>CadetBlue</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -250,7 +252,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>1.60376cm</Top>
-          <Left>8.9212cm</Left>
+          <Left>5.4287cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
           <ZIndex>1</ZIndex>

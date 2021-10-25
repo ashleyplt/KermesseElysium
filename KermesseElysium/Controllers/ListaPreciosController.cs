@@ -19,8 +19,13 @@ namespace KermesseElysium.Controllers
         // GET: ListaPrecios
         public ActionResult Index()
         {
-            var listaPrecio = db.ListaPrecio.Include(l => l.Kermesse1);
-            return View(listaPrecio.ToList());
+            var listaprecio = from lp in db.ListaPrecio select lp;
+
+            listaprecio = listaprecio.Where(lp => lp.estado.Equals(2) || lp.estado.Equals(1));
+
+            return View(listaprecio.ToList());
+            //var listaPrecio = db.ListaPrecio.Include(l => l.Kermesse1);
+            //return View(listaPrecio.ToList());
         }
 
         // GET: ListaPrecios/Details/5

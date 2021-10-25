@@ -252,6 +252,7 @@
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <TextDecoration>None</TextDecoration>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -261,14 +262,15 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.89007cm</Top>
-          <Left>10.0971cm</Left>
+          <Top>0.59903cm</Top>
+          <Left>5.30814cm</Left>
           <Height>1.10271cm</Height>
           <Width>6.49521cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>CadetBlue</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -292,8 +294,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>2.15759cm</Top>
-          <Left>10.8359cm</Left>
+          <Top>1.70174cm</Top>
+          <Left>5.70298cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
           <ZIndex>1</ZIndex>

@@ -20,25 +20,40 @@ namespace KermesseElysium.Models
         {
             this.Kermesse = new HashSet<Kermesse>();
         }
-    
+
+        [Display(Name = "ID")]
         public int idParroquia { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+        [Display(Name = "Nombre")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string nombre { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+        [Display(Name = "Dirección")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string direccion { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+        [Display(Name = "Teléfono")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string telefono { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+
+        [Display(Name = "Parroco")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string parroco { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+
+        [Display(Name = "Logo")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string logo { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
+        [Display(Name = "Sitio Web")]
+        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string sitioWeb { get; set; }
         
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

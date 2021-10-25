@@ -18,7 +18,11 @@ namespace KermesseElysium.Controllers
         // GET: Monedas
         public ActionResult Index()
         {
-            return View(db.Moneda.ToList());
+            var moneda = from m in db.Moneda select m;
+
+            moneda = moneda.Where(m => m.estado.Equals(2) || m.estado.Equals(1));
+
+            return View(moneda.ToList());
         }
 
         // GET: Monedas/Details/5

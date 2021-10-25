@@ -212,9 +212,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Moneda </Value>
+                  <Value>Moneda </Value>
                   <Style>
                     <FontSize>24pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -226,12 +227,13 @@
           <rd:DefaultName>Textbox10</rd:DefaultName>
           <Top>0.37869cm</Top>
           <Left>2.38125cm</Left>
-          <Height>1.71097cm</Height>
+          <Height>1.04951cm</Height>
           <Width>12.15822cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>CadetBlue</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>

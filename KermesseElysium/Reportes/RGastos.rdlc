@@ -190,9 +190,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Categoria de Gastos</Value>
+                  <Value>Categoría de Gastos</Value>
                   <Style>
                     <FontSize>24pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -204,12 +205,13 @@
           <rd:DefaultName>Textbox10</rd:DefaultName>
           <Top>0.70556cm</Top>
           <Left>1.19063cm</Left>
-          <Height>1.65805cm</Height>
+          <Height>1.12888cm</Height>
           <Width>12.81921cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>CadetBlue</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>

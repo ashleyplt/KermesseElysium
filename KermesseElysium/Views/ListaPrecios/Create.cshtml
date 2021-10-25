@@ -27,7 +27,7 @@
 
 <div class="card card-secondary">
     <div class="card-header">
-        <h3 class="card-title">Crear una Lista de Precios</h3>
+        <h3 class="card-title">Crear una lista de precios</h3>
     </div>
     @using (Html.BeginForm())
     {
@@ -37,11 +37,10 @@
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el nombre de la categoria" } })
+                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba el nombre de la lista" } })
                         @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
                     </div>
                 </div>

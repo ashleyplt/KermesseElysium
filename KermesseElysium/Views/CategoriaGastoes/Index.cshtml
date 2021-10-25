@@ -28,8 +28,8 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='./CategoriaGastoes/Create'">
-                <i class="fas fa-plus"></i> Registrar nueva Categoria de gastos
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "CategoriaGastoes")'">
+                <i class="fas fa-plus"></i> Registrar nueva categoría de gastos
             </button>
         </div>
     </div>
@@ -54,9 +54,9 @@
                         @Html.DisplayFor(modelItem => item.descripcion)
                     </td>
                     <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='./CategoriaGastoes/Details/' + @item.idCatGasto"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='./CategoriaGastoes/Edit/' +  @item.idCatGasto"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='./CategoriaGastoes/Delete/' + @item.idCatGasto"><i class="fas fa-trash"></i></a></span>
+                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
                     </td>
                 </tr>
                 }

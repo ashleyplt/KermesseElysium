@@ -19,7 +19,11 @@ namespace KermesseElysium.Controllers
         // GET: CategoriaProductoes
         public ActionResult Index()
         {
-            return View(db.CategoriaProducto.ToList());
+            var categoriaProducto = from cp in db.CategoriaProducto select cp;
+
+            categoriaProducto = categoriaProducto.Where(cp => cp.estado.Equals(2) || cp.estado.Equals(1));
+
+            return View(categoriaProducto.ToList());
         }
 
         // GET: CategoriaProductoes/Details/5

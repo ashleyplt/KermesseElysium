@@ -19,7 +19,11 @@ namespace KermesseElysium.Controllers
         // GET: Opcions
         public ActionResult Index()
         {
-            return View(db.Opcion.ToList());
+            var opcion = from o in db.Opcion select o;
+
+            opcion = opcion.Where(o => o.estado.Equals(2) || o.estado.Equals(1));
+
+            return View(opcion.ToList());
         }
 
         // GET: Opcions/Details/5

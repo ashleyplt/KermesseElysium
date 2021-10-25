@@ -13,8 +13,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/../">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="../">Parroquia</a></li>
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Parroquias")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Parroquias", "Index", "Parroquias")</li>
                     <li class="breadcrumb-item active">Eliminar</li>
                 </ol>
             </div><!-- /.col -->
@@ -32,37 +32,37 @@
     <div class="card-body">
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Nombre</span>
+                @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Dirección</span>
+                @Html.LabelFor(model => model.direccion, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.direccion)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Teléfono</span>
+                @Html.LabelFor(model => model.telefono, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.telefono)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Parroco</span>
+                @Html.LabelFor(model => model.parroco, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.parroco)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Logo</span>
+                @Html.LabelFor(model => model.logo, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.logo)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                <span class="info-box-number mb-0">Sitio Web</span>
+                @Html.LabelFor(model => model.sitioWeb, htmlAttributes: new { @class = "info-box-number mb-0" })
                 <span class="info-box-text">@Html.DisplayFor(model => model.sitioWeb)</span>
             </div>
         </div>
@@ -74,7 +74,7 @@
 
             <div class="form-actions no-color">
                 <input type="submit" value="Eliminar" class="btn btn-secondary" />
-                <a class="btn btn-default" href="../">Volver</a>
+                <a class="btn btn-default"  href="@Url.Action("Index", "Parroquias")">Volver</a>
             </div>
         }
     </div>

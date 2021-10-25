@@ -27,7 +27,7 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='Usuarios/Create'">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "Usuarios")'">
                 <i class="fas fa-plus"></i> Crear nuevo usuario
             </button>
         </div>
@@ -61,9 +61,9 @@
                         @Html.DisplayFor(modelItem => item.email)
                     </td>
                     <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='./Details/' + @item.idUsuario"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='./Edit/' + @item.idUsuario"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='./Delete/' + @item.idUsuario"><i class="fas fa-trash"></i></a></span>
+                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "Usuarios", new { id = item.idUsuario })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "Usuarios", new { id = item.idUsuario })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "Usuarios", new { id = item.idUsuario })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
                     </td>
                 </tr>
                 }
