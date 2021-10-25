@@ -61,9 +61,9 @@
                         @Html.DisplayFor(modelItem => item.email)
                     </td>
                     <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='Usuarios/Details/' + @item.idUsuario"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='Usuarios/Edit/' + @item.idUsuario"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='Usuarios/Delete/' + @item.idUsuario"><i class="fas fa-trash"></i></a></span>
+                        <span style="cursor:pointer;" title="Ver detalles"><a onclick="window.location.href='./Details/' + @item.idUsuario"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a onclick="window.location.href='./Edit/' + @item.idUsuario"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a onclick="window.location.href='./Delete/' + @item.idUsuario"><i class="fas fa-trash"></i></a></span>
                     </td>
                 </tr>
                 }

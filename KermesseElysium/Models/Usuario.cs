@@ -36,7 +36,7 @@ namespace KermesseElysium.Models
         [Display(Name = "ID")]
         public int idUsuario { get; set; }
 
-        [StringLength(8, ErrorMessage = "La longitud máxima es de 8 caracteres.")]
+        [StringLength(15, ErrorMessage = "La longitud máxima es de 15 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
 
         [Display(Name = "Usuario")]
@@ -67,6 +67,7 @@ namespace KermesseElysium.Models
         [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string email { get; set; }
         [Required(ErrorMessage = "Este campo es requerido.")]
+        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
 
         [Display(Name = "Estado")]
         public int estado { get; set; }

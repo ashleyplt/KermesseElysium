@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KermesseElysium.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace KermesseElysium.Controllers
     public class LoginController : Controller
     {
         // GET: Login
+        private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
+
         public ActionResult Borrar()
         {
             Session["User"] = null;
@@ -48,6 +51,37 @@ namespace KermesseElysium.Controllers
             }
         }
 
+
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Usuarios/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
+        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                var u = new Usuario();
+                u.idUsuario = 0;
+                u.userName = usuario.userName;
+                u.pwd = usuario.pwd;
+                u.nombres = usuario.nombres;
+                u.apellidos = usuario.apellidos;
+                u.email = usuario.email;
+                u.estado = 1;
+                db.Usuario.Add(u);
+                db.SaveChanges();
+                return RedirectToAction("~/Login/Login");
+            }
+
+            return RedirectToAction("~/Login/Login");
+        }
 
     }
 }
