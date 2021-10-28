@@ -15,7 +15,7 @@
               <Width>2.90967cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.83026cm</Width>
+              <Width>3.92422cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -325,7 +325,7 @@
         <Top>0.03528cm</Top>
         <Left>0.42333cm</Left>
         <Height>1.5175cm</Height>
-        <Width>16.39503cm</Width>
+        <Width>15.48899cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -368,7 +368,7 @@
     <Height>0.88541in</Height>
     <Style />
   </Body>
-  <Width>7.15625in</Width>
+  <Width>6.49641in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -412,38 +412,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="ExecutionTime">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.5332cm</Top>
-          <Left>6.23169cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.75641cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -473,8 +441,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.69901cm</Top>
-          <Left>14.37601cm</Left>
+          <Top>1.43984cm</Top>
+          <Left>12.73559cm</Left>
           <Height>0.52062cm</Height>
           <Width>1.25646cm</Width>
           <Style>
@@ -531,6 +499,44 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="ExecutionTime">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Generado el : </Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>1.43984cm</Top>
+          <Left>0.42333cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.75641cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>

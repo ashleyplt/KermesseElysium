@@ -44,7 +44,7 @@ namespace KermesseElysium.Models
         [Display(Name = "Parroco")]
         [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string parroco { get; set; }
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
+        [StringLength(100, ErrorMessage = "La longitud máxima es de 100 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]
 
         [Display(Name = "Logo")]
