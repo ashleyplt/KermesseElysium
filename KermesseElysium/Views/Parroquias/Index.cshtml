@@ -4,11 +4,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
- 
-
-
-
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -22,15 +17,15 @@
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
-        <div class="row mb-2 badge bg-primary text-wrap"> 
-            @Html.ActionLink("Crear Reporte", "ReporteParroquia", new { tipo = "PDF" })
-        </div>
     </div><!-- /.container-fluid -->
 </div>
 
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("ReporteParroquia", new { tipo = "PDF" })'">
+                <i class="fas fa-file-alt mr-1"></i> Crear reporte
+            </button>
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "Parroquias")'">
                 <i class="fas fa-plus"></i> Registrar nueva parroquia
             </button>

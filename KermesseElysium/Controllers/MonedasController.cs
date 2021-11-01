@@ -145,8 +145,11 @@ namespace KermesseElysium.Controllers
 
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
+            var moneda = from m in db.Moneda select m;
+            moneda = moneda.Where(m => m.estado.Equals(2) || m.estado.Equals(1));
+
             List<Moneda> listaMon = new List<Moneda>();
-            listaMon = modelo.Moneda.ToList();
+            listaMon = moneda.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSMoneda", listaMon);
             rpt.DataSources.Add(rds);

@@ -19,9 +19,7 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row mb-2">
-            <div class="row mb-2 badge bg-primary text-wrap">
-                @Html.ActionLink("Crear Reporte", "VerReporteMoneda", new { tipo = "PDF" })
-            </div>
+            
         </div>
     </div><!-- /.container-fluid -->
 </div>
@@ -29,6 +27,9 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("VerReporteMoneda", new { tipo = "PDF" })'">
+                <i class="fas fa-file-alt mr-1"></i> Crear reporte
+            </button>
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "Monedas")'">
                 <i class="fas fa-plus"></i> Crear nueva moneda
             </button>

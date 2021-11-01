@@ -158,7 +158,9 @@ namespace KermesseElysium.Controllers
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
             List<ListaPrecio> listaPrec = new List<ListaPrecio>();
-            listaPrec = modelo.ListaPrecio.ToList();
+            var listaprecio = from lp in db.ListaPrecio select lp;
+            listaprecio = listaprecio.Where(lp => lp.estado.Equals(2) || lp.estado.Equals(1));
+            listaPrec = listaprecio.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSListaPrecio", listaPrec);
             rpt.DataSources.Add(rds);

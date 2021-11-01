@@ -21,15 +21,15 @@
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
-        <div class="row mb-2">           
-            @Html.ActionLink("Crear Reporte", "VerReporteCatProducto", new { tipo = "PDF" })
-        </div>
     </div><!-- /.container-fluid -->
 </div>
 
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("VerReporteCatProducto", new { tipo = "PDF" })'">
+                <i class="fas fa-file-alt mr-1"></i> Crear reporte
+            </button>
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "CategoriaProductoes")'">
                 <i class="fas fa-plus"></i> Crear nueva categoría
             </button>

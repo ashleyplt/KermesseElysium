@@ -67,8 +67,6 @@ namespace KermesseElysium.Models
         [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string email { get; set; }
         [Required(ErrorMessage = "Este campo es requerido.")]
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
-
         [Display(Name = "Estado")]
         public int estado { get; set; }
        

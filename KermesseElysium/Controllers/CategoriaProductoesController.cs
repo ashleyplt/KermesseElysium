@@ -146,7 +146,9 @@ namespace KermesseElysium.Controllers
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
             List<CategoriaProducto> listaProduct = new List<CategoriaProducto>();
-            listaProduct = modelo.CategoriaProducto.ToList();
+            var categoriaProducto = from cp in db.CategoriaProducto select cp;
+            categoriaProducto = categoriaProducto.Where(cp => cp.estado.Equals(2) || cp.estado.Equals(1));
+            listaProduct = categoriaProducto.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSCatProducto", listaProduct);
             rpt.DataSources.Add(rds);

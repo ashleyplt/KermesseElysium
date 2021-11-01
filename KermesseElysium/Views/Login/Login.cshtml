@@ -6,13 +6,13 @@
 
 
 
-<div class="main-card     card  mt-5 border position-absolute "style="position:absolute;width:60%; left:20%;">
-    <div class="card-body mt-5">
-        <h5 class="card-title text-center">Kermesse Elysium</h5>
+<div class="main-card     card  mt-5 border position-absolute "style="position:absolute;width:40%; left:30%;">
+    <div class="card-body mt-1">
+        <img src="~/Content/dist/img/1.png" style="width:30%; height:30%; left:35%; position:relative;" />
         <form class="needs-validation" novalidate action="@Url.Content("~/Login/Login")" method="post">
-            <div class="form-row mt-5">
+            <div class="form-row mt-3">
                 <div class="col-12 mb-3">
-                    <label for="validationCustom01">Correo electrónico</label>
+                    <b><label for="validationCustom01">Correo electrónico</label></b>
                     <input type="text" class="form-control" name="User" id="validationCustom01" placeholder="Usuario" required>
 
                     <div class="invalid-feedback">
@@ -20,7 +20,9 @@
                     </div>
                 </div>
                 <div class="col-12 mb-3">
-                    <label for="validationCustom01">Contraseña</label>
+                    <b>
+                        <label for="validationCustom01">Contraseña</label>
+                    </b>
                     <input type="password" class="form-control" name="Pass" id="validationCustom01" placeholder="Contraseña" required>
 
                     <div class="invalid-feedback">
@@ -28,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-block btn-primary mt-5 mb-5" type="submit">Ingresar</button> 
+            <button class="btn btn-block mt-4 mb-5" style="background: #0A131E; color:white;" type="submit">Ingresar</button>
             <h5 class="card-title text-center" style="font-size:1.8rem;color:red;"> @ViewBag.Error</h5>
 
 

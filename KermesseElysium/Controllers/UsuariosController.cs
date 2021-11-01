@@ -152,7 +152,9 @@ namespace KermesseElysium.Controllers
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
             List<Usuario> listaUser = new List<Usuario>();
-            listaUser = modelo.Usuario.ToList();
+            var usuario = from u in db.Usuario select u;
+            usuario = usuario.Where(u => u.estado.Equals(2) || u.estado.Equals(1));
+            listaUser = usuario.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSUsuario", listaUser);
             rpt.DataSources.Add(rds);

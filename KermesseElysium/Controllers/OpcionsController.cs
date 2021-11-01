@@ -145,7 +145,9 @@ namespace KermesseElysium.Controllers
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
             List<Opcion> listaOpc = new List<Opcion>();
-            listaOpc = modelo.Opcion.ToList();
+            var opcion = from o in db.Opcion select o;
+            opcion = opcion.Where(o => o.estado.Equals(2) || o.estado.Equals(1));
+            listaOpc = opcion.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSOpcion", listaOpc);
             rpt.DataSources.Add(rds);
