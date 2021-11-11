@@ -16,11 +16,15 @@ namespace KermesseElysium.Controllers
     {
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
         // GET: Monedas
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
             var moneda = from m in db.Moneda select m;
 
             moneda = moneda.Where(m => m.estado.Equals(2) || m.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                moneda = moneda.Where(m => m.nombre.Contains(buscar));
+            }
 
             return View(moneda.ToList());
         }
@@ -131,7 +135,7 @@ namespace KermesseElysium.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult VerReporteMoneda(string tipo)
+        public ActionResult VerReporteMoneda(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -147,6 +151,10 @@ namespace KermesseElysium.Controllers
 
             var moneda = from m in db.Moneda select m;
             moneda = moneda.Where(m => m.estado.Equals(2) || m.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                moneda = moneda.Where(m => m.nombre.Contains(buscar));
+            }
 
             List<Moneda> listaMon = new List<Moneda>();
             listaMon = moneda.ToList();

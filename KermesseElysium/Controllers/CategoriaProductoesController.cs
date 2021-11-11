@@ -17,11 +17,15 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: CategoriaProductoes
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
             var categoriaProducto = from cp in db.CategoriaProducto select cp;
 
             categoriaProducto = categoriaProducto.Where(cp => cp.estado.Equals(2) || cp.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                categoriaProducto = categoriaProducto.Where(cp => cp.nombre.Contains(buscar));
+            }
 
             return View(categoriaProducto.ToList());
         }
@@ -131,7 +135,7 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult VerReporteCatProducto(string tipo)
+        public ActionResult VerReporteCatProducto(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -148,6 +152,10 @@ namespace KermesseElysium.Controllers
             List<CategoriaProducto> listaProduct = new List<CategoriaProducto>();
             var categoriaProducto = from cp in db.CategoriaProducto select cp;
             categoriaProducto = categoriaProducto.Where(cp => cp.estado.Equals(2) || cp.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                categoriaProducto = categoriaProducto.Where(cp => cp.nombre.Contains(buscar));
+            }
             listaProduct = categoriaProducto.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSCatProducto", listaProduct);

@@ -17,11 +17,15 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: Usuarios
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
             var usuario = from u in db.Usuario select u;
-
             usuario = usuario.Where(u => u.estado.Equals(2) || u.estado.Equals(1));
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                usuario = usuario.Where(us => us.nombres.Contains(buscar) || us.apellidos.Contains(buscar) || us.email.Contains(buscar) || us.userName.Contains(buscar));
+            }
 
             return View(usuario.ToList());
         }
@@ -137,7 +141,7 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult VerReporteUsuario(string tipo)
+        public ActionResult VerReporteUsuario(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -154,6 +158,12 @@ namespace KermesseElysium.Controllers
             List<Usuario> listaUser = new List<Usuario>();
             var usuario = from u in db.Usuario select u;
             usuario = usuario.Where(u => u.estado.Equals(2) || u.estado.Equals(1));
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                usuario = usuario.Where(us => us.nombres.Contains(buscar) || us.apellidos.Contains(buscar) || us.email.Contains(buscar) || us.userName.Contains(buscar));
+            }
+
             listaUser = usuario.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSUsuario", listaUser);

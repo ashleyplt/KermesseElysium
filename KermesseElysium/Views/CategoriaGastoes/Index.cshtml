@@ -26,16 +26,34 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("ReporteGastos", new { tipo = "PDF" })'">
-                <i class="fas fa-file-alt mr-1"></i> Crear reporte
-            </button>
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "CategoriaGastoes")'">
                 <i class="fas fa-plus"></i> Registrar nueva categoría de gastos
             </button>
+            <div class="btn-group">
+                <button type="button" class="btn-sm btn-secondary dropdown-toggle dropdown-icon border border-secondary" data-toggle="dropdown">
+                    Exportar
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item" href="@Url.Action("ReporteGastos", new { tipo = "PDF", buscar = Request.Form["buscar"] })">PDF</a>
+                    <a class="dropdown-item" href="@Url.Action("ReporteGastos", new { tipo = "Word", buscar = Request.Form["buscar"] })">Word</a>
+                    <a class="dropdown-item" href="@Url.Action("ReporteGastos", new { tipo = "Excel", buscar = Request.Form["buscar"] })">Excel</a>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        @using (Html.BeginForm("Index", "CategoriaGastoes", FormMethod.Post))
+        {
+            <div style="text-align:right; float:right;">
+                <div class"row">
+                    <div class="input-group">
+                        @Html.TextBox("buscar", "", new { @class = "form-control" })
+                        <button type="submit" class="btn btn-dark">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        }
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -47,19 +65,19 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombreCategoria)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.descripcion)
-                    </td>
-                    <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombreCategoria)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion)
+                        </td>
+                        <td>
+                            <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                            <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                            <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "CategoriaGastoes", new { id = item.idCatGasto })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
+                        </td>
+                    </tr>
                 }
             </tbody>
             <tfoot>

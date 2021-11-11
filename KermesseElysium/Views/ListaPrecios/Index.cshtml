@@ -32,10 +32,31 @@
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "ListaPrecios")'">
                 <i class="fas fa-plus"></i> Registrar nueva lista
             </button>
+            <div class="btn-group">
+                <button type="button" class="btn-sm btn-secondary dropdown-toggle dropdown-icon border border-secondary" data-toggle="dropdown">
+                    Exportar
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item" href="@Url.Action("VerReporteListaPrecio", new { tipo = "PDF", buscar = Request.Form["buscar"] })">PDF</a>
+                    <a class="dropdown-item" href="@Url.Action("VerReporteListaPrecio", new { tipo = "Word", buscar = Request.Form["buscar"] })">Word</a>
+                    <a class="dropdown-item" href="@Url.Action("VerReporteListaPrecio", new { tipo = "Excel", buscar = Request.Form["buscar"] })">Excel</a>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        @using (Html.BeginForm("Index", "ListaPrecios", FormMethod.Post))
+        {
+            <div style="text-align:right; float:right;">
+                <div class"row">
+                    <div class="input-group">
+                        @Html.TextBox("buscar", "", new { @class = "form-control" })
+                        <button type="submit" class="btn btn-dark">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        }
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -48,22 +69,22 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.descripcion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
-                    </td>
-                    <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ListaPrecios", new { id = item.idListaPrecio })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                        </td>
+                        <td>
+                            <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                            <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ListaPrecios", new { id = item.idListaPrecio })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                            <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ListaPrecios", new { id = item.idListaPrecio })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
+                        </td>
+                    </tr>
                 }
             </tbody>
             <tfoot>

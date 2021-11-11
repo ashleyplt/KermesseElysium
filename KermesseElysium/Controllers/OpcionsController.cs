@@ -17,11 +17,16 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: Opcions
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
             var opcion = from o in db.Opcion select o;
 
             opcion = opcion.Where(o => o.estado.Equals(2) || o.estado.Equals(1));
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                opcion = opcion.Where(o => o.opcionDescripcion.Contains(buscar));
+            }
 
             return View(opcion.ToList());
         }
@@ -130,7 +135,7 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult VerReporteOpciones(string tipo)
+        public ActionResult VerReporteOpciones(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -147,6 +152,10 @@ namespace KermesseElysium.Controllers
             List<Opcion> listaOpc = new List<Opcion>();
             var opcion = from o in db.Opcion select o;
             opcion = opcion.Where(o => o.estado.Equals(2) || o.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                opcion = opcion.Where(o => o.opcionDescripcion.Contains(buscar));
+            }
             listaOpc = opcion.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSOpcion", listaOpc);

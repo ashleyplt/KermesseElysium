@@ -17,11 +17,15 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: ListaPrecios
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
             var listaprecio = from lp in db.ListaPrecio select lp;
 
             listaprecio = listaprecio.Where(lp => lp.estado.Equals(2) || lp.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                listaprecio = listaprecio.Where(lp => lp.nombre.Contains(buscar));
+            }
 
             return View(listaprecio.ToList());
             //var listaPrecio = db.ListaPrecio.Include(l => l.Kermesse1);
@@ -143,7 +147,7 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult VerReporteListaPrecio(string tipo)
+        public ActionResult VerReporteListaPrecio(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -160,6 +164,10 @@ namespace KermesseElysium.Controllers
             List<ListaPrecio> listaPrec = new List<ListaPrecio>();
             var listaprecio = from lp in db.ListaPrecio select lp;
             listaprecio = listaprecio.Where(lp => lp.estado.Equals(2) || lp.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                listaprecio = listaprecio.Where(lp => lp.nombre.Contains(buscar));
+            }
             listaPrec = listaprecio.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSListaPrecio", listaPrec);

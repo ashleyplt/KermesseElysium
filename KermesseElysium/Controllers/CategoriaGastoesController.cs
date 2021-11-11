@@ -16,11 +16,15 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: CategoriaGastoes
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
-            var categoriaGasto = from ca in db.CategoriaGasto select ca;
+            var categoriaGasto = from cg in db.CategoriaGasto select cg;
 
-            categoriaGasto = categoriaGasto.Where(ca => ca.estado.Equals(2) || ca.estado.Equals(1));
+            categoriaGasto = categoriaGasto.Where(cg => cg.estado.Equals(2) || cg.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                categoriaGasto = categoriaGasto.Where(cg => cg.nombreCategoria.Contains(buscar));
+            }
 
             return View(categoriaGasto.ToList());
         }
@@ -132,7 +136,7 @@ namespace KermesseElysium.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult ReporteGastos(string tipo)
+        public ActionResult ReporteGastos(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -149,6 +153,10 @@ namespace KermesseElysium.Controllers
             List<CategoriaGasto> listacat = new List<CategoriaGasto>();
             var categoriaGasto = from ca in db.CategoriaGasto select ca;
             categoriaGasto = categoriaGasto.Where(ca => ca.estado.Equals(2) || ca.estado.Equals(1));
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                categoriaGasto = categoriaGasto.Where(cg => cg.nombreCategoria.Contains(buscar));
+            }
             listacat = categoriaGasto.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSGastos", listacat);

@@ -17,9 +17,16 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: Parroquias
-        public ActionResult Index()
+        public ActionResult Index(string buscar = "")
         {
-            return View(db.Parroquia.ToList());
+            var parroquia = from p in db.Parroquia select p;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                parroquia = parroquia.Where(pa => pa.nombre.Contains(buscar) || pa.parroco.Contains(buscar));
+            }
+
+            return View(parroquia.ToList());
         }
 
         // GET: Parroquias/Details/5
@@ -126,7 +133,7 @@ namespace KermesseElysium.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult ReporteParroquia()
+        public ActionResult ReporteParroquia(string tipo = "", string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -134,14 +141,20 @@ namespace KermesseElysium.Controllers
             string[] s;
             Warning[] w;
 
-            string ruta = System.IO.Path.Combine(Server.MapPath("~/Reportes"), "RParroquia.rdlc");
-            String tipo = "PDF";
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RParroquia.rdlc");
             rpt.ReportPath = ruta;
 
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
             List<Parroquia> listaparr = new List<Parroquia>();
-            listaparr = modelo.Parroquia.ToList();
+            var parroquia = from p in db.Parroquia select p;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                parroquia = parroquia.Where(pa => pa.nombre.Contains(buscar) || pa.parroco.Contains(buscar));
+            }
+
+            listaparr = parroquia.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSParroquia", listaparr);
             rpt.DataSources.Add(rds);

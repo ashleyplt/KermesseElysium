@@ -33,10 +33,31 @@
             <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "CategoriaProductoes")'">
                 <i class="fas fa-plus"></i> Crear nueva categoría
             </button>
+            <div class="btn-group">
+                <button type="button" class="btn-sm btn-secondary dropdown-toggle dropdown-icon border border-secondary" data-toggle="dropdown">
+                    Exportar
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item" href="@Url.Action("VerReporteCatProducto", new { tipo = "PDF", buscar = Request.Form["buscar"] })">PDF</a>
+                    <a class="dropdown-item" href="@Url.Action("VerReporteCatProducto", new { tipo = "Word", buscar = Request.Form["buscar"] })">Word</a>
+                    <a class="dropdown-item" href="@Url.Action("VerReporteCatProducto", new { tipo = "Excel", buscar = Request.Form["buscar"] })">Excel</a>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        @using (Html.BeginForm("Index", "CategoriaProductoes", FormMethod.Post))
+        {
+            <div style="text-align:right; float:right;">
+                <div class"row">
+                    <div class="input-group">
+                        @Html.TextBox("buscar", "", new { @class = "form-control" })
+                        <button type="submit" class="btn btn-dark">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        }
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -61,7 +82,7 @@
                             <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "CategoriaProductoes", new { id = item.idCatProd })" style="color:black;"><i class="fas fa-edit"></i></a></span>
                             <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "CategoriaProductoes", new { id = item.idCatProd })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
 
-                     
+
                         </td>
                     </tr>
                 }
