@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\KermesseElysium",
-    "\\KermesseElysium\\Controllers",
-    "\\KermesseElysium\\Models",
+    "\\KermesseElysium\\Reportes",
     "\\KermesseElysium\\Views",
     "\\KermesseElysium\\Views\\Parroquias"
   ],
-  "SelectedNode": "\\KermesseElysium\\Controllers\\MonedasController.cs",
+  "SelectedNode": "\\KermesseElysium\\Reportes\\RGastos.rdlc",
   "PreviewInSolutionExplorer": false
 }

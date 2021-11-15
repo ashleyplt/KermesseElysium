@@ -16,7 +16,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li class="breadcrumb-item active">Categoria</li>
                 </ol>
             </div><!-- /.col -->
@@ -40,9 +40,8 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
+                    <th>@Html.DisplayNameFor(model => model.nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.descripcion)</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -73,9 +72,8 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
+                    <th>@Html.DisplayNameFor(model => model.nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.descripcion)</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>

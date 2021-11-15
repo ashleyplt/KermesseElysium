@@ -2982,6 +2982,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RGastos.rdlc" />
     <EmbeddedResource Include="Reportes\RMoneda.rdlc" />
+    <EmbeddedResource Include="Reportes\ROpcion.rdlc" />
     <EmbeddedResource Include="Reportes\RParroquia.rdlc" />
   </ItemGroup>
   <PropertyGroup>

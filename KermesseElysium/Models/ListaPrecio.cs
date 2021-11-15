@@ -24,7 +24,6 @@ namespace KermesseElysium.Models
         [Display(Name = "ID")]
         public int idListaPrecio { get; set; }
         [Display(Name = "Kermesse")]
-        
         public Nullable<int> kermesse { get; set; }
         [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
         [Required(ErrorMessage = "Este campo es requerido.")]

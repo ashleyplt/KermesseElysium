@@ -25,11 +25,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre  </Value>
-                              <Style />
+                              <Value>Categoría </Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -55,11 +59,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion</Value>
-                              <Style />
+                              <Value>Descripción</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -162,8 +170,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSGastos</DataSetName>
-        <Top>2.11349cm</Top>
-        <Left>2.83479cm</Left>
+        <Top>1.26682cm</Top>
+        <Left>4.43223cm</Left>
         <Height>1.2cm</Height>
         <Width>10.02708cm</Width>
         <Style>
@@ -173,7 +181,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.58333in</Height>
     <Style />
   </Body>
   <Width>7.27628in</Width>
@@ -190,9 +198,23 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Categoria de Gastos</Value>
+                  <Value />
                   <Style>
                     <FontSize>24pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de Categoría de Gastos.</Value>
+                  <Style>
+                    <FontSize>24pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -222,7 +244,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.33729cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -245,7 +267,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.44625cm</Top>
+          <Top>0.89063cm</Top>
           <Left>0.59578cm</Left>
           <Height>0.6cm</Height>
           <Width>6.54812cm</Width>
@@ -274,8 +296,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.44625cm</Top>
-          <Left>15.13463cm</Left>
+          <Top>0.89063cm</Top>
+          <Left>14.79067cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>

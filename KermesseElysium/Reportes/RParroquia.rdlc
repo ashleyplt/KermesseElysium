@@ -31,8 +31,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre</Value>
-                              <Style />
+                              <Value>Parroquia</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -61,8 +63,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>direccion</Value>
-                              <Style />
+                              <Value>Dirección</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -91,8 +95,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>telefono</Value>
-                              <Style />
+                              <Value>Teléfono</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -121,8 +127,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>parroco</Value>
-                              <Style />
+                              <Value>Parroco</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -291,7 +299,7 @@
         </TablixRowHierarchy>
         <DataSetName>DSParroquia</DataSetName>
         <Top>1.21391cm</Top>
-        <Left>1.58433cm</Left>
+        <Left>2.77495cm</Left>
         <Height>1.2cm</Height>
         <Width>15.29167cm</Width>
         <Style>
@@ -301,10 +309,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.66667in</Height>
     <Style />
   </Body>
-  <Width>7.51425in</Width>
+  <Width>8.108in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -318,7 +326,34 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Parroquias</Value>
+                  <Value />
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de Parroquias.</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
                   <Style>
                     <FontSize>20pt</FontSize>
                   </Style>
@@ -330,9 +365,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.28787cm</Top>
-          <Height>1.76417cm</Height>
-          <Width>18.06662cm</Width>
+          <Height>2.54cm</Height>
+          <Width>20.59432cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -351,7 +385,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.06375cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -370,8 +404,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.63724cm</Top>
-          <Left>15.56662cm</Left>
+          <Top>0.63182cm</Top>
+          <Left>16.41329cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -403,8 +437,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.63724cm</Top>
-          <Left>0.47307cm</Left>
+          <Top>0.63182cm</Top>
+          <Left>1.9812cm</Left>
           <Height>0.6cm</Height>
           <Width>6.65396cm</Width>
           <ZIndex>1</ZIndex>
