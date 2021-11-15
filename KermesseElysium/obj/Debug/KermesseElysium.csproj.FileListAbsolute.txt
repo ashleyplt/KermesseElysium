@@ -1634,3 +1634,5 @@ C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\Ke
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.CopyComplete
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.dll
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.pdb
+C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\RdlCompile.cache
+C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\RdlCompile.compiled

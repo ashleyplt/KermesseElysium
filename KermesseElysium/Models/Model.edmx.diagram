@@ -65,6 +65,15 @@
         <AssociationConnector Association="DBKermesseElysiumModel.FK__RolUsuario__rol__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="DBKermesseElysiumModel.FK__RolUsuari__usuar__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="DBKermesseElysiumModel.FK__TasaCambi__tasaC__571DF1D5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_rolopcion" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_gasto" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_ingresocomunidad" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_ingresocomunidaddet" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_kermesse" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_listaprecio" Width="1.5" PointX="10.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_listapreciodet" Width="1.5" PointX="11.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_producto" Width="1.5" PointX="10.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_rolusuario" Width="1.5" PointX="12.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

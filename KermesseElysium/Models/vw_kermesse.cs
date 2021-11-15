@@ -12,22 +12,20 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ListaPrecio
+    public partial class vw_kermesse
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ListaPrecio()
-        {
-            this.ListaPrecioDet = new HashSet<ListaPrecioDet>();
-        }
-    
-        public int idListaPrecio { get; set; }
-        public Nullable<int> kermesse { get; set; }
+        public int idKermesse { get; set; }
+        public string parroquia { get; set; }
         public string nombre { get; set; }
+        public System.DateTime fInicio { get; set; }
+        public System.DateTime fFinal { get; set; }
         public string descripcion { get; set; }
         public int estado { get; set; }
-    
-        public virtual Kermesse Kermesse1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ListaPrecioDet> ListaPrecioDet { get; set; }
+        public string usuarioCreacion { get; set; }
+        public System.DateTime fechaCreacion { get; set; }
+        public string usuarioModificacion { get; set; }
+        public Nullable<System.DateTime> fechaModificacion { get; set; }
+        public string usuarioEliminacion { get; set; }
+        public Nullable<System.DateTime> fechaEliminacion { get; set; }
     }
 }

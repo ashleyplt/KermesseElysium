@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBKermesseElysiumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBKermesseElysiumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ArqueoCaja">
           <Key>
             <PropertyRef Name="idArqueoCaja" />
@@ -257,6 +257,138 @@
           <Property Name="nombres" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="apellidos" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_gasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_gasto">
+          <Key>
+            <PropertyRef Name="idGasto" />
+          </Key>
+          <Property Name="idGasto" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="catGasto" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="fechGasto" Type="datetime" Nullable="false" />
+          <Property Name="concepto" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="monto" Type="float" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="usuarioModificacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaModificacion" Type="datetime" />
+          <Property Name="usuarioEliminacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaEliminacion" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ingresocomunidad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_ingresocomunidad">
+          <Key>
+            <PropertyRef Name="idIngresoComunidad" />
+          </Key>
+          <Property Name="idIngresoComunidad" Type="int" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="producto" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="cantProducto" Type="int" Nullable="false" />
+          <Property Name="totalBonos" Type="int" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="usuarioModificacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaModificacion" Type="datetime" />
+          <Property Name="usuarioEliminacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaEliminacion" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ingresocomunidaddet' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_ingresocomunidaddet">
+          <Key>
+            <PropertyRef Name="idIngresoComunidadDet" />
+          </Key>
+          <Property Name="idIngresoComunidadDet" Type="int" Nullable="false" />
+          <Property Name="ingresoComunidad" Type="nvarchar" MaxLength="193" Nullable="false" />
+          <Property Name="bono" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="denominacion" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="subTotalBono" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_kermesse' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_kermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+          </Key>
+          <Property Name="idKermesse" Type="int" Nullable="false" />
+          <Property Name="parroquia" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fInicio" Type="datetime" Nullable="false" />
+          <Property Name="fFinal" Type="datetime" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="usuarioModificacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaModificacion" Type="datetime" />
+          <Property Name="usuarioEliminacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="fechaEliminacion" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_listaprecio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_listaprecio">
+          <Key>
+            <PropertyRef Name="idListaPrecio" />
+          </Key>
+          <Property Name="idListaPrecio" Type="int" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_listapreciodet' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_listapreciodet">
+          <Key>
+            <PropertyRef Name="idListaPrecioDet" />
+          </Key>
+          <Property Name="idListaPrecioDet" Type="int" Nullable="false" />
+          <Property Name="listaPrecio" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="producto" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="precioVenta" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_producto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_producto">
+          <Key>
+            <PropertyRef Name="idProducto" />
+          </Key>
+          <Property Name="idProducto" Type="int" Nullable="false" />
+          <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="catProd" Type="int" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="precioVSugerido" Type="float" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolopcion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_rolopcion">
+          <Key>
+            
+            
+            <PropertyRef Name="idRolOpcion" />
+          </Key>
+          <Property Name="rolDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="opcionDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="idRolOpcion" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_rolusuario">
+          <Key>
+            <PropertyRef Name="idRolUsuario" />
+          </Key>
+          <Property Name="idRolUsuario" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="rolDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="estado" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
@@ -733,6 +865,109 @@
           <EntitySet Name="TasaCambio" EntityType="Self.TasaCambio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TasaCambioDet" EntityType="Self.TasaCambioDet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_gasto" EntityType="Self.vw_gasto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_gasto].[idGasto] AS [idGasto], 
+    [vw_gasto].[nombre] AS [nombre], 
+    [vw_gasto].[catGasto] AS [catGasto], 
+    [vw_gasto].[fechGasto] AS [fechGasto], 
+    [vw_gasto].[concepto] AS [concepto], 
+    [vw_gasto].[monto] AS [monto], 
+    [vw_gasto].[usuarioCreacion] AS [usuarioCreacion], 
+    [vw_gasto].[fechaCreacion] AS [fechaCreacion], 
+    [vw_gasto].[usuarioModificacion] AS [usuarioModificacion], 
+    [vw_gasto].[fechaModificacion] AS [fechaModificacion], 
+    [vw_gasto].[usuarioEliminacion] AS [usuarioEliminacion], 
+    [vw_gasto].[fechaEliminacion] AS [fechaEliminacion]
+    FROM [dbo].[vw_gasto] AS [vw_gasto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ingresocomunidad" EntityType="Self.vw_ingresocomunidad" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_ingresocomunidad].[idIngresoComunidad] AS [idIngresoComunidad], 
+    [vw_ingresocomunidad].[kermesse] AS [kermesse], 
+    [vw_ingresocomunidad].[comunidad] AS [comunidad], 
+    [vw_ingresocomunidad].[producto] AS [producto], 
+    [vw_ingresocomunidad].[cantProducto] AS [cantProducto], 
+    [vw_ingresocomunidad].[totalBonos] AS [totalBonos], 
+    [vw_ingresocomunidad].[usuarioCreacion] AS [usuarioCreacion], 
+    [vw_ingresocomunidad].[fechaCreacion] AS [fechaCreacion], 
+    [vw_ingresocomunidad].[usuarioModificacion] AS [usuarioModificacion], 
+    [vw_ingresocomunidad].[fechaModificacion] AS [fechaModificacion], 
+    [vw_ingresocomunidad].[usuarioEliminacion] AS [usuarioEliminacion], 
+    [vw_ingresocomunidad].[fechaEliminacion] AS [fechaEliminacion]
+    FROM [dbo].[vw_ingresocomunidad] AS [vw_ingresocomunidad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ingresocomunidaddet" EntityType="Self.vw_ingresocomunidaddet" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_ingresocomunidaddet].[idIngresoComunidadDet] AS [idIngresoComunidadDet], 
+    [vw_ingresocomunidaddet].[ingresoComunidad] AS [ingresoComunidad], 
+    [vw_ingresocomunidaddet].[bono] AS [bono], 
+    [vw_ingresocomunidaddet].[denominacion] AS [denominacion], 
+    [vw_ingresocomunidaddet].[cantidad] AS [cantidad], 
+    [vw_ingresocomunidaddet].[subTotalBono] AS [subTotalBono]
+    FROM [dbo].[vw_ingresocomunidaddet] AS [vw_ingresocomunidaddet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_kermesse" EntityType="Self.vw_kermesse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_kermesse].[idKermesse] AS [idKermesse], 
+    [vw_kermesse].[parroquia] AS [parroquia], 
+    [vw_kermesse].[nombre] AS [nombre], 
+    [vw_kermesse].[fInicio] AS [fInicio], 
+    [vw_kermesse].[fFinal] AS [fFinal], 
+    [vw_kermesse].[descripcion] AS [descripcion], 
+    [vw_kermesse].[estado] AS [estado], 
+    [vw_kermesse].[usuarioCreacion] AS [usuarioCreacion], 
+    [vw_kermesse].[fechaCreacion] AS [fechaCreacion], 
+    [vw_kermesse].[usuarioModificacion] AS [usuarioModificacion], 
+    [vw_kermesse].[fechaModificacion] AS [fechaModificacion], 
+    [vw_kermesse].[usuarioEliminacion] AS [usuarioEliminacion], 
+    [vw_kermesse].[fechaEliminacion] AS [fechaEliminacion]
+    FROM [dbo].[vw_kermesse] AS [vw_kermesse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_listaprecio" EntityType="Self.vw_listaprecio" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_listaprecio].[idListaPrecio] AS [idListaPrecio], 
+    [vw_listaprecio].[kermesse] AS [kermesse], 
+    [vw_listaprecio].[nombre] AS [nombre], 
+    [vw_listaprecio].[descripcion] AS [descripcion], 
+    [vw_listaprecio].[estado] AS [estado]
+    FROM [dbo].[vw_listaprecio] AS [vw_listaprecio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_listapreciodet" EntityType="Self.vw_listapreciodet" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_listapreciodet].[idListaPrecioDet] AS [idListaPrecioDet], 
+    [vw_listapreciodet].[listaPrecio] AS [listaPrecio], 
+    [vw_listapreciodet].[producto] AS [producto], 
+    [vw_listapreciodet].[precioVenta] AS [precioVenta]
+    FROM [dbo].[vw_listapreciodet] AS [vw_listapreciodet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_producto" EntityType="Self.vw_producto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_producto].[idProducto] AS [idProducto], 
+    [vw_producto].[comunidad] AS [comunidad], 
+    [vw_producto].[catProd] AS [catProd], 
+    [vw_producto].[nombre] AS [nombre], 
+    [vw_producto].[descripcion] AS [descripcion], 
+    [vw_producto].[cantidad] AS [cantidad], 
+    [vw_producto].[precioVSugerido] AS [precioVSugerido], 
+    [vw_producto].[estado] AS [estado]
+    FROM [dbo].[vw_producto] AS [vw_producto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_rolopcion" EntityType="Self.vw_rolopcion" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_rolopcion].[rolDescripcion] AS [rolDescripcion], 
+    [vw_rolopcion].[opcionDescripcion] AS [opcionDescripcion], 
+    [vw_rolopcion].[idRolOpcion] AS [idRolOpcion]
+    FROM [dbo].[vw_rolopcion] AS [vw_rolopcion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_rolusuario" EntityType="Self.vw_rolusuario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_rolusuario].[idRolUsuario] AS [idRolUsuario], 
+    [vw_rolusuario].[userName] AS [userName], 
+    [vw_rolusuario].[rolDescripcion] AS [rolDescripcion], 
+    [vw_rolusuario].[estado] AS [estado]
+    FROM [dbo].[vw_rolusuario] AS [vw_rolusuario]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__ArqueoCaj__arque__6FE99F9F" Association="Self.FK__ArqueoCaj__arque__6FE99F9F">
             <End Role="ArqueoCaja" EntitySet="ArqueoCaja" />
             <End Role="ArqueoCajaDet" EntitySet="ArqueoCajaDet" />
@@ -882,8 +1117,7 @@
             <End Role="TasaCambioDet" EntitySet="TasaCambioDet" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBKermesseElysiumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1837,7 +2071,128 @@
             <Parameter Name="signo" Mode="In" Type="String" />
             <Parameter Name="estado" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="vw_rolopcion" EntityType="DBKermesseElysiumModel.vw_rolopcion" />
+          <EntitySet Name="vw_gasto" EntityType="DBKermesseElysiumModel.vw_gasto" />
+          <EntitySet Name="vw_ingresocomunidad" EntityType="DBKermesseElysiumModel.vw_ingresocomunidad" />
+          <EntitySet Name="vw_ingresocomunidaddet" EntityType="DBKermesseElysiumModel.vw_ingresocomunidaddet" />
+          <EntitySet Name="vw_kermesse" EntityType="DBKermesseElysiumModel.vw_kermesse" />
+          <EntitySet Name="vw_listaprecio" EntityType="DBKermesseElysiumModel.vw_listaprecio" />
+          <EntitySet Name="vw_listapreciodet" EntityType="DBKermesseElysiumModel.vw_listapreciodet" />
+          <EntitySet Name="vw_producto" EntityType="DBKermesseElysiumModel.vw_producto" />
+          <EntitySet Name="vw_rolusuario" EntityType="DBKermesseElysiumModel.vw_rolusuario" />
         </EntityContainer>
+        <EntityType Name="vw_rolopcion">
+          <Key>
+            <PropertyRef Name="idRolOpcion" />
+          </Key>
+          <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="opcionDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="idRolOpcion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_gasto">
+          <Key>
+            <PropertyRef Name="idGasto" />
+          </Key>
+          <Property Name="idGasto" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="catGasto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="Double" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_ingresocomunidad">
+          <Key>
+            <PropertyRef Name="idIngresoComunidad" />
+          </Key>
+          <Property Name="idIngresoComunidad" Type="Int32" Nullable="false" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="cantProducto" Type="Int32" Nullable="false" />
+          <Property Name="totalBonos" Type="Int32" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_ingresocomunidaddet">
+          <Key>
+            <PropertyRef Name="idIngresoComunidadDet" />
+          </Key>
+          <Property Name="idIngresoComunidadDet" Type="Int32" Nullable="false" />
+          <Property Name="ingresoComunidad" Type="String" Nullable="false" MaxLength="193" FixedLength="false" Unicode="true" />
+          <Property Name="bono" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="denominacion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="subTotalBono" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_kermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+          </Key>
+          <Property Name="idKermesse" Type="Int32" Nullable="false" />
+          <Property Name="parroquia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fFinal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_listaprecio">
+          <Key>
+            <PropertyRef Name="idListaPrecio" />
+          </Key>
+          <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_listapreciodet">
+          <Key>
+            <PropertyRef Name="idListaPrecioDet" />
+          </Key>
+          <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
+          <Property Name="listaPrecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="precioVenta" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_producto">
+          <Key>
+            <PropertyRef Name="idProducto" />
+          </Key>
+          <Property Name="idProducto" Type="Int32" Nullable="false" />
+          <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="catProd" Type="Int32" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="precioVSugerido" Type="Double" Nullable="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_rolusuario">
+          <Key>
+            <PropertyRef Name="idRolUsuario" />
+          </Key>
+          <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2122,6 +2477,127 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_updatemoneda" FunctionName="DBKermesseElysiumModel.Store.sp_updatemoneda" />
+          <EntitySetMapping Name="vw_rolopcion">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolopcion">
+              <MappingFragment StoreEntitySet="vw_rolopcion">
+                <ScalarProperty Name="idRolOpcion" ColumnName="idRolOpcion" />
+                <ScalarProperty Name="opcionDescripcion" ColumnName="opcionDescripcion" />
+                <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_gasto">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_gasto">
+              <MappingFragment StoreEntitySet="vw_gasto">
+                <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+                <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="fechGasto" ColumnName="fechGasto" />
+                <ScalarProperty Name="catGasto" ColumnName="catGasto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idGasto" ColumnName="idGasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ingresocomunidad">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ingresocomunidad">
+              <MappingFragment StoreEntitySet="vw_ingresocomunidad">
+                <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+                <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+                <ScalarProperty Name="totalBonos" ColumnName="totalBonos" />
+                <ScalarProperty Name="cantProducto" ColumnName="cantProducto" />
+                <ScalarProperty Name="producto" ColumnName="producto" />
+                <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="idIngresoComunidad" ColumnName="idIngresoComunidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ingresocomunidaddet">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ingresocomunidaddet">
+              <MappingFragment StoreEntitySet="vw_ingresocomunidaddet">
+                <ScalarProperty Name="subTotalBono" ColumnName="subTotalBono" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+                <ScalarProperty Name="bono" ColumnName="bono" />
+                <ScalarProperty Name="ingresoComunidad" ColumnName="ingresoComunidad" />
+                <ScalarProperty Name="idIngresoComunidadDet" ColumnName="idIngresoComunidadDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_kermesse">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_kermesse">
+              <MappingFragment StoreEntitySet="vw_kermesse">
+                <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+                <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fFinal" ColumnName="fFinal" />
+                <ScalarProperty Name="fInicio" ColumnName="fInicio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="parroquia" ColumnName="parroquia" />
+                <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_listaprecio">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_listaprecio">
+              <MappingFragment StoreEntitySet="vw_listaprecio">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="idListaPrecio" ColumnName="idListaPrecio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_listapreciodet">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_listapreciodet">
+              <MappingFragment StoreEntitySet="vw_listapreciodet">
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="producto" ColumnName="producto" />
+                <ScalarProperty Name="listaPrecio" ColumnName="listaPrecio" />
+                <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_producto">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_producto">
+              <MappingFragment StoreEntitySet="vw_producto">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="precioVSugerido" ColumnName="precioVSugerido" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="catProd" ColumnName="catProd" />
+                <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_rolusuario">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolusuario">
+              <MappingFragment StoreEntitySet="vw_rolusuario">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -950,5 +950,126 @@
       <Parameter Name="signo" Mode="In" Type="String" />
       <Parameter Name="estado" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="vw_rolopcion" EntityType="DBKermesseElysiumModel.vw_rolopcion" />
+    <EntitySet Name="vw_gasto" EntityType="DBKermesseElysiumModel.vw_gasto" />
+    <EntitySet Name="vw_ingresocomunidad" EntityType="DBKermesseElysiumModel.vw_ingresocomunidad" />
+    <EntitySet Name="vw_ingresocomunidaddet" EntityType="DBKermesseElysiumModel.vw_ingresocomunidaddet" />
+    <EntitySet Name="vw_kermesse" EntityType="DBKermesseElysiumModel.vw_kermesse" />
+    <EntitySet Name="vw_listaprecio" EntityType="DBKermesseElysiumModel.vw_listaprecio" />
+    <EntitySet Name="vw_listapreciodet" EntityType="DBKermesseElysiumModel.vw_listapreciodet" />
+    <EntitySet Name="vw_producto" EntityType="DBKermesseElysiumModel.vw_producto" />
+    <EntitySet Name="vw_rolusuario" EntityType="DBKermesseElysiumModel.vw_rolusuario" />
   </EntityContainer>
+  <EntityType Name="vw_rolopcion">
+    <Key>
+      <PropertyRef Name="idRolOpcion" />
+    </Key>
+    <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="opcionDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="idRolOpcion" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_gasto">
+    <Key>
+      <PropertyRef Name="idGasto" />
+    </Key>
+    <Property Name="idGasto" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="catGasto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="monto" Type="Double" Nullable="false" />
+    <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_ingresocomunidad">
+    <Key>
+      <PropertyRef Name="idIngresoComunidad" />
+    </Key>
+    <Property Name="idIngresoComunidad" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="cantProducto" Type="Int32" Nullable="false" />
+    <Property Name="totalBonos" Type="Int32" Nullable="false" />
+    <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_ingresocomunidaddet">
+    <Key>
+      <PropertyRef Name="idIngresoComunidadDet" />
+    </Key>
+    <Property Name="idIngresoComunidadDet" Type="Int32" Nullable="false" />
+    <Property Name="ingresoComunidad" Type="String" Nullable="false" MaxLength="193" FixedLength="false" Unicode="true" />
+    <Property Name="bono" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="denominacion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="subTotalBono" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_kermesse">
+    <Key>
+      <PropertyRef Name="idKermesse" />
+    </Key>
+    <Property Name="idKermesse" Type="Int32" Nullable="false" />
+    <Property Name="parroquia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fFinal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="usuarioCreacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="usuarioEliminacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_listaprecio">
+    <Key>
+      <PropertyRef Name="idListaPrecio" />
+    </Key>
+    <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_listapreciodet">
+    <Key>
+      <PropertyRef Name="idListaPrecioDet" />
+    </Key>
+    <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
+    <Property Name="listaPrecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="precioVenta" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="catProd" Type="Int32" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="Int32" />
+    <Property Name="precioVSugerido" Type="Double" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_rolusuario">
+    <Key>
+      <PropertyRef Name="idRolUsuario" />
+    </Key>
+    <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

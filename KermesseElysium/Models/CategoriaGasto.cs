@@ -11,8 +11,7 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class CategoriaGasto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,20 +19,12 @@ namespace KermesseElysium.Models
         {
             this.Gasto = new HashSet<Gasto>();
         }
-
-        [Display(Name = "ID")]
+    
         public int idCatGasto { get; set; }
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-        [Display(Name = "NombreCategoria")]
         public string nombreCategoria { get; set; }
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-        [Display(Name = "Descripción")]
         public string descripcion { get; set; }
-        [Display(Name = "Estado")]
-        public int estado { get; set; } 
-
+        public int estado { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Gasto> Gasto { get; set; }
     }

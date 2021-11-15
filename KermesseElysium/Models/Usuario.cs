@@ -11,8 +11,7 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -32,45 +31,15 @@ namespace KermesseElysium.Models
             this.Kermesse2 = new HashSet<Kermesse>();
             this.RolUsuario = new HashSet<RolUsuario>();
         }
-
-        [Display(Name = "ID")]
+    
         public int idUsuario { get; set; }
-
-        [StringLength(15, ErrorMessage = "La longitud máxima es de 15 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-
-        [Display(Name = "Usuario")]
-        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string userName { get; set; }
-        [StringLength(25, ErrorMessage = "La longitud máxima es de 25 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-
-        [Display(Name = "Contraseña")]
-        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string pwd { get; set; }
-        [StringLength(25, ErrorMessage = "La longitud máxima es de 25 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-
-        [Display(Name = "Nombres")]
-        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string nombres { get; set; }
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-
-        [Display(Name = "Apellidos")]
-        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string apellidos { get; set; }
-        [StringLength(45, ErrorMessage = "La longitud máxima es de 45 caracteres.")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-
-        [Display(Name = "Correo")]
-        [DataType(DataType.Text, ErrorMessage = "Ingrese un dato de tipo texto.")]
         public string email { get; set; }
-        [Required(ErrorMessage = "Este campo es requerido.")]
-        [Display(Name = "Estado")]
         public int estado { get; set; }
-       
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArqueoCaja> ArqueoCaja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

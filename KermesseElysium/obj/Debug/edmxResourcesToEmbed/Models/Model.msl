@@ -279,5 +279,126 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_updatemoneda" FunctionName="DBKermesseElysiumModel.Store.sp_updatemoneda" />
+    <EntitySetMapping Name="vw_rolopcion">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolopcion">
+        <MappingFragment StoreEntitySet="vw_rolopcion">
+          <ScalarProperty Name="idRolOpcion" ColumnName="idRolOpcion" />
+          <ScalarProperty Name="opcionDescripcion" ColumnName="opcionDescripcion" />
+          <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_gasto">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_gasto">
+        <MappingFragment StoreEntitySet="vw_gasto">
+          <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+          <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="fechGasto" ColumnName="fechGasto" />
+          <ScalarProperty Name="catGasto" ColumnName="catGasto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idGasto" ColumnName="idGasto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ingresocomunidad">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ingresocomunidad">
+        <MappingFragment StoreEntitySet="vw_ingresocomunidad">
+          <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+          <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="totalBonos" ColumnName="totalBonos" />
+          <ScalarProperty Name="cantProducto" ColumnName="cantProducto" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="idIngresoComunidad" ColumnName="idIngresoComunidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ingresocomunidaddet">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ingresocomunidaddet">
+        <MappingFragment StoreEntitySet="vw_ingresocomunidaddet">
+          <ScalarProperty Name="subTotalBono" ColumnName="subTotalBono" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+          <ScalarProperty Name="bono" ColumnName="bono" />
+          <ScalarProperty Name="ingresoComunidad" ColumnName="ingresoComunidad" />
+          <ScalarProperty Name="idIngresoComunidadDet" ColumnName="idIngresoComunidadDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_kermesse">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_kermesse">
+        <MappingFragment StoreEntitySet="vw_kermesse">
+          <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
+          <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fFinal" ColumnName="fFinal" />
+          <ScalarProperty Name="fInicio" ColumnName="fInicio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="parroquia" ColumnName="parroquia" />
+          <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_listaprecio">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_listaprecio">
+        <MappingFragment StoreEntitySet="vw_listaprecio">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="idListaPrecio" ColumnName="idListaPrecio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_listapreciodet">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_listapreciodet">
+        <MappingFragment StoreEntitySet="vw_listapreciodet">
+          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="listaPrecio" ColumnName="listaPrecio" />
+          <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_producto">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_producto">
+        <MappingFragment StoreEntitySet="vw_producto">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="precioVSugerido" ColumnName="precioVSugerido" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="catProd" ColumnName="catProd" />
+          <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_rolusuario">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolusuario">
+        <MappingFragment StoreEntitySet="vw_rolusuario">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

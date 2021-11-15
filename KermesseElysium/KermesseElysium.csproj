@@ -153,12 +153,14 @@
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresoComunidadsController.cs" />
     <Compile Include="Controllers\KermessesController.cs" />
     <Compile Include="Controllers\ListaPreciosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonedasController.cs" />
     <Compile Include="Controllers\OpcionsController.cs" />
     <Compile Include="Controllers\ParroquiasController.cs" />
+    <Compile Include="Controllers\RolOpcionsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
@@ -246,6 +248,33 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_gasto.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_ingresocomunidad.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_ingresocomunidaddet.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_kermesse.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_listaprecio.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_listapreciodet.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_producto.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_rolopcion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_rolusuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4999,6 +5028,16 @@
     <Content Include="Views\ArqueoCajas\Details.cshtml" />
     <Content Include="Views\ArqueoCajas\Edit.cshtml" />
     <Content Include="Views\ArqueoCajas\Index.cshtml" />
+    <Content Include="Views\RolOpcions\Index.cshtml" />
+    <Content Include="Views\RolOpcions\Create.cshtml" />
+    <Content Include="Views\RolOpcions\Details.cshtml" />
+    <Content Include="Views\RolOpcions\Edit.cshtml" />
+    <Content Include="Views\RolOpcions\Delete.cshtml" />
+    <Content Include="Views\IngresoComunidads\Index.cshtml" />
+    <Content Include="Views\IngresoComunidads\Details.cshtml" />
+    <Content Include="Views\IngresoComunidads\Create.cshtml" />
+    <Content Include="Views\IngresoComunidads\Edit.cshtml" />
+    <Content Include="Views\IngresoComunidads\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

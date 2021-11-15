@@ -33,11 +33,12 @@ namespace KermesseElysium.Controllers
                                  select d).FirstOrDefault();
                     if (oUser == null)
                     {
-                        ViewBag.Error = "Usuario o Contraseña Incorrecto";
+                        ViewBag.Error = "Usuario o contraseña incorrecta.";
                         return View();
                     }
 
                     Session["User"] = oUser;
+                    System.Web.HttpContext.Current.Session["idUser"] = oUser.idUsuario;
                     String temp = oUser.nombres + " " + oUser.apellidos;
                     System.Web.HttpContext.Current.Session["Username"] = temp;
                     // ViewBag.Data = oUser.nombres + " " + oUser.apellidos;
