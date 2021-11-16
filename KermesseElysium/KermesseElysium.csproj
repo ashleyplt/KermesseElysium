@@ -160,6 +160,7 @@
     <Compile Include="Controllers\MonedasController.cs" />
     <Compile Include="Controllers\OpcionsController.cs" />
     <Compile Include="Controllers\ParroquiasController.cs" />
+    <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\RolOpcionsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
@@ -5038,6 +5039,11 @@
     <Content Include="Views\IngresoComunidads\Create.cshtml" />
     <Content Include="Views\IngresoComunidads\Edit.cshtml" />
     <Content Include="Views\IngresoComunidads\Delete.cshtml" />
+    <Content Include="Views\Productoes\Index.cshtml" />
+    <Content Include="Views\Productoes\Details.cshtml" />
+    <Content Include="Views\Productoes\Create.cshtml" />
+    <Content Include="Views\Productoes\Edit.cshtml" />
+    <Content Include="Views\Productoes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5061,6 +5067,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidad.rdlc" />
+    <EmbeddedResource Include="Reportes\RProducto.rdlc" />
+    <EmbeddedResource Include="Reportes\RProductoIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcion.rdlc" />
     <EmbeddedResource Include="Reportes\ROpcion.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcionIndiv.rdlc" />

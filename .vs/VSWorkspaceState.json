@@ -3,8 +3,10 @@
     "",
     "\\KermesseElysium",
     "\\KermesseElysium\\Controllers",
-    "\\KermesseElysium\\Models"
+    "\\KermesseElysium\\Models",
+    "\\KermesseElysium\\Views",
+    "\\KermesseElysium\\Views\\IngresoComunidads"
   ],
-  "SelectedNode": "\\KermesseElysium\\Controllers",
+  "SelectedNode": "\\KermesseElysium\\Views\\IngresoComunidads\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
