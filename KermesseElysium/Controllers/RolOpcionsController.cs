@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -46,7 +48,7 @@ namespace KermesseElysium.Controllers
         public ActionResult Create()
         {
             ViewBag.opcion = new SelectList(db.Opcion.Where(o => o.estado == 1 || o.estado == 2), "idOpcion", "opcionDescripcion");
-            ViewBag.rol = new SelectList(db.Rol, "idRol", "rolDescripcion");
+            ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion");
             return View();
         }
 
@@ -64,8 +66,8 @@ namespace KermesseElysium.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.opcion = new SelectList(db.Opcion, "idOpcion", "opcionDescripcion", rolOpcion.opcion);
-            ViewBag.rol = new SelectList(db.Rol, "idRol", "rolDescripcion", rolOpcion.rol);
+            ViewBag.opcion = new SelectList(db.Opcion.Where(o => o.estado == 1 || o.estado == 2), "idOpcion", "opcionDescripcion", rolOpcion.opcion);
+            ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolOpcion.rol);
             return View(rolOpcion);
         }
 
@@ -81,8 +83,8 @@ namespace KermesseElysium.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.opcion = new SelectList(db.Opcion, "idOpcion", "opcionDescripcion", rolOpcion.opcion);
-            ViewBag.rol = new SelectList(db.Rol, "idRol", "rolDescripcion", rolOpcion.rol);
+            ViewBag.opcion = new SelectList(db.Opcion.Where(o => o.estado == 1 || o.estado == 2), "idOpcion", "opcionDescripcion", rolOpcion.opcion);
+            ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolOpcion.rol);
             return View(rolOpcion);
         }
 
@@ -99,8 +101,8 @@ namespace KermesseElysium.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.opcion = new SelectList(db.Opcion, "idOpcion", "opcionDescripcion", rolOpcion.opcion);
-            ViewBag.rol = new SelectList(db.Rol, "idRol", "rolDescripcion", rolOpcion.rol);
+            ViewBag.opcion = new SelectList(db.Opcion.Where(o => o.estado == 1 || o.estado == 2), "idOpcion", "opcionDescripcion", rolOpcion.opcion);
+            ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolOpcion.rol);
             return View(rolOpcion);
         }
 
@@ -111,7 +113,7 @@ namespace KermesseElysium.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RolOpcion rolOpcion = db.RolOpcion.Find(id);
+            vw_rolopcion rolOpcion = db.vw_rolopcion.Find(id);
             if (rolOpcion == null)
             {
                 return HttpNotFound();
@@ -138,6 +140,61 @@ namespace KermesseElysium.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult VerReporteRolOpcion(string tipo, string buscar = "")
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RRolOpcion.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            List<vw_rolopcion> lista = new List<vw_rolopcion>();
+            var rolopcion = from ro in db.vw_rolopcion select ro;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                rolopcion = rolopcion.Where(ro => ro.opcionDescripcion.Contains(buscar) || ro.rolDescripcion.Contains(buscar));
+            }
+
+            lista = rolopcion.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSRolOpcion", lista);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+        }
+
+        public ActionResult VerReporteRolOpcionIndiv(int id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RRolOpcionIndiv.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            var rolopcion = from ro in db.vw_rolopcion select ro;
+            rolopcion = rolopcion.Where(o => o.idRolOpcion == id);
+
+            ReportDataSource rds = new ReportDataSource("DSRolOpcion", rolopcion.ToList());
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
         }
 
         protected override void Dispose(bool disposing)

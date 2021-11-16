@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\KermesseElysium",
+    "\\KermesseElysium\\Controllers",
+    "\\KermesseElysium\\Models"
   ],
-  "SelectedNode": "\\KermesseElysium.sln",
+  "SelectedNode": "\\KermesseElysium\\Controllers",
   "PreviewInSolutionExplorer": false
 }

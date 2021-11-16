@@ -68,11 +68,11 @@
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_rolopcion" Width="1.5" PointX="7.375" PointY="5.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_gasto" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_ingresocomunidad" Width="1.5" PointX="8.375" PointY="8.75" />
-        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_ingresocomunidaddet" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_ingresocomunidaddet" Width="1.5" PointX="9.625" PointY="5" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_kermesse" Width="1.5" PointX="10.375" PointY="0.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_listaprecio" Width="1.5" PointX="10.375" PointY="8.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_listapreciodet" Width="1.5" PointX="11.375" PointY="5.75" />
-        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_producto" Width="1.5" PointX="10.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_producto" Width="1.5" PointX="12.25" PointY="8.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_rolusuario" Width="1.5" PointX="12.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>

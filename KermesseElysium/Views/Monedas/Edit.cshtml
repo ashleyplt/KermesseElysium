@@ -22,7 +22,7 @@
         <div class="row mb-2">
 
         </div>
-    </div><!-- /.container-fluid -->
+    </div> <!-- /.container-fluid -->
 </div>
 
 <div class="card card-secondary">
@@ -34,9 +34,7 @@
         @Html.AntiForgeryToken()
 
         <div class="card-body">
-            <div class="form-horizontal">
-                <h4>Moneda</h4>
-                <hr />
+            <div class="form-horizontal">   
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.idMoneda)
 

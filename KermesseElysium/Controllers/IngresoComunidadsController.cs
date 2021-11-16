@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -18,7 +20,7 @@ namespace KermesseElysium.Controllers
         public ActionResult Index(string buscar = "")
         {
             var ingresoComunidad = from ic in db.vw_ingresocomunidad select ic;
-            ingresoComunidad = ingresoComunidad.Where(ic => !ic.fechaEliminacion.Equals(null));
+            ingresoComunidad = ingresoComunidad.Where(ic => ic.fechaEliminacion.Equals(null) && ic.usuarioEliminacion.Equals(null));
 
             if(!string.IsNullOrEmpty(buscar))
             {
@@ -45,12 +47,12 @@ namespace KermesseElysium.Controllers
         // GET: IngresoComunidads/Create
         public ActionResult Create()
         {
-            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre");
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre");
-            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre");
-            ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName");
-            ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName");
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName");
+            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre");
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre");
+            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre");
+            ViewBag.usuarioCreacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName");
+            ViewBag.usuarioModificacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName");
+            ViewBag.usuarioEliminacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName");
             return View();
         }
 
@@ -76,12 +78,12 @@ namespace KermesseElysium.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre", ingresoComunidad.comunidad);
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", ingresoComunidad.kermesse);
-            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
+            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre", ingresoComunidad.comunidad);
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre", ingresoComunidad.kermesse);
+            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre", ingresoComunidad.producto);
+            ViewBag.usuarioCreacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
+            ViewBag.usuarioModificacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
+            ViewBag.usuarioEliminacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
             return View(ingresoComunidad);
         }
 
@@ -97,9 +99,9 @@ namespace KermesseElysium.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre", ingresoComunidad.comunidad);
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", ingresoComunidad.kermesse);
-            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre", ingresoComunidad.producto);
+            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre", ingresoComunidad.comunidad);
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre", ingresoComunidad.kermesse);
+            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre", ingresoComunidad.producto);
             ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
             ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
             ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
@@ -127,12 +129,12 @@ namespace KermesseElysium.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre", ingresoComunidad.comunidad);
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", ingresoComunidad.kermesse);
-            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
+            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre", ingresoComunidad.comunidad);
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre", ingresoComunidad.kermesse);
+            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre", ingresoComunidad.producto);
+            ViewBag.usuarioCreacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
+            ViewBag.usuarioModificacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
+            ViewBag.usuarioEliminacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
             return View(ingresoComunidad);
         }
 
@@ -143,7 +145,7 @@ namespace KermesseElysium.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            IngresoComunidad ingresoComunidad = db.IngresoComunidad.Find(id);
+            vw_ingresocomunidad ingresoComunidad = db.vw_ingresocomunidad.Find(id);
             if (ingresoComunidad == null)
             {
                 return HttpNotFound();
@@ -162,6 +164,59 @@ namespace KermesseElysium.Controllers
             db.Entry(ingresoComunidad).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult VerReporteIngComunidad(string tipo, string buscar = "")
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RIngresoComunidad.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            List<vw_ingresocomunidad> lista = new List<vw_ingresocomunidad>();
+            var ingcomunidad = from ro in db.vw_ingresocomunidad select ro;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                ingcomunidad = ingcomunidad.Where(ic => ic.comunidad.Contains(buscar) || ic.kermesse.Contains(buscar) || ic.producto.Contains(buscar));
+            }
+
+            lista = ingcomunidad.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSIngresoComunidad", lista);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+        }
+
+        public ActionResult VerReporteIngComunidadIndiv(int id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RIngresoComunidadIndiv.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            var ingcomunidad = from ro in db.vw_ingresocomunidad select ro;
+            ingcomunidad = ingcomunidad.Where(ic => ic.idIngresoComunidad == id);
+
+            ReportDataSource rds = new ReportDataSource("DSIngresoComunidad", ingcomunidad.ToList());
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
         }
 
         protected override void Dispose(bool disposing)

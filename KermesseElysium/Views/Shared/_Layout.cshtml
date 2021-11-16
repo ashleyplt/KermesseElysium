@@ -125,7 +125,7 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                
+
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -185,7 +185,9 @@
                                 <li class="nav-item">
                                     @Html.ActionLink("Opción", "index", "Opcions", new { area = "" }, new { @class = "nav-link " })
                                 </li>
-
+                                <li class="nav-item">
+                                    @Html.ActionLink("Opción del rol", "index", "RolOpcions", new { area = "" }, new { @class = "nav-link " })
+                                </li>
 
 
                                 <li class="nav-item">
@@ -313,6 +315,9 @@
     <script src="~/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="~/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="~/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes
@@ -358,6 +363,12 @@
                 "autoWidth": false,
                 "responsive": true,
             });
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
         });
     </script>
 
