@@ -5,8 +5,9 @@
     "\\KermesseElysium\\Controllers",
     "\\KermesseElysium\\Models",
     "\\KermesseElysium\\Views",
-    "\\KermesseElysium\\Views\\IngresoComunidads"
+    "\\KermesseElysium\\Views\\IngresoComunidads",
+    "\\KermesseElysium\\Views\\Productoes"
   ],
-  "SelectedNode": "\\KermesseElysium\\Views\\IngresoComunidads\\Index.cshtml",
+  "SelectedNode": "\\KermesseElysium\\Views\\Productoes\\Edit.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -37,40 +37,51 @@
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.idProducto)
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.comunidad, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.comunidad)</span>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.comunidad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("comunidad", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.comunidad, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.catProd, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.catProd)</span>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.catProd, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("catProd", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.catProd, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.descripcion)</span>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.cantidad, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.cantidad)</span>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cantidad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cantidad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cantidad, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        @Html.LabelFor(model => model.precioVSugerido, htmlAttributes: new { @class = "info-box-number mb-0" })
-                        <span class="info-box-text">@Html.DisplayFor(model => model.precioVSugerido)</span>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.precioVSugerido, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.precioVSugerido, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.precioVSugerido, "", new { @class = "text-danger" })
                     </div>
                 </div>
 

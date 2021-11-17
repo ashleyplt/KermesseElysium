@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.28131cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.06964cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.14902cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.28131cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.28131cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.26729cm</Width>
+              <Width>1.80506cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -465,10 +465,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DsProducto</DataSetName>
-        <Top>0.86995cm</Top>
-        <Left>0.51265cm</Left>
+        <Top>0.36985cm</Top>
+        <Left>1.44209cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.76729cm</Width>
+        <Width>12.86764cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -476,10 +476,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.83333in</Height>
+    <Height>0.63541in</Height>
     <Style />
   </Body>
-  <Width>6.82651in</Width>
+  <Width>6.64924in</Width>
   <Page>
     <PageHeader>
       <Height>2.83559cm</Height>
@@ -527,7 +527,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Producto</Value>
+                  <Value>Productos</Value>
                   <Style>
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -581,7 +581,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.82562cm</Height>
+      <Height>0.87312cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -604,8 +604,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.01651cm</Top>
-          <Left>15.37275cm</Left>
+          <Top>0.06401cm</Top>
+          <Left>15.05525cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.96542cm</Width>
           <Style>
@@ -637,8 +637,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>1.01651cm</Top>
-          <Left>16.37345cm</Left>
+          <Top>0.06401cm</Top>
+          <Left>16.05595cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.83312cm</Width>
           <ZIndex>1</ZIndex>
@@ -653,8 +653,8 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>1.00287cm</Top>
-          <Left>16.61802cm</Left>
+          <Top>0.05037cm</Top>
+          <Left>16.30052cm</Left>
           <Height>0.53425cm</Height>
           <Width>-0.27985cm</Width>
           <ZIndex>2</ZIndex>

@@ -2,14 +2,14 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix3">
+      <Tablix Name="Tablix5">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.30156cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>11.49212cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -18,7 +18,75 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox22">
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Usuario</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="userName">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!userName.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>userName</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox24">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -27,16 +95,15 @@
                             <TextRun>
                               <Value>Rol</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -63,83 +130,10 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>rolDescripcion</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox23">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Opción</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="opcionDescripcion">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!opcionDescripcion.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>opcionDescripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -174,11 +168,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSRolOpcion</DataSetName>
-        <Top>0.49954cm</Top>
-        <Left>1.68889cm</Left>
+        <DataSetName>DSRolUsuarioIndiv</DataSetName>
+        <Top>0.38915cm</Top>
+        <Left>2.82787cm</Left>
         <Height>1.2cm</Height>
-        <Width>13.79368cm</Width>
+        <Width>5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -186,13 +180,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.66911in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.66331in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>4.04812cm</Height>
+      <Height>2.83559cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -216,7 +210,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>2.45271cm</Top>
+          <Top>1.84644cm</Top>
           <Left>6.9107cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
@@ -237,7 +231,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Opción del rol</Value>
+                  <Value>Rol de Usuario</Value>
                   <Style>
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -252,7 +246,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.3781cm</Top>
+          <Top>0.77183cm</Top>
           <Left>4.00028cm</Left>
           <Height>1.0746cm</Height>
           <Width>11.48229cm</Width>
@@ -272,7 +266,6 @@
           <Source>Embedded</Source>
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.60627cm</Top>
           <Left>1.02743cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
@@ -292,7 +285,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.45521cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -315,8 +308,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.85013cm</Top>
-          <Left>15.09099cm</Left>
+          <Top>0.14111cm</Top>
+          <Left>14.51715cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.96542cm</Width>
           <Style>
@@ -348,8 +341,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.85013cm</Top>
-          <Left>16.09169cm</Left>
+          <Top>0.14111cm</Top>
+          <Left>15.51785cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.83312cm</Width>
           <ZIndex>1</ZIndex>
@@ -364,8 +357,8 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>0.83649cm</Top>
-          <Left>16.33626cm</Left>
+          <Top>0.12747cm</Top>
+          <Left>15.76242cm</Left>
           <Height>0.53425cm</Height>
           <Width>-0.27985cm</Width>
           <ZIndex>2</ZIndex>
@@ -398,18 +391,18 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>c16a629c-9512-44b7-94fb-93fd5cd0fb38</rd:DataSourceID>
+      <rd:DataSourceID>33f3265c-2fd0-4a88-80bd-2c38c766e322</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSRolOpcion">
+    <DataSet Name="DSRolUsuarioIndiv">
       <Query>
         <DataSourceName>DSreportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="opcionDescripcion">
-          <DataField>opcionDescripcion</DataField>
+        <Field Name="userName">
+          <DataField>userName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="rolDescripcion">
@@ -419,8 +412,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSreportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\isi24\source\repos\KermesseElysium2\KermesseElysium1\KermesseElysium\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
-        <rd:TableName>vw_rolopcion</rd:TableName>
+        <rd:SchemaPath>C:\Users\isi24\source\repos\KermesseElysium1\KermesseElysium\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:TableName>vw_rolusuario</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -464,5 +457,5 @@ S5ZaWx0w1TXAXN8Ac9051JrrcKamFrc6O0WnEXkUDjpRH41WBiMqMrx34CMjwhARPhHDAgJEp0mC0+lE
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>4061f63f-c794-46e1-9626-0e1c4037684e</rd:ReportID>
+  <rd:ReportID>a7ecbefa-b530-45a5-a471-5c0622fdb17f</rd:ReportID>
 </Report>

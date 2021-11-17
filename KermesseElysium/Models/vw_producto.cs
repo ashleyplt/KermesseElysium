@@ -16,7 +16,7 @@ namespace KermesseElysium.Models
     {
         public int idProducto { get; set; }
         public string comunidad { get; set; }
-        public Nullable<int> catProd { get; set; }
+        public int catProd { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public Nullable<int> cantidad { get; set; }

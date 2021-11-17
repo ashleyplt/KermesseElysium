@@ -162,6 +162,7 @@
     <Compile Include="Controllers\ParroquiasController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\RolOpcionsController.cs" />
+    <Compile Include="Controllers\RolUsuariosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
@@ -5044,6 +5045,11 @@
     <Content Include="Views\Productoes\Create.cshtml" />
     <Content Include="Views\Productoes\Edit.cshtml" />
     <Content Include="Views\Productoes\Delete.cshtml" />
+    <Content Include="Views\RolUsuarios\Index.cshtml" />
+    <Content Include="Views\RolUsuarios\Details.cshtml" />
+    <Content Include="Views\RolUsuarios\Create.cshtml" />
+    <Content Include="Views\RolUsuarios\Edit.cshtml" />
+    <Content Include="Views\RolUsuarios\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5072,6 +5078,8 @@
     <EmbeddedResource Include="Reportes\RRolOpcion.rdlc" />
     <EmbeddedResource Include="Reportes\ROpcion.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcionIndiv.rdlc" />
+    <EmbeddedResource Include="Reportes\RRolUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\RRolUsuarioIndv.rdlc" />
     <EmbeddedResource Include="Reportes\RUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\RListaPrecio.rdlc" />
     <EmbeddedResource Include="Reportes\RGastos.rdlc" />

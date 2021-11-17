@@ -264,6 +264,13 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_gasto' no tiene def
         <EntityType Name="vw_gasto">
           <Key>
             <PropertyRef Name="idGasto" />
+            
+            
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idGasto" Type="int" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -283,6 +290,13 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ingresocomunidad' n
         <EntityType Name="vw_ingresocomunidad">
           <Key>
             <PropertyRef Name="idIngresoComunidad" />
+            
+            
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idIngresoComunidad" Type="int" Nullable="false" />
           <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -302,6 +316,11 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ingresocomunidaddet
         <EntityType Name="vw_ingresocomunidaddet">
           <Key>
             <PropertyRef Name="idIngresoComunidadDet" />
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idIngresoComunidadDet" Type="int" Nullable="false" />
           <Property Name="ingresoComunidad" Type="nvarchar" MaxLength="193" Nullable="false" />
@@ -315,6 +334,14 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_kermesse' no tiene 
         <EntityType Name="vw_kermesse">
           <Key>
             <PropertyRef Name="idKermesse" />
+            
+            
+            
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idKermesse" Type="int" Nullable="false" />
           <Property Name="parroquia" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -335,6 +362,10 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_listaprecio' no tie
         <EntityType Name="vw_listaprecio">
           <Key>
             <PropertyRef Name="idListaPrecio" />
+            
+            
+            
+            
           </Key>
           <Property Name="idListaPrecio" Type="int" Nullable="false" />
           <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -347,6 +378,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_listapreciodet' no 
         <EntityType Name="vw_listapreciodet">
           <Key>
             <PropertyRef Name="idListaPrecioDet" />
+            
+            
+            
           </Key>
           <Property Name="idListaPrecioDet" Type="int" Nullable="false" />
           <Property Name="listaPrecio" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -358,10 +392,16 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_producto' no tiene 
         <EntityType Name="vw_producto">
           <Key>
             <PropertyRef Name="idProducto" />
+            
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idProducto" Type="int" Nullable="false" />
           <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
-          <Property Name="catProd" Type="int" />
+          <Property Name="catProd" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="cantidad" Type="int" />
@@ -385,6 +425,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
         <EntityType Name="vw_rolusuario">
           <Key>
             <PropertyRef Name="idRolUsuario" />
+            
+            
+            
           </Key>
           <Property Name="idRolUsuario" Type="int" Nullable="false" />
           <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
@@ -2177,7 +2220,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
           </Key>
           <Property Name="idProducto" Type="Int32" Nullable="false" />
           <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-          <Property Name="catProd" Type="Int32" />
+          <Property Name="catProd" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="cantidad" Type="Int32" />
