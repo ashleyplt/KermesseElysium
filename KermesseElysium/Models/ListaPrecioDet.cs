@@ -11,14 +11,26 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ListaPrecioDet
     {
+        [Display(Name = "ID Lista Precio Det")]
         public int idListaPrecioDet { get; set; }
+
+        [Display(Name = "Lista Precio")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int listaPrecio { get; set; }
+
+        [Display(Name = "Producto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int producto { get; set; }
+
+        [Display(Name = "Precio Venta")]
+        [DataType(DataType.Currency, ErrorMessage = "Por favor ingrese un dato de tipo decimal")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public double precioVenta { get; set; }
-    
+
         public virtual ListaPrecio ListaPrecio1 { get; set; }
         public virtual Producto Producto1 { get; set; }
     }

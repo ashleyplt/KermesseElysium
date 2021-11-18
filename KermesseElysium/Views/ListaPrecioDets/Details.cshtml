@@ -1,0 +1,55 @@
+﻿@model KermesseElysium.Models.ListaPrecioDet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Lista de precios</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Lista de precio", "Index", "ListaPrecioDet")</li>
+                    <li class="breadcrumb-item active">Detalles</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Detalles de la Lista de precios</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.precioVenta, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.precioVenta)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.ListaPrecio1.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.ListaPrecio1.nombre)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.Producto1.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.Producto1.nombre)</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-default" href="@Url.Action("Index", "ListaPrecioDets")">Volver</a>
+    </div>
+</div>

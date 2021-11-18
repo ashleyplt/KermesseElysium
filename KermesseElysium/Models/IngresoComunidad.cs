@@ -21,7 +21,7 @@ namespace KermesseElysium.Models
             this.IngresoComunidadDet = new HashSet<IngresoComunidadDet>();
         }
 
-        [Display(Name = "ID")]
+        [Display(Name = "Id Ingreso Comunidad")]
         public int idIngresoComunidad { get; set; }
 
         [Display(Name = "Kermesse")]
@@ -33,11 +33,11 @@ namespace KermesseElysium.Models
         [Display(Name = "Producto")]
         public Nullable<int> producto { get; set; }
 
-        [Display(Name = "Cantidad de producto")]
+        [Display(Name = "Cantidad de Producto")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int cantProducto { get; set; }
 
-        [Display(Name = "Total de bonos")]
+        [Display(Name = "Total Bonos")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int totalBonos { get; set; }
 

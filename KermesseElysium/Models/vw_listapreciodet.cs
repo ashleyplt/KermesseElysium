@@ -11,12 +11,16 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vw_listapreciodet
     {
         public int idListaPrecioDet { get; set; }
+        [Display(Name = "Lista de precio")]
         public string listaPrecio { get; set; }
+        [Display(Name = "Producto")]
         public string producto { get; set; }
+        [Display(Name = "Precio de venta")]
         public double precioVenta { get; set; }
     }
 }

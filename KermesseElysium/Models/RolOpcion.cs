@@ -11,13 +11,21 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class RolOpcion
     {
+        [Display(Name = "ID Rol Opción")]
         public int idRolOpcion { get; set; }
+
+        [Display(Name = "Rol")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int rol { get; set; }
+
+        [Display(Name = "Opción")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int opcion { get; set; }
-    
+
         public virtual Opcion Opcion1 { get; set; }
         public virtual Rol Rol1 { get; set; }
     }

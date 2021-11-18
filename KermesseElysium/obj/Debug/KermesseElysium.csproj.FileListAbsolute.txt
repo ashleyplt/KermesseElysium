@@ -2147,6 +2147,6 @@ C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\bin\zh-CHT\Microsoft
 C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\RdlCompile.cache
 C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\RdlCompile.compiled
 C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.CoreCompileInputs.cache
-C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.CopyComplete
 C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.dll
 C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.pdb
+C:\Users\isi24\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.AssemblyReference.cache

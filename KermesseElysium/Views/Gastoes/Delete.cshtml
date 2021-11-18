@@ -1,5 +1,4 @@
-﻿@model KermesseElysium.Models.Kermesse
-
+﻿@model KermesseElysium.Models.Gasto
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,12 +8,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Kermese</h1>
+                <h1 class="m-0">Gastos</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li class="breadcrumb-item"> @Html.ActionLink("Kermesse", "Index", "Kermesses")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Gasto", "Index", "Gastoes")</li>
                     <li class="breadcrumb-item active">Eliminar</li>
                 </ol>
             </div><!-- /.col -->
@@ -27,37 +26,53 @@
 
 <div class="card card-secondary">
     <div class="card-header">
-        <h3 class="card-title">¿Estás seguro que deseas eliminar esta kermesse?</h3>
+        <h3 class="card-title">¿Estás seguro que deseas eliminar esta Gasto?</h3>
     </div>
     <div class="card-body">
+
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
+
+                @Html.LabelFor(model => model.usuarioCreacion, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.Usuario.userName)</span>
+            </div>
+        </div>  
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+
+                @Html.LabelFor(model => model.concepto, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.concepto)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.fInicio, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.fInicio)</span>
+                @Html.LabelFor(model => model.monto, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.monto)</span>
             </div>
         </div>
+
+
+
+
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.fFinal, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.fFinal)</span>
+                <label class="info-box-number mb-0">Fecha </label>
+                <span class="info-box-text">@Html.DisplayFor(model => model.fechGasto)</span>
             </div>
         </div>
+
+
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.descripcion)</span>
+                <label class="info-box-number mb-0">Categoria</label>
+                <span class="info-box-text">@Html.DisplayFor(model => model.CategoriaGasto.nombreCategoria)</span>
             </div>
         </div>
+
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.fechaCreacion, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.fechaCreacion)</span>
+                <label class="info-box-number mb-0">Kermesse</label>
+                <span class="info-box-text">@Html.DisplayFor(model => model.Kermesse1.nombre)</span>
             </div>
         </div>
     </div>
@@ -68,7 +83,7 @@
 
             <div class="form-actions no-color">
                 <input type="submit" value="Eliminar" class="btn btn-secondary" />
-                <a class="btn btn-default" href="@Url.Action("Index", "Kermesse")">Volver</a>
+                <a class="btn btn-default" href="@Url.Action("Index", "Gastoes")">Volver</a>
             </div>
         }
     </div>
