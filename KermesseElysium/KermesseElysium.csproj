@@ -152,10 +152,12 @@
     <Compile Include="Controllers\ArqueoCajasController.cs" />
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
+    <Compile Include="Controllers\GastoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresoComunidadDetsController.cs" />
     <Compile Include="Controllers\IngresoComunidadsController.cs" />
     <Compile Include="Controllers\KermessesController.cs" />
+    <Compile Include="Controllers\ListaPrecioDetsController.cs" />
     <Compile Include="Controllers\ListaPreciosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonedasController.cs" />
@@ -5019,11 +5021,6 @@
     <Content Include="Views\CategoriaGastoes\Details.cshtml" />
     <Content Include="Views\CategoriaGastoes\Edit.cshtml" />
     <Content Include="Views\CategoriaGastoes\Index.cshtml" />
-    <Content Include="Views\Kermesses\Create.cshtml" />
-    <Content Include="Views\Kermesses\Delete.cshtml" />
-    <Content Include="Views\Kermesses\Details.cshtml" />
-    <Content Include="Views\Kermesses\Edit.cshtml" />
-    <Content Include="Views\Kermesses\Index.cshtml" />
     <Content Include="Views\Parroquias\Delete.cshtml" />
     <Content Include="Views\Login\Create.cshtml" />
     <Content Include="Views\ArqueoCajas\Create.cshtml" />
@@ -5056,6 +5053,21 @@
     <Content Include="Views\IngresoComunidadDets\Create.cshtml" />
     <Content Include="Views\IngresoComunidadDets\Edit.cshtml" />
     <Content Include="Views\IngresoComunidadDets\Delete.cshtml" />
+    <Content Include="Views\Gastoes\Create.cshtml" />
+    <Content Include="Views\Gastoes\Delete.cshtml" />
+    <Content Include="Views\Gastoes\Details.cshtml" />
+    <Content Include="Views\Gastoes\Edit.cshtml" />
+    <Content Include="Views\Gastoes\Index.cshtml" />
+    <Content Include="Views\Kermesses\Create.cshtml" />
+    <Content Include="Views\Kermesses\Delete.cshtml" />
+    <Content Include="Views\Kermesses\Details.cshtml" />
+    <Content Include="Views\Kermesses\Edit.cshtml" />
+    <Content Include="Views\Kermesses\Index.cshtml" />
+    <Content Include="Views\ListaPrecioDets\Create.cshtml" />
+    <Content Include="Views\ListaPrecioDets\Delete.cshtml" />
+    <Content Include="Views\ListaPrecioDets\Details.cshtml" />
+    <Content Include="Views\ListaPrecioDets\Edit.cshtml" />
+    <Content Include="Views\ListaPrecioDets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5078,6 +5090,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
+    <EmbeddedResource Include="Reportes\RGasto2.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidad.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidadDet.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidadDetIndiv.rdlc" />

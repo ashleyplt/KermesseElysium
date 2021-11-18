@@ -11,24 +11,40 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Gasto
     {
         public int idGasto { get; set; }
+        [Display(Name = "Kermesse")]
         public int kermesse { get; set; }
+
+        [Display(Name = "Categoria")]
         public int catGasto { get; set; }
+        [Display(Name = "Fecha")]
         public System.DateTime fechGasto { get; set; }
+
+        [Display(Name = "Concepto")]
         public string concepto { get; set; }
+        [Display(Name = "Monto")]
         public double monto { get; set; }
+
+        [Display(Name = "Usuario")]
         public int usuarioCreacion { get; set; }
+        [Display(Name = "Fecha Creacion")]
         public System.DateTime fechaCreacion { get; set; }
+        [Display(Name = "Fecha Modificacion")]
         public Nullable<int> usuarioModificacion { get; set; }
+        [Display(Name = "Fecha Modificacion")]
         public Nullable<System.DateTime> fechaModificacion { get; set; }
         public Nullable<int> usuarioEliminacion { get; set; }
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
-    
+
+        [Display(Name = "Categoria")]
         public virtual CategoriaGasto CategoriaGasto { get; set; }
+        [Display(Name = "Kermesse")]
         public virtual Kermesse Kermesse1 { get; set; }
+        [Display(Name = "Usuario")]
         public virtual Usuario Usuario { get; set; }
         public virtual Usuario Usuario1 { get; set; }
         public virtual Usuario Usuario2 { get; set; }

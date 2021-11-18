@@ -14,14 +14,22 @@ namespace KermesseElysium.Controllers
     {
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
-        // GET: Kermesses
-        public ActionResult Index()
+        // GET: Kermesses1
+        public ActionResult Index(string buscar = "")
         {
-            var kermesse = db.Kermesse.Include(k => k.Parroquia1).Include(k => k.Usuario).Include(k => k.Usuario1).Include(k => k.Usuario2);
+            var kermesse = from g in db.Kermesse select g;
+
+            kermesse = kermesse.Where(p => p.estado.Equals(2) || p.estado.Equals(1));
+
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                kermesse = kermesse.Where(g => g.nombre.Contains(buscar));
+            }
+
             return View(kermesse.ToList());
         }
-
-        // GET: Kermesses/Details/5
+        // GET: Kermesses1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +44,7 @@ namespace KermesseElysium.Controllers
             return View(kermesse);
         }
 
-        // GET: Kermesses/Create
+        // GET: Kermesses1/Create
         public ActionResult Create()
         {
             ViewBag.parroquia = new SelectList(db.Parroquia, "idParroquia", "nombre");
@@ -46,7 +54,7 @@ namespace KermesseElysium.Controllers
             return View();
         }
 
-        // POST: Kermesses/Create
+        // POST: Kermesses1/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +75,7 @@ namespace KermesseElysium.Controllers
             return View(kermesse);
         }
 
-        // GET: Kermesses/Edit/5
+        // GET: Kermesses1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,7 +94,7 @@ namespace KermesseElysium.Controllers
             return View(kermesse);
         }
 
-        // POST: Kermesses/Edit/5
+        // POST: Kermesses1/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -106,7 +114,7 @@ namespace KermesseElysium.Controllers
             return View(kermesse);
         }
 
-        // GET: Kermesses/Delete/5
+        // GET: Kermesses1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,13 +129,16 @@ namespace KermesseElysium.Controllers
             return View(kermesse);
         }
 
-        // POST: Kermesses/Delete/5
+        // POST: Kermesses1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Kermesse kermesse = db.Kermesse.Find(id);
-            db.Kermesse.Remove(kermesse);
+
+            kermesse.estado = 3;
+
+            db.Entry(kermesse).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

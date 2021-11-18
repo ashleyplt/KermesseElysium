@@ -11,7 +11,8 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Kermesse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,13 +25,20 @@ namespace KermesseElysium.Models
         }
     
         public int idKermesse { get; set; }
+        [Display(Name = "Parroqia")]
         public int parroquia { get; set; }
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
+        [Display(Name = "Inicio")]
         public System.DateTime fInicio { get; set; }
+        [Display(Name = "Final")]
         public System.DateTime fFinal { get; set; }
+        [Display(Name = "Descripción")]
         public string descripcion { get; set; }
         public int estado { get; set; }
+        [Display(Name = "Usuario")]
         public int usuarioCreacion { get; set; }
+        [Display(Name = "Fecha")]
         public System.DateTime fechaCreacion { get; set; }
         public Nullable<int> usuarioModificacion { get; set; }
         public Nullable<System.DateTime> fechaModificacion { get; set; }
