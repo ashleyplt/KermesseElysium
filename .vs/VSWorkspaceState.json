@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\KermesseElysium",
-    "\\KermesseElysium\\Controllers",
-    "\\KermesseElysium\\Models",
-    "\\KermesseElysium\\Views",
-    "\\KermesseElysium\\Views\\IngresoComunidads",
-    "\\KermesseElysium\\Views\\Productoes"
+    ""
   ],
-  "SelectedNode": "\\KermesseElysium\\Views\\Productoes\\Edit.cshtml",
+  "SelectedNode": "\\KermesseElysium.sln",
   "PreviewInSolutionExplorer": false
 }

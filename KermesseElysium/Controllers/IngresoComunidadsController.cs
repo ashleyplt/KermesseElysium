@@ -99,9 +99,9 @@ namespace KermesseElysium.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre", ingresoComunidad.comunidad);
-            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre", ingresoComunidad.kermesse);
-            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre", ingresoComunidad.producto);
+            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre", ingresoComunidad.comunidad);
+            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", ingresoComunidad.kermesse);
+            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre", ingresoComunidad.producto);
             ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
             ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
             ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
@@ -113,28 +113,23 @@ namespace KermesseElysium.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(IngresoComunidad ingresoComunidad)
+        public ActionResult Edit([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
             if (ModelState.IsValid)
             {
-                var ic = new IngresoComunidad();
-                ic.producto = ingresoComunidad.producto;
-                ic.kermesse = ingresoComunidad.kermesse;
-                ic.comunidad = ingresoComunidad.comunidad;
-                ic.cantProducto = ingresoComunidad.cantProducto;
-                ic.totalBonos = ingresoComunidad.totalBonos;
-                ic.usuarioModificacion = (int)Session["idUser"];
-                ic.fechaModificacion = DateTime.Now;
-                db.Entry(ic).State = EntityState.Modified;
+                ingresoComunidad.usuarioModificacion = (int)Session["idUser"];
+                ingresoComunidad.fechaModificacion = DateTime.Now;
+
+                db.Entry(ingresoComunidad).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.comunidad = new SelectList(db.Comunidad.Where(c => c.estado == 1 || c.estado == 2), "idComunidad", "nombre", ingresoComunidad.comunidad);
-            ViewBag.kermesse = new SelectList(db.Kermesse.Where(k => k.fechaEliminacion.Equals(null) && k.usuarioEliminacion.Equals(null)), "idKermesse", "nombre", ingresoComunidad.kermesse);
-            ViewBag.producto = new SelectList(db.Producto.Where(p => p.estado == 1 || p.estado == 2), "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
+            ViewBag.comunidad = new SelectList(db.Comunidad, "idComunidad", "nombre", ingresoComunidad.comunidad);
+            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", ingresoComunidad.kermesse);
+            ViewBag.producto = new SelectList(db.Producto, "idProducto", "nombre", ingresoComunidad.producto);
+            ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
+            ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
+            ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
             return View(ingresoComunidad);
         }
 

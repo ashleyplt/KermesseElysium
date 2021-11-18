@@ -2220,7 +2220,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
           </Key>
           <Property Name="idProducto" Type="Int32" Nullable="false" />
           <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-          <Property Name="catProd" Type="String" Nullable="false" />
+          <Property Name="catProd" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="cantidad" Type="Int32" />

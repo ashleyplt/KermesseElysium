@@ -5039,7 +5039,7 @@
     <Content Include="Views\IngresoComunidads\Index.cshtml" />
     <Content Include="Views\IngresoComunidads\Details.cshtml" />
     <Content Include="Views\IngresoComunidads\Create.cshtml" />
-    <Content Include="Views\IngresoComunidads\Edit.cshtml" />
+    <Content Include="Views\IngresoComunidads\Edit2.cshtml" />
     <Content Include="Views\IngresoComunidads\Delete.cshtml" />
     <Content Include="Views\Productoes\Index.cshtml" />
     <Content Include="Views\Productoes\Details.cshtml" />
@@ -5056,6 +5056,7 @@
     <Content Include="Views\IngresoComunidadDets\Create.cshtml" />
     <Content Include="Views\IngresoComunidadDets\Edit.cshtml" />
     <Content Include="Views\IngresoComunidadDets\Delete.cshtml" />
+    <Content Include="Views\IngresoComunidads\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5081,6 +5082,7 @@
     <EmbeddedResource Include="Reportes\RIngresoComunidad.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidadDet.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidadDetIndiv.rdlc" />
+    <EmbeddedResource Include="Reportes\RIngresoComunidadIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RProducto.rdlc" />
     <EmbeddedResource Include="Reportes\RProductoIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcion.rdlc" />
