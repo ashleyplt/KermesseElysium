@@ -356,7 +356,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_producto' no tiene 
     </Key>
     <Property Name="idProducto" Type="int" Nullable="false" />
     <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
-    <Property Name="catProd" Type="int" />
+    <Property Name="catProd" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="nombre" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="cantidad" Type="int" />

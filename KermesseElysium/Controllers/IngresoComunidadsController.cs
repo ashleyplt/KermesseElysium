@@ -166,7 +166,7 @@ namespace KermesseElysium.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult VerReporteIngComunidad(string tipo, string buscar = "")
+        public ActionResult VerReporteIngresoComunidad(string tipo, string buscar = "")
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -197,7 +197,7 @@ namespace KermesseElysium.Controllers
             return File(b, mt);
         }
 
-        public ActionResult VerReporteIngComunidadIndiv(int id)
+        public ActionResult VerReporteIngresoComunidadIndiv(int id)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;

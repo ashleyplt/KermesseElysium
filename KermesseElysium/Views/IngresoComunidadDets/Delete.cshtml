@@ -1,4 +1,4 @@
-﻿@model KermesseElysium.Models.vw_ingresocomunidad
+﻿@model KermesseElysium.Models.vw_ingresocomunidaddet
 
 @{
     ViewBag.Title = "Delete";
@@ -9,12 +9,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Opción del rol</h1>
+                <h1 class="m-0">Ingreso de la comunidad</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li class="breadcrumb-item"> @Html.ActionLink("Ingreso de la comunidad", "Index", "IngresoComunidads")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Detalle de ingresos", "Index", "IngresoComunidadDets")</li>
                     <li class="breadcrumb-item active">Eliminar</li>
                 </ol>
             </div><!-- /.col -->
@@ -27,31 +28,37 @@
 
 <div class="card card-secondary">
     <div class="card-header">
-        <h3 class="card-title">¿Estás seguro que deseas eliminar este ingreso de la comunidad?</h3>
+        <h3 class="card-title">¿Estás seguro que deseas eliminar este detalle del ingreso?</h3>
     </div>
     <div class="card-body">
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.comunidad, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.comunidad)</span>
+                @Html.LabelFor(model => model.ingresoComunidad, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.ingresoComunidad)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.kermesse, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.kermesse)</span>
+                @Html.LabelFor(model => model.bono, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.bono)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.producto, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.producto)</span>
+                @Html.LabelFor(model => model.denominacion, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.denominacion)</span>
             </div>
         </div>
         <div class="info-box bg-light">
             <div class="info-box-content">
-                @Html.LabelFor(model => model.cantProducto, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.cantProducto)</span>
+                @Html.LabelFor(model => model.cantidad, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.cantidad)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.subTotalBono, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.subTotalBono)</span>
             </div>
         </div>
     </div>
@@ -62,8 +69,9 @@
 
             <div class="form-actions no-color">
                 <input type="submit" value="Eliminar" class="btn btn-secondary" />
-                <a class="btn btn-default" href="@Url.Action("Index", "IngresoComunidads")">Volver</a>
+                <a class="btn btn-default" href="@Url.Action("Index", "IngresoComunidadDets")">Volver</a>
             </div>
         }
     </div>
 </div>
+

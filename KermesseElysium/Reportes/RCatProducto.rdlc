@@ -178,8 +178,8 @@
         <DataSetName>DSCatProducto</DataSetName>
         <Top>0.5986cm</Top>
         <Left>1.24037cm</Left>
-        <Height>1.83444cm</Height>
-        <Width>14.65637cm</Width>
+        <Height>1.62334cm</Height>
+        <Width>14.65636cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -187,7 +187,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.95789in</Height>
+    <Height>0.88497in</Height>
     <Style />
   </Body>
   <Width>6.65475in</Width>

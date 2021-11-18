@@ -153,6 +153,7 @@
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresoComunidadDetsController.cs" />
     <Compile Include="Controllers\IngresoComunidadsController.cs" />
     <Compile Include="Controllers\KermessesController.cs" />
     <Compile Include="Controllers\ListaPreciosController.cs" />
@@ -5050,6 +5051,11 @@
     <Content Include="Views\RolUsuarios\Create.cshtml" />
     <Content Include="Views\RolUsuarios\Edit.cshtml" />
     <Content Include="Views\RolUsuarios\Delete.cshtml" />
+    <Content Include="Views\IngresoComunidadDets\Index.cshtml" />
+    <Content Include="Views\IngresoComunidadDets\Details.cshtml" />
+    <Content Include="Views\IngresoComunidadDets\Create.cshtml" />
+    <Content Include="Views\IngresoComunidadDets\Edit.cshtml" />
+    <Content Include="Views\IngresoComunidadDets\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5073,6 +5079,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidad.rdlc" />
+    <EmbeddedResource Include="Reportes\RIngresoComunidadDet.rdlc" />
+    <EmbeddedResource Include="Reportes\RIngresoComunidadDetIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RProducto.rdlc" />
     <EmbeddedResource Include="Reportes\RProductoIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcion.rdlc" />

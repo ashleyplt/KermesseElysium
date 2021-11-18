@@ -5,47 +5,57 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Ingreso de la comunidad</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Ingreso de la comunidad", "Index", "IngresoComunidads")</li>
+                    <li class="breadcrumb-item active">Detalles</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
 
-<div>
-    <h4>vw_ingresocomunidad</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioModificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioModificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaModificacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechaModificacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.usuarioEliminacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.usuarioEliminacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaEliminacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fechaEliminacion)
-        </dd>
-
-    </dl>
+        </div>
+    </div><!-- /.container-fluid -->
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Detalles del ingreso de la comunidad</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.comunidad, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text"> @Html.DisplayFor(model => model.comunidad)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.kermesse, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.kermesse)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.producto, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.producto)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.cantProducto, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.cantProducto)</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-default" href="@Url.Action("Index", "IngresoComunidads")">Volver</a>
+    </div>
+</div>
