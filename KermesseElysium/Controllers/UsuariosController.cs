@@ -20,7 +20,6 @@ namespace KermesseElysium.Controllers
         public ActionResult Index(string buscar = "")
         {
             var usuario = from u in db.Usuario select u;
-            usuario = usuario.Where(u => u.estado.Equals(2) || u.estado.Equals(1));
 
             if (!string.IsNullOrEmpty(buscar))
             {
@@ -136,7 +135,14 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Usuario usuario = db.Usuario.Find(id);
-            usuario.estado = 3;
+            if(usuario.estado.Equals(1) || usuario.estado.Equals(2))
+            {
+                usuario.estado = 3;
+            } else
+            {
+                usuario.estado = 2;
+            }
+            
             db.Entry(usuario).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

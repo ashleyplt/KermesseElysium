@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\RolOpcionsController.cs" />
     <Compile Include="Controllers\RolUsuariosController.cs" />
+    <Compile Include="Controllers\TasaCambioDetsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
@@ -5069,6 +5070,8 @@
     <Content Include="Views\ListaPrecioDets\Details.cshtml" />
     <Content Include="Views\ListaPrecioDets\Edit.cshtml" />
     <Content Include="Views\ListaPrecioDets\Index.cshtml" />
+    <Content Include="Views\TasaCambioDets\Create.cshtml" />
+    <Content Include="Views\TasaCambioDets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
