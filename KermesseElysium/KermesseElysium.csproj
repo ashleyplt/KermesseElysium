@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\RolOpcionsController.cs" />
     <Compile Include="Controllers\RolUsuariosController.cs" />
+    <Compile Include="Controllers\TasaCambiosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
@@ -255,6 +256,9 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VW_arqueoCaja.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vw_gasto.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -280,6 +284,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_rolusuario.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_tasacambio.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -5069,9 +5076,15 @@
     <Content Include="Views\ListaPrecioDets\Details.cshtml" />
     <Content Include="Views\ListaPrecioDets\Edit.cshtml" />
     <Content Include="Views\ListaPrecioDets\Index.cshtml" />
+    <Content Include="Views\TasaCambios\Index.cshtml" />
+    <Content Include="Views\TasaCambios\Details.cshtml" />
+    <Content Include="Views\TasaCambios\Create.cshtml" />
+    <Content Include="Views\TasaCambios\Edit.cshtml" />
+    <Content Include="Views\TasaCambios\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\vw_tasacambio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
