@@ -1,0 +1,100 @@
+﻿@model IEnumerable<KermesseElysium.Models.ControlBono>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Gasto</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item active">Control Bono</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div style="text-align:right;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "ControlBonoes")'">
+                <i class="fas fa-plus"></i> Registrar Control Bono
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn-sm btn-secondary dropdown-toggle dropdown-icon border border-secondary" data-toggle="dropdown">
+                    Exportar
+                </button>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item" target="_blank" href="@Url.Action("ReporteControlBono", new { tipo = "PDF", buscar = Request.Form["buscar"] })">PDF</a>
+                    <a class="dropdown-item" target="_blank" href="@Url.Action("ReporteControlBono", new { tipo = "Word", buscar = Request.Form["buscar"] })">Word</a>
+                    <a class="dropdown-item" target="_blank" href="@Url.Action("ReporteControlBono", new { tipo = "Excel", buscar = Request.Form["buscar"] })">Excel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        @using (Html.BeginForm("Index", "Gastoes", FormMethod.Post))
+        {
+            <div style="text-align:right; float:right;">
+                <div class"row">
+                    <div class="input-group">
+                        @Html.TextBox("buscar", "", new { @class = "form-control" })
+                        <button type="submit" class="btn btn-dark">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        }
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.valor)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.valor)
+                        </td>
+
+                        <td>
+                            <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ControlBonoes", new { id = item.idBono })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                            <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ControlBonoes", new { id = item.idBono })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                            <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ControlBonoes", new { id = item.idBono })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
+                            <span style="cursor:pointer;" title="Exportar a PDF"><a href="@Url.Action("ReporteControlBonoIndiv", "ControlBonoes", new { id = item.idBono })" style="color:black;"><i class="fas fa-file-export"></i></a></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.valor)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

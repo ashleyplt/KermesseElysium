@@ -152,6 +152,7 @@
     <Compile Include="Controllers\ArqueoCajasController.cs" />
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
+    <Compile Include="Controllers\ControlBonoesController.cs" />
     <Compile Include="Controllers\GastoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresoComunidadDetsController.cs" />
@@ -5081,6 +5082,11 @@
     <Content Include="Views\TasaCambios\Create.cshtml" />
     <Content Include="Views\TasaCambios\Edit.cshtml" />
     <Content Include="Views\TasaCambios\Delete.cshtml" />
+    <Content Include="Views\ControlBonoes\Create.cshtml" />
+    <Content Include="Views\ControlBonoes\Delete.cshtml" />
+    <Content Include="Views\ControlBonoes\Details.cshtml" />
+    <Content Include="Views\ControlBonoes\Edit.cshtml" />
+    <Content Include="Views\ControlBonoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5104,6 +5110,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
+    <EmbeddedResource Include="Reportes\RControlBono.rdlc" />
+    <EmbeddedResource Include="Reportes\RControlBonoIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RGastoIndividual2.rdlc" />
     <EmbeddedResource Include="Reportes\RGasto2.rdlc" />
     <EmbeddedResource Include="Reportes\RIngresoComunidad.rdlc" />
