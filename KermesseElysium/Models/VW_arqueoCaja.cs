@@ -12,13 +12,12 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RolUsuario
+    public partial class VW_arqueoCaja
     {
-        public int idRolUsuario { get; set; }
-        public int usuario { get; set; }
-        public int rol { get; set; }
-    
-        public virtual Rol Rol1 { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public int ID { get; set; }
+        public string Kermesse { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
+        public string Usuario { get; set; }
+        public Nullable<decimal> Total { get; set; }
     }
 }

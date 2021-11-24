@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArqueoCajaDetsController.cs" />
     <Compile Include="Controllers\ArqueoCajasController.cs" />
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
@@ -255,6 +256,9 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VW_arqueoCaja.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vw_gasto.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -280,6 +284,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_rolusuario.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_tasacambio.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -5028,11 +5035,6 @@
     <Content Include="Views\Kermesses\Index.cshtml" />
     <Content Include="Views\Parroquias\Delete.cshtml" />
     <Content Include="Views\Login\Create.cshtml" />
-    <Content Include="Views\ArqueoCajas\Create.cshtml" />
-    <Content Include="Views\ArqueoCajas\Delete.cshtml" />
-    <Content Include="Views\ArqueoCajas\Details.cshtml" />
-    <Content Include="Views\ArqueoCajas\Edit.cshtml" />
-    <Content Include="Views\ArqueoCajas\Index.cshtml" />
     <Content Include="Views\RolOpcions\Index.cshtml" />
     <Content Include="Views\RolOpcions\Create.cshtml" />
     <Content Include="Views\RolOpcions\Details.cshtml" />
@@ -5069,6 +5071,16 @@
     <Content Include="Views\ListaPrecioDets\Details.cshtml" />
     <Content Include="Views\ListaPrecioDets\Edit.cshtml" />
     <Content Include="Views\ListaPrecioDets\Index.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Create.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Delete.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Details.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Edit.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Index.cshtml" />
+    <Content Include="Views\ArqueoCajas\Create.cshtml" />
+    <Content Include="Views\ArqueoCajas\Delete.cshtml" />
+    <Content Include="Views\ArqueoCajas\Details.cshtml" />
+    <Content Include="Views\ArqueoCajas\Edit.cshtml" />
+    <Content Include="Views\ArqueoCajas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5090,6 +5102,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\Rarqueo.rdlc" />
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
     <EmbeddedResource Include="Reportes\RGastoIndividual2.rdlc" />
     <EmbeddedResource Include="Reportes\RGasto2.rdlc" />

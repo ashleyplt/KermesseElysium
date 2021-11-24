@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KermesseElysium.Models.ArqueoCaja>
+﻿@model IEnumerable<KermesseElysium.Models.ArqueoCajaDet>
 
 @{
     ViewBag.Title = "Index";
@@ -8,12 +8,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Arqueo de la caja</h1>
+                <h1 class="m-0">Arqueo caja (Detalle) </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li class="breadcrumb-item active">Arqueo de la caja</li>
+                    <li class="breadcrumb-item active">Arqueo de caja (Detalle)</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,7 +23,7 @@
 <div class="card">
     <div class="card-header">
         <div style="text-align:right;">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "ArqueoCajas")'">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='@Url.Action("Create", "ArqueoCajaDets")'">
                 <i class="fas fa-plus"></i> Registrar Arqueo
             </button>
             <div class="btn-group">
@@ -40,7 +40,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        @using (Html.BeginForm("Index", "ArqueoCajas", FormMethod.Post))
+        @using (Html.BeginForm("Index", "ArqueoCajaDets", FormMethod.Post))
         {
             <div style="text-align:right; float:right;">
                 <div class"row">
@@ -54,20 +54,25 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
+
                     <th>
-                        @Html.DisplayNameFor(model => model.fechaArqueo)
+                        @Html.DisplayNameFor(model => model.cantidad)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.granTotal)
+                        @Html.DisplayNameFor(model => model.subtotal)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+                        @Html.DisplayNameFor(model => model.ArqueoCaja1.idArqueoCaja)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Usuario.userName)
+                        @Html.DisplayNameFor(model => model.Denominacion1.valorLetras)
                     </th>
-                   
-                    <th>Acciones</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Moneda1.nombre)
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -75,27 +80,25 @@
                 {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.fechaArqueo)
+                        @Html.DisplayFor(modelItem => item.cantidad)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.granTotal)
+                        @Html.DisplayFor(modelItem => item.subtotal)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                        @Html.DisplayFor(modelItem => item.ArqueoCaja1.idArqueoCaja)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Usuario.userName)
+                        @Html.DisplayFor(modelItem => item.Denominacion1.valorLetras)
                     </td>
-                  
-
-
-
-
                     <td>
-                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ArqueoCajas", new { id = item.idArqueoCaja })" style="color:black;"><i class="fas fa-eye"></i></a></span>
-                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ArqueoCajas", new { id = item.idArqueoCaja })" style="color:black;"><i class="fas fa-edit"></i></a></span>
-                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ArqueoCajas", new { id = item.idArqueoCaja })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
-                        <span style="cursor:pointer;" title="Exportar a PDF"><a href="@Url.Action("ReporteGastoIndiv", "ArqueoCajas", new { id = item.idArqueoCaja })" style="color:black;"><i class="fas fa-file-export"></i></a></span>
+                        @Html.DisplayFor(modelItem => item.Moneda1.nombre)
+                    </td>
+                    <td>
+                        <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "ArqueoCajaDets", new { id = item.idArqueoCajaDet })" style="color:black;"><i class="fas fa-eye"></i></a></span>
+                        <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "ArqueoCajaDets", new { id = item.idArqueoCajaDet })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                        <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "ArqueoCajaDets", new { id = item.idArqueoCajaDet })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
+                        <span style="cursor:pointer;" title="Exportar a PDF"><a href="@Url.Action("ReporteGastoIndiv", "ArqueoCajaDets", new { id = item.idArqueoCajaDet })" style="color:black;"><i class="fas fa-file-export"></i></a></span>
 
                     </td>
                 </tr>
@@ -104,20 +107,25 @@
             <tfoot>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.fechaArqueo)
+                        @Html.DisplayNameFor(model => model.cantidad)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.granTotal)
+                        @Html.DisplayNameFor(model => model.subtotal)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+                        @Html.DisplayNameFor(model => model.ArqueoCaja1.idArqueoCaja)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Usuario.userName)
+                        @Html.DisplayNameFor(model => model.Denominacion1.valorLetras)
                     </th>
-                   
-                    <th>Acciones</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Moneda1.nombre)
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
                 </tr>
             </tfoot>
         </table>
     </div>
+</div>

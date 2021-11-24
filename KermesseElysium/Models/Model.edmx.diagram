@@ -74,6 +74,8 @@
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_listapreciodet" Width="1.5" PointX="11.375" PointY="5.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_producto" Width="1.5" PointX="12.25" PointY="8.75" />
         <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_rolusuario" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.VW_arqueoCaja" Width="1.5" PointX="10.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DBKermesseElysiumModel.vw_tasacambio" Width="1.5" PointX="12.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

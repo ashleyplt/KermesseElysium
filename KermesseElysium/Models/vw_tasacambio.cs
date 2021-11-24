@@ -12,13 +12,13 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RolUsuario
+    public partial class vw_tasacambio
     {
-        public int idRolUsuario { get; set; }
-        public int usuario { get; set; }
-        public int rol { get; set; }
-    
-        public virtual Rol Rol1 { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public int idTasaCambio { get; set; }
+        public string monedaO { get; set; }
+        public string monedaC { get; set; }
+        public string mes { get; set; }
+        public int anio { get; set; }
+        public int estado { get; set; }
     }
 }
