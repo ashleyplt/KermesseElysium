@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArqueoCajaDetsController.cs" />
     <Compile Include="Controllers\ArqueoCajasController.cs" />
     <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
@@ -5087,6 +5088,11 @@
     <Content Include="Views\ControlBonoes\Details.cshtml" />
     <Content Include="Views\ControlBonoes\Edit.cshtml" />
     <Content Include="Views\ControlBonoes\Index.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Create.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Delete.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Details.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Edit.cshtml" />
+    <Content Include="Views\ArqueoCajaDets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

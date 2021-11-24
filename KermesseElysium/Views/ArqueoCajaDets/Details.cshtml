@@ -1,7 +1,7 @@
-﻿@model KermesseElysium.Models.ArqueoCaja
+﻿@model KermesseElysium.Models.ArqueoCajaDet
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,12 +9,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Arqueo de Caja</h1>
+                <h1 class="m-0">Detalles</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li class="breadcrumb-item"> @Html.ActionLink("Arqueo", "Index", "ArqueoCajas")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Arqueo detalle", "Index", "ArqueoCajaDets")</li>
                     <li class="breadcrumb-item active">Detalles</li>
                 </ol>
             </div><!-- /.col -->
@@ -27,43 +27,46 @@
 
 <div class="card card-secondary">
     <div class="card-header">
-        <h3 class="card-title">Detalles del Arqueo</h3>
+        <h3 class="card-title">Detalles del arqueo de caja</h3>
     </div>
     <div class="card-body">
 
         <div class="info-box bg-light">
             <div class="info-box-content">
 
-                @Html.LabelFor(model => model.usuarioCreacion, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.Usuario.userName)</span>
+                @Html.LabelFor(model => model.idArqueoCajaDet, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.idArqueoCajaDet)</span>
             </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+
+                @Html.LabelFor(model => model.cantidad, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.cantidad)</span>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.Denominacion1.valorLetras, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.Denominacion1.valorLetras)</span>
+            </div>
+
         </div>
 
         <div class="info-box bg-light">
             <div class="info-box-content">
-
-                @Html.LabelFor(model => model.Kermesse1, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.Kermesse1.nombre)</span>
+                @Html.LabelFor(model => model.subtotal, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.subtotal)</span>
             </div>
-        </div>
 
-        <div class="info-box bg-light">
-            <div class="info-box-content">
-
-                @Html.LabelFor(model => model.granTotal, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.granTotal)</span>
-            </div>
-        </div>
-
-        <div class="info-box bg-light">
-            <div class="info-box-content">
-
-                @Html.LabelFor(model => model.fechaArqueo, htmlAttributes: new { @class = "info-box-number mb-0" })
-                <span class="info-box-text">@Html.DisplayFor(model => model.fechaArqueo)</span>
-            </div>
         </div>
     </div>
     <div class="card-footer">
-        <a class="btn btn-default" href="@Url.Action("Index", "ArqueoCajas")">Volver</a>
+        <a class="btn btn-default" href="@Url.Action("Index", "ArqueoCajaDets")">Volver</a>
     </div>
 </div>
