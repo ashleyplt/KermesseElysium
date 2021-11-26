@@ -1,0 +1,63 @@
+﻿@model KermesseElysium.Models.Comunidad
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Comunidad</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Comunidad", "Index", "Comunidads")</li>
+                    <li class="breadcrumb-item active">Eliminar</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">¿Estás seguro que deseas eliminar esta comunidad?</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.nombre)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.responsble, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.responsble)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.descContribucion, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.descContribucion)</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-secondary" />
+                <a class="btn btn-default" href="@Url.Action("Index", "Comunidads")">Volver</a>
+            </div>
+        }
+    </div>
+</div>

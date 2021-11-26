@@ -58,7 +58,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.mes, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.mes, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.mes, new { htmlAttributes = new { @class = "form-control"} })
                         @Html.ValidationMessageFor(model => model.mes, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.anio, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.anio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.anio, new { htmlAttributes = new { @class = "form-control"} })
                         @Html.ValidationMessageFor(model => model.anio, "", new { @class = "text-danger" })
                     </div>
                 </div> 
@@ -77,6 +77,14 @@
         </div>
     }
 </div>
+
+<script>
+    $("#datepicker").datepicker({
+        format: "mm",
+        startView: "months",
+        minViewMode: "months"
+    });
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

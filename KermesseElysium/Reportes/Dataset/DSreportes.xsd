@@ -188,6 +188,25 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vw_tasaCambio" msprop:Generator_TableClassName="vw_tasaCambioDataTable" msprop:Generator_TableVarName="tablevw_tasaCambio" msprop:Generator_RowChangedName="vw_tasaCambioRowChanged" msprop:Generator_TablePropName="vw_tasaCambio" msprop:Generator_RowDeletingName="vw_tasaCambioRowDeleting" msprop:Generator_RowChangingName="vw_tasaCambioRowChanging" msprop:Generator_RowEvHandlerName="vw_tasaCambioRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_tasaCambioRowDeleted" msprop:Generator_RowClassName="vw_tasaCambioRow" msprop:Generator_UserTableName="vw_tasaCambio" msprop:Generator_RowEvArgName="vw_tasaCambioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="monedaO" msprop:Generator_ColumnVarNameInTable="columnmonedaO" msprop:Generator_ColumnPropNameInRow="monedaO" msprop:Generator_ColumnPropNameInTable="monedaOColumn" msprop:Generator_UserColumnName="monedaO" type="xs:string" minOccurs="0" />
+              <xs:element name="monedaC" msprop:Generator_ColumnVarNameInTable="columnmonedaC" msprop:Generator_ColumnPropNameInRow="monedaC" msprop:Generator_ColumnPropNameInTable="monedaCColumn" msprop:Generator_UserColumnName="monedaC" type="xs:string" minOccurs="0" />
+              <xs:element name="mes" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:string" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="comunidad" msprop:Generator_TableClassName="comunidadDataTable" msprop:Generator_TableVarName="tablecomunidad" msprop:Generator_RowChangedName="comunidadRowChanged" msprop:Generator_TablePropName="comunidad" msprop:Generator_RowDeletingName="comunidadRowDeleting" msprop:Generator_RowChangingName="comunidadRowChanging" msprop:Generator_RowEvHandlerName="comunidadRowChangeEventHandler" msprop:Generator_RowDeletedName="comunidadRowDeleted" msprop:Generator_RowClassName="comunidadRow" msprop:Generator_UserTableName="comunidad" msprop:Generator_RowEvArgName="comunidadRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="responsble" msprop:Generator_ColumnVarNameInTable="columnresponsble" msprop:Generator_ColumnPropNameInRow="responsble" msprop:Generator_ColumnPropNameInTable="responsbleColumn" msprop:Generator_UserColumnName="responsble" type="xs:string" minOccurs="0" />
+              <xs:element name="descContribucion" msprop:Generator_ColumnVarNameInTable="columndescContribucion" msprop:Generator_ColumnPropNameInRow="descContribucion" msprop:Generator_ColumnPropNameInTable="descContribucionColumn" msprop:Generator_UserColumnName="descContribucion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

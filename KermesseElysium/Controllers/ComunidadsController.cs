@@ -12,130 +12,121 @@ using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
-    public class TasaCambiosController : Controller
+    public class ComunidadsController : Controller
     {
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
-        // GET: TasaCambios
+        // GET: Comunidads
         public ActionResult Index(string buscar)
         {
-            var tasacambio = from t in db.vw_tasacambio select t;
-            tasacambio = tasacambio.Where(t => t.estado.Equals(1) || t.estado.Equals(2));
+            var comunidad = from c in db.Comunidad select c;
             if (!string.IsNullOrEmpty(buscar))
             {
-                tasacambio = tasacambio.Where(tc => tc.anio.Equals(buscar) || tc.monedaO.Contains(buscar) || tc.monedaC.Contains(buscar) || tc.mes.Contains(buscar));
+                comunidad = comunidad.Where(c => c.nombre.Contains(buscar) || c.responsble.Contains(buscar));
             }
-            
-            return View(tasacambio.ToList());
+            return View(comunidad.ToList());
         }
 
-        // GET: TasaCambios/Details/5
+        // GET: Comunidads/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vw_tasacambio vw_tasacambio = db.vw_tasacambio.Find(id);
-            if (vw_tasacambio == null)
+            Comunidad comunidad = db.Comunidad.Find(id);
+            if (comunidad == null)
             {
                 return HttpNotFound();
             }
-            return View(vw_tasacambio);
+            return View(comunidad);
         }
 
-        // GET: TasaCambios/Create
+        // GET: Comunidads/Create
         public ActionResult Create()
         {
-            ViewBag.monedaO = new SelectList(db.Moneda, "idMoneda", "nombre");
-            ViewBag.monedaC = new SelectList(db.Moneda, "idMoneda", "nombre");
             return View();
         }
 
-        // POST: TasaCambios/Create
+        // POST: Comunidads/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( TasaCambio tasaCambio)
+        public ActionResult Create( Comunidad comunidad)
         {
             if (ModelState.IsValid)
             {
-                tasaCambio.estado = 1;
-                db.TasaCambio.Add(tasaCambio);
+                comunidad.estado = 1;
+                db.Comunidad.Add(comunidad);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.monedaO = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaO);
-            ViewBag.monedaC = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaC);
-            return View(tasaCambio);
+            return View(comunidad);
         }
 
-        // GET: TasaCambios/Edit/5
+        // GET: Comunidads/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TasaCambio tasaCambio = db.TasaCambio.Find(id);
-            if (tasaCambio == null)
+            Comunidad comunidad = db.Comunidad.Find(id);
+            if (comunidad == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.monedaO = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaO);
-            ViewBag.monedaC = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaC);
-            return View(tasaCambio);
+            return View(comunidad);
         }
 
-        // POST: TasaCambios/Edit/5
+        // POST: Comunidads/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idTasaCambio,monedaO,monedaC,mes,anio,estado")] TasaCambio tasaCambio)
+        public ActionResult Edit( Comunidad comunidad)
         {
             if (ModelState.IsValid)
             {
-                tasaCambio.estado = 2;
-                db.Entry(tasaCambio).State = EntityState.Modified;
+                comunidad.estado = 2;
+                db.Entry(comunidad).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.monedaO = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaO);
-            ViewBag.monedaC = new SelectList(db.Moneda.Where(m => m.estado == 1 || m.estado == 2), "idMoneda", "nombre", tasaCambio.monedaC);
-            return View(tasaCambio);
+            return View(comunidad);
         }
 
-        // GET: TasaCambios/Delete/5
+        // GET: Comunidads/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vw_tasacambio vw_tasaCambio = db.vw_tasacambio.Find(id);
-            if (vw_tasaCambio == null)
+            Comunidad comunidad = db.Comunidad.Find(id);
+            if (comunidad == null)
             {
                 return HttpNotFound();
             }
-            return View(vw_tasaCambio);
+            return View(comunidad);
         }
 
-        // POST: TasaCambios/Delete/5
+        // POST: Comunidads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TasaCambio tasaCambio = db.TasaCambio.Find(id);
-            tasaCambio.estado = 3;
-            db.Entry(tasaCambio).State = EntityState.Modified;
+            
+            Comunidad comunidad = db.Comunidad.Find(id);
+            comunidad.estado = 3;
+            db.Entry(comunidad).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult VerReporteTasaCambio(string tipo, string buscar = "")
+        public ActionResult VerReporteComunidad(string tipo, string buscar = "")
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -143,7 +134,7 @@ namespace KermesseElysium.Controllers
             Warning[] w;
 
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RTasaCambio.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RComunidad.rdlc");
             string deviceInfo = @"<DeviceInfo>
                       <MarginTop>0cm</MarginTop>
                       <MarginLeft>0cm</MarginLeft>
@@ -156,17 +147,17 @@ namespace KermesseElysium.Controllers
 
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
-            List<vw_tasacambio> lista = new List<vw_tasacambio>();
-            var Tasacambio = from p in db.vw_tasacambio select p;
+            List<Comunidad> lista = new List<Comunidad>();
+            var comunidad = from c in db.Comunidad select c;
 
             if (!string.IsNullOrEmpty(buscar))
             {
-                Tasacambio = Tasacambio.Where((tc => tc.anio.Equals(buscar) || tc.monedaO.Contains(buscar) || tc.monedaC.Contains(buscar) || tc.mes.Contains(buscar)));
+                comunidad = comunidad.Where(c => c.nombre.Contains(buscar) || c.responsble.Contains(buscar));
             }
 
-            lista = Tasacambio.ToList();
+            lista = comunidad.ToList();
 
-            ReportDataSource rds = new ReportDataSource("DsTasaCambio", lista);
+            ReportDataSource rds = new ReportDataSource("DsComunidad", lista);
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render(tipo, deviceInfo, out mt, out enc, out f, out s, out w);
@@ -174,14 +165,14 @@ namespace KermesseElysium.Controllers
             return File(b, mt);
         }
 
-        public ActionResult VerReporteTasaCambioIndiv(int id)
+        public ActionResult VerReporteComunidadIndiv(int id)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
             Warning[] w;
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RTasaCambioIndiv.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RComunidadIndiv.rdlc"); 
             string deviceInfo = @"<DeviceInfo>
                       <MarginTop>0cm</MarginTop>
                       <MarginLeft>0cm</MarginLeft>
@@ -194,10 +185,10 @@ namespace KermesseElysium.Controllers
 
             DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
 
-            var Tasacambio = from p in db.vw_tasacambio select p;
-            Tasacambio = Tasacambio.Where(t => t.idTasaCambio == id);
+            var comunidad = from c in db.Comunidad select c;
+            comunidad = comunidad.Where(t => t.idComunidad == id);
 
-            ReportDataSource rds = new ReportDataSource("DsTasaCambio", Tasacambio.ToList());
+            ReportDataSource rds = new ReportDataSource("DsComunidadIndiv", comunidad.ToList());
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render("PDF", deviceInfo, out mt, out enc, out f, out s, out w);
