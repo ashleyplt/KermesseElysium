@@ -48,8 +48,8 @@ namespace KermesseElysium.Controllers
         public ActionResult Create()
         {
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCaja, "idArqueoCaja", "idArqueoCaja");
-            ViewBag.denominacion = new SelectList(db.Denominacion, "idDenominacion", "valorLetras");
-            ViewBag.moneda = new SelectList(db.Moneda, "idMoneda", "nombre");
+            ViewBag.denominacion = new SelectList(db.Denominacion.Where( d => d.estado == 1 || d.estado == 2), "idDenominacion", "valorLetras");
+            ViewBag.moneda = new SelectList(db.Moneda.Where(d => d.estado == 1 || d.estado == 2), "idMoneda", "nombre");
             return View();
         }
 
@@ -86,8 +86,8 @@ namespace KermesseElysium.Controllers
                 return HttpNotFound();
             }
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCaja, "idArqueoCaja", "idArqueoCaja", arqueoCajaDet.arqueoCaja);
-            ViewBag.denominacion = new SelectList(db.Denominacion, "idDenominacion", "valorLetras", arqueoCajaDet.denominacion);
-            ViewBag.moneda = new SelectList(db.Moneda, "idMoneda", "nombre", arqueoCajaDet.moneda);
+            ViewBag.denominacion = new SelectList(db.Denominacion.Where(d => d.estado == 1 || d.estado == 2), "idDenominacion", "valorLetras", arqueoCajaDet.denominacion);
+            ViewBag.moneda = new SelectList(db.Moneda.Where(d => d.estado == 1 || d.estado == 2), "idMoneda", "nombre", arqueoCajaDet.moneda);
             return View(arqueoCajaDet);
         }
 

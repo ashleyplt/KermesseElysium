@@ -155,6 +155,7 @@
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
     <Compile Include="Controllers\ComunidadsController.cs" />
     <Compile Include="Controllers\ControlBonoesController.cs" />
+    <Compile Include="Controllers\DenominacionsController.cs" />
     <Compile Include="Controllers\GastoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresoComunidadDetsController.cs" />
@@ -5099,6 +5100,11 @@
     <Content Include="Views\Comunidads\Details.cshtml" />
     <Content Include="Views\Comunidads\Edit.cshtml" />
     <Content Include="Views\Comunidads\Index.cshtml" />
+    <Content Include="Views\Denominacions\Create.cshtml" />
+    <Content Include="Views\Denominacions\Delete.cshtml" />
+    <Content Include="Views\Denominacions\Details.cshtml" />
+    <Content Include="Views\Denominacions\Edit.cshtml" />
+    <Content Include="Views\Denominacions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

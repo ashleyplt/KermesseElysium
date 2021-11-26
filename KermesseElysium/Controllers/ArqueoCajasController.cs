@@ -49,7 +49,7 @@ namespace KermesseElysium.Controllers
         // GET: ArqueoCajas/Create
         public ActionResult Create()
         {
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre");
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(d => d.estado == 1 || d.estado == 2), "idKermesse", "nombre");
             ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName");
             ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName");
             ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName");
@@ -94,7 +94,7 @@ namespace KermesseElysium.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.kermesse = new SelectList(db.Kermesse, "idKermesse", "nombre", arqueoCaja.kermesse);
+            ViewBag.kermesse = new SelectList(db.Kermesse.Where(d => d.estado == 1 || d.estado == 2), "idKermesse", "nombre", arqueoCaja.kermesse);
             ViewBag.usuarioCreacion = new SelectList(db.Usuario, "idUsuario", "userName", arqueoCaja.usuarioCreacion);
             ViewBag.usuarioModificacion = new SelectList(db.Usuario, "idUsuario", "userName", arqueoCaja.usuarioModificacion);
             ViewBag.usuarioEliminacion = new SelectList(db.Usuario, "idUsuario", "userName", arqueoCaja.usuarioEliminacion);
