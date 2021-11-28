@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -128,6 +130,59 @@ namespace KermesseElysium.Controllers
             db.Entry(denominacion).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ReporteDenominacions(string tipo, string buscar = "")
+        {
+
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RDenominacion.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            var Denominacion = from m in db.vw_denominacion select m;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                Denominacion = Denominacion.Where(m => m.valorLetras.Contains(buscar));
+            }
+
+            List<vw_denominacion> ListaDen = new List<vw_denominacion>();
+            ListaDen = Denominacion.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSDenominacion", ListaDen);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+        }
+        public ActionResult ReporteDenominacionIndiv(int id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RDenominacion.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            var Denominacion = from m in db.vw_denominacion select m;
+            Denominacion = Denominacion.Where(m => m.idDenominacion == id);
+
+            ReportDataSource rds = new ReportDataSource("DSDenominacion", Denominacion.ToList());
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
         }
 
         protected override void Dispose(bool disposing)

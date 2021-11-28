@@ -11,28 +11,13 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class vw_tasacambio
     {
         public int idTasaCambio { get; set; }
-
-        [Display(Name = "Moneda O")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public string monedaO { get; set; }
-
-        [Display(Name = "Moneda C")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public string monedaC { get; set; }
-
-        [Display(Name = "Mes")]
-        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(15, ErrorMessage = "Longitud máxima 15")]
         public string mes { get; set; }
-
-        [Display(Name = "Año")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public int anio { get; set; }
         public int estado { get; set; }
     }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KermesseElysium.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace KermesseElysium.Controllers
 {
@@ -134,6 +136,58 @@ namespace KermesseElysium.Controllers
             db.ArqueoCajaDet.Remove(arqueoCajaDet);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult Reportearq(string tipo, string buscar = "")
+        {
+
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RArqueoCajaDets.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            DBKermesseElysiumEntities modelo = new DBKermesseElysiumEntities();
+
+            var Arqueo = from m in db.vw_ArqueoCajaDetalle select m;
+
+            if (!string.IsNullOrEmpty(buscar))
+            {
+                Arqueo = Arqueo.Where(m => m.kermesse.Contains(buscar));
+            }
+
+            List<vw_ArqueoCajaDetalle> listaDets = new List<vw_ArqueoCajaDetalle>();
+            listaDets = Arqueo.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSArqueoCajaDets", listaDets);
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
+        }
+        public ActionResult ReportearqIndiv(int id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RArqueoCajaDets.rdlc");
+
+            rpt.ReportPath = ruta;
+
+            var arqueo = from m in db.vw_ArqueoCajaDetalle select m;
+           // arqueo = arqueo.Where(m => m.idArqueoCajaDet == id);
+
+            ReportDataSource rds = new ReportDataSource("DSArqueoCajaDets", arqueo.ToList());
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return File(b, mt);
         }
 
         protected override void Dispose(bool disposing)

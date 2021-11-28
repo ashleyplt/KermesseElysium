@@ -12,14 +12,12 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TasaCambioDet
+    public partial class vw_denominacion
     {
-        public int idTasaCambioDet { get; set; }
-        public int tasaCambio { get; set; }
-        public System.DateTime fecha { get; set; }
-        public decimal tipoCambio { get; set; }
+        public int idDenominacion { get; set; }
+        public decimal valor { get; set; }
+        public string valorLetras { get; set; }
         public int estado { get; set; }
-    
-        public virtual TasaCambio TasaCambio1 { get; set; }
+        public string nombre { get; set; }
     }
 }

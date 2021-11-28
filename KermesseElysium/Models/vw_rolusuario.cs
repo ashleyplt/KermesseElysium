@@ -11,19 +11,11 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class vw_rolusuario
     {
-        [Display(Name = "Id Rol Usuario")]
         public int idRolUsuario { get; set; }
-
-        [Display(Name = "Usuario")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public string userName { get; set; }
-
-        [Display(Name = "Rol")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public string rolDescripcion { get; set; }
         public int estado { get; set; }
     }

@@ -423,5 +423,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_denominacion">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_denominacion">
+        <MappingFragment StoreEntitySet="vw_denominacion">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="valorLetras" ColumnName="valorLetras" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="idDenominacion" ColumnName="idDenominacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_tasacambiodet">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_tasacambiodet">
+        <MappingFragment StoreEntitySet="vw_tasacambiodet">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="tipoCambio" ColumnName="tipoCambio" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tasaCambio" ColumnName="tasaCambio" />
+          <ScalarProperty Name="idTasaCambioDet" ColumnName="idTasaCambioDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ArqueoCajaDetalle">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ArqueoCajaDetalle">
+        <MappingFragment StoreEntitySet="vw_ArqueoCajaDetalle">
+          <ScalarProperty Name="idArqueoCajaDet" ColumnName="idArqueoCajaDet" />
+          <ScalarProperty Name="valorLetra" ColumnName="valorLetra" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

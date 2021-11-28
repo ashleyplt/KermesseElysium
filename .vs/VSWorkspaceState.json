@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\KermesseElysium",
+    "\\KermesseElysium\\Views",
+    "\\KermesseElysium\\Views\\Denominacions",
+    "\\KermesseElysium\\Views\\Shared"
   ],
-  "SelectedNode": "\\KermesseElysium.sln",
+  "SelectedNode": "\\KermesseElysium\\Views\\Denominacions\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

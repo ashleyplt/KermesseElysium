@@ -274,6 +274,40 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tien
           <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ArqueoCajaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_ArqueoCajaDetalle">
+          <Key>
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Subtotal" />
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="moneda" />
+            <PropertyRef Name="valorLetra" />
+            <PropertyRef Name="idArqueoCajaDet" />
+          </Key>
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="moneda" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="valorLetra" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idArqueoCajaDet" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_denominacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_denominacion">
+          <Key>
+            <PropertyRef Name="idDenominacion" />
+            <PropertyRef Name="valor" />
+            <PropertyRef Name="valorLetras" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="nombre" />
+          </Key>
+          <Property Name="idDenominacion" Type="int" Nullable="false" />
+          <Property Name="valor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="valorLetras" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_gasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vw_gasto">
           <Key>
@@ -453,12 +487,31 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
         <EntityType Name="vw_tasacambio">
           <Key>
             <PropertyRef Name="idTasaCambio" />
+            
+            
+            
+            
           </Key>
           <Property Name="idTasaCambio" Type="int" Nullable="false" />
           <Property Name="monedaO" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="monedaC" Type="nvarchar" MaxLength="45" />
           <Property Name="mes" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="anio" Type="int" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_tasacambiodet">
+          <Key>
+            <PropertyRef Name="idTasaCambioDet" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="tipoCambio" />
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTasaCambioDet" Type="int" Nullable="false" />
+          <Property Name="tasaCambio" Type="nvarchar" MaxLength="93" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="tipoCambio" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="estado" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
@@ -944,6 +997,25 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
     [VW_arqueoCaja].[Total] AS [Total]
     FROM [dbo].[VW_arqueoCaja] AS [VW_arqueoCaja]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="Self.vw_ArqueoCajaDetalle" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_ArqueoCajaDetalle].[Cantidad] AS [Cantidad], 
+    [vw_ArqueoCajaDetalle].[Subtotal] AS [Subtotal], 
+    [vw_ArqueoCajaDetalle].[kermesse] AS [kermesse], 
+    [vw_ArqueoCajaDetalle].[moneda] AS [moneda], 
+    [vw_ArqueoCajaDetalle].[valorLetra] AS [valorLetra], 
+    [vw_ArqueoCajaDetalle].[idArqueoCajaDet] AS [idArqueoCajaDet]
+    FROM [dbo].[vw_ArqueoCajaDetalle] AS [vw_ArqueoCajaDetalle]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_denominacion" EntityType="Self.vw_denominacion" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_denominacion].[idDenominacion] AS [idDenominacion], 
+    [vw_denominacion].[valor] AS [valor], 
+    [vw_denominacion].[valorLetras] AS [valorLetras], 
+    [vw_denominacion].[estado] AS [estado], 
+    [vw_denominacion].[nombre] AS [nombre]
+    FROM [dbo].[vw_denominacion] AS [vw_denominacion]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_gasto" EntityType="Self.vw_gasto" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vw_gasto].[idGasto] AS [idGasto], 
@@ -1056,6 +1128,15 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
     [vw_tasacambio].[anio] AS [anio], 
     [vw_tasacambio].[estado] AS [estado]
     FROM [dbo].[vw_tasacambio] AS [vw_tasacambio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_tasacambiodet" EntityType="Self.vw_tasacambiodet" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_tasacambiodet].[idTasaCambioDet] AS [idTasaCambioDet], 
+    [vw_tasacambiodet].[tasaCambio] AS [tasaCambio], 
+    [vw_tasacambiodet].[fecha] AS [fecha], 
+    [vw_tasacambiodet].[tipoCambio] AS [tipoCambio], 
+    [vw_tasacambiodet].[estado] AS [estado]
+    FROM [dbo].[vw_tasacambiodet] AS [vw_tasacambiodet]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__ArqueoCaj__arque__6FE99F9F" Association="Self.FK__ArqueoCaj__arque__6FE99F9F">
             <End Role="ArqueoCaja" EntitySet="ArqueoCaja" />
@@ -2171,6 +2252,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
           <EntitySet Name="vw_rolusuario" EntityType="DBKermesseElysiumModel.vw_rolusuario" />
           <EntitySet Name="VW_arqueoCaja" EntityType="DBKermesseElysiumModel.VW_arqueoCaja" />
           <EntitySet Name="vw_tasacambio" EntityType="DBKermesseElysiumModel.vw_tasacambio" />
+          <EntitySet Name="vw_denominacion" EntityType="DBKermesseElysiumModel.vw_denominacion" />
+          <EntitySet Name="vw_tasacambiodet" EntityType="DBKermesseElysiumModel.vw_tasacambiodet" />
+          <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="DBKermesseElysiumModel.vw_ArqueoCajaDetalle" />
         </EntityContainer>
         <EntityType Name="vw_rolopcion">
           <Key>
@@ -2306,6 +2390,49 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
           <Property Name="mes" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="anio" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_denominacion">
+          <Key>
+            <PropertyRef Name="idDenominacion" />
+            <PropertyRef Name="valor" />
+            <PropertyRef Name="valorLetras" />
+            <PropertyRef Name="estado" />
+            <PropertyRef Name="nombre" />
+          </Key>
+          <Property Name="idDenominacion" Type="Int32" Nullable="false" />
+          <Property Name="valor" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="valorLetras" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_tasacambiodet">
+          <Key>
+            <PropertyRef Name="idTasaCambioDet" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="tipoCambio" />
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTasaCambioDet" Type="Int32" Nullable="false" />
+          <Property Name="tasaCambio" Type="String" MaxLength="93" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tipoCambio" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_ArqueoCajaDetalle">
+          <Key>
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Subtotal" />
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="moneda" />
+            <PropertyRef Name="valorLetra" />
+            <PropertyRef Name="idArqueoCajaDet" />
+          </Key>
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="valorLetra" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idArqueoCajaDet" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2732,6 +2859,40 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
                 <ScalarProperty Name="monedaC" ColumnName="monedaC" />
                 <ScalarProperty Name="monedaO" ColumnName="monedaO" />
                 <ScalarProperty Name="idTasaCambio" ColumnName="idTasaCambio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_denominacion">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_denominacion">
+              <MappingFragment StoreEntitySet="vw_denominacion">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="valorLetras" ColumnName="valorLetras" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="idDenominacion" ColumnName="idDenominacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_tasacambiodet">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_tasacambiodet">
+              <MappingFragment StoreEntitySet="vw_tasacambiodet">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="tipoCambio" ColumnName="tipoCambio" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tasaCambio" ColumnName="tasaCambio" />
+                <ScalarProperty Name="idTasaCambioDet" ColumnName="idTasaCambioDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ArqueoCajaDetalle">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_ArqueoCajaDetalle">
+              <MappingFragment StoreEntitySet="vw_ArqueoCajaDetalle">
+                <ScalarProperty Name="idArqueoCajaDet" ColumnName="idArqueoCajaDet" />
+                <ScalarProperty Name="valorLetra" ColumnName="valorLetra" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

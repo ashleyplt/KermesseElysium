@@ -263,6 +263,12 @@
     <Compile Include="Models\VW_arqueoCaja.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\vw_ArqueoCajaDetalle.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_denominacion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vw_gasto.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_tasacambio.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_tasacambiodet.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -5128,6 +5137,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RCatProducto.rdlc" />
+    <EmbeddedResource Include="Reportes\RArqueoCajaDets.rdlc" />
+    <EmbeddedResource Include="Reportes\RDenominacion.rdlc" />
     <EmbeddedResource Include="Reportes\RComunidad.rdlc" />
     <EmbeddedResource Include="Reportes\RComunidadIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RControlBono.rdlc" />

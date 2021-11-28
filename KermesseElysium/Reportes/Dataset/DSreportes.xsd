@@ -207,6 +207,28 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vw_denominacion" msprop:Generator_TableClassName="vw_denominacionDataTable" msprop:Generator_TableVarName="tablevw_denominacion" msprop:Generator_RowChangedName="vw_denominacionRowChanged" msprop:Generator_TablePropName="vw_denominacion" msprop:Generator_RowDeletingName="vw_denominacionRowDeleting" msprop:Generator_RowChangingName="vw_denominacionRowChanging" msprop:Generator_RowEvHandlerName="vw_denominacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_denominacionRowDeleted" msprop:Generator_RowClassName="vw_denominacionRow" msprop:Generator_UserTableName="vw_denominacion" msprop:Generator_RowEvArgName="vw_denominacionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDenominacion" msprop:Generator_ColumnVarNameInTable="columnidDenominacion" msprop:Generator_ColumnPropNameInRow="idDenominacion" msprop:Generator_ColumnPropNameInTable="idDenominacionColumn" msprop:Generator_UserColumnName="idDenominacion" type="xs:int" minOccurs="0" />
+              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor" msprop:Generator_ColumnPropNameInRow="valor" msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorLetras" msprop:Generator_ColumnVarNameInTable="columnvalorLetras" msprop:Generator_ColumnPropNameInRow="valorLetras" msprop:Generator_ColumnPropNameInTable="valorLetrasColumn" msprop:Generator_UserColumnName="valorLetras" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_ArqueoCajaDets" msprop:Generator_TableClassName="vw_ArqueoCajaDetsDataTable" msprop:Generator_TableVarName="tablevw_ArqueoCajaDets" msprop:Generator_TablePropName="vw_ArqueoCajaDets" msprop:Generator_RowDeletingName="vw_ArqueoCajaDetsRowDeleting" msprop:Generator_RowChangingName="vw_ArqueoCajaDetsRowChanging" msprop:Generator_RowEvHandlerName="vw_ArqueoCajaDetsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ArqueoCajaDetsRowDeleted" msprop:Generator_UserTableName="vw_ArqueoCajaDets" msprop:Generator_RowChangedName="vw_ArqueoCajaDetsRowChanged" msprop:Generator_RowEvArgName="vw_ArqueoCajaDetsRowChangeEvent" msprop:Generator_RowClassName="vw_ArqueoCajaDetsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_UserColumnName="Subtotal" type="xs:int" minOccurs="0" />
+              <xs:element name="kermesse" msprop:Generator_ColumnVarNameInTable="columnkermesse" msprop:Generator_ColumnPropNameInRow="kermesse" msprop:Generator_ColumnPropNameInTable="kermesseColumn" msprop:Generator_UserColumnName="kermesse" type="xs:string" minOccurs="0" />
+              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="valorLetra" msprop:Generator_ColumnVarNameInTable="columnvalorLetra" msprop:Generator_ColumnPropNameInRow="valorLetra" msprop:Generator_ColumnPropNameInTable="valorLetraColumn" msprop:Generator_UserColumnName="valorLetra" type="xs:string" minOccurs="0" />
+              <xs:element name="idArqueoCajaDet" msprop:Generator_ColumnVarNameInTable="columnidArqueoCajaDet" msprop:Generator_ColumnPropNameInRow="idArqueoCajaDet" msprop:Generator_ColumnPropNameInTable="idArqueoCajaDetColumn" msprop:Generator_UserColumnName="idArqueoCajaDet" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

@@ -269,6 +269,40 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tien
     <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ArqueoCajaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_ArqueoCajaDetalle">
+    <Key>
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Subtotal" />
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="moneda" />
+      <PropertyRef Name="valorLetra" />
+      <PropertyRef Name="idArqueoCajaDet" />
+    </Key>
+    <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="moneda" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="valorLetra" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="idArqueoCajaDet" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_denominacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_denominacion">
+    <Key>
+      <PropertyRef Name="idDenominacion" />
+      <PropertyRef Name="valor" />
+      <PropertyRef Name="valorLetras" />
+      <PropertyRef Name="estado" />
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="idDenominacion" Type="int" Nullable="false" />
+    <Property Name="valor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="valorLetras" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_gasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_gasto">
     <Key>
@@ -409,6 +443,21 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
     <Property Name="monedaC" Type="nvarchar" MaxLength="45" />
     <Property Name="mes" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="anio" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_tasacambiodet">
+    <Key>
+      <PropertyRef Name="idTasaCambioDet" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="tipoCambio" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="idTasaCambioDet" Type="int" Nullable="false" />
+    <Property Name="tasaCambio" Type="nvarchar" MaxLength="93" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="tipoCambio" Type="decimal" Precision="18" Scale="4" Nullable="false" />
     <Property Name="estado" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
@@ -894,6 +943,25 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
     [VW_arqueoCaja].[Total] AS [Total]
     FROM [dbo].[VW_arqueoCaja] AS [VW_arqueoCaja]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="Self.vw_ArqueoCajaDetalle" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_ArqueoCajaDetalle].[Cantidad] AS [Cantidad], 
+    [vw_ArqueoCajaDetalle].[Subtotal] AS [Subtotal], 
+    [vw_ArqueoCajaDetalle].[kermesse] AS [kermesse], 
+    [vw_ArqueoCajaDetalle].[moneda] AS [moneda], 
+    [vw_ArqueoCajaDetalle].[valorLetra] AS [valorLetra], 
+    [vw_ArqueoCajaDetalle].[idArqueoCajaDet] AS [idArqueoCajaDet]
+    FROM [dbo].[vw_ArqueoCajaDetalle] AS [vw_ArqueoCajaDetalle]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_denominacion" EntityType="Self.vw_denominacion" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_denominacion].[idDenominacion] AS [idDenominacion], 
+    [vw_denominacion].[valor] AS [valor], 
+    [vw_denominacion].[valorLetras] AS [valorLetras], 
+    [vw_denominacion].[estado] AS [estado], 
+    [vw_denominacion].[nombre] AS [nombre]
+    FROM [dbo].[vw_denominacion] AS [vw_denominacion]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="vw_gasto" EntityType="Self.vw_gasto" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [vw_gasto].[idGasto] AS [idGasto], 
@@ -1006,6 +1074,15 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambio' no tien
     [vw_tasacambio].[anio] AS [anio], 
     [vw_tasacambio].[estado] AS [estado]
     FROM [dbo].[vw_tasacambio] AS [vw_tasacambio]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_tasacambiodet" EntityType="Self.vw_tasacambiodet" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_tasacambiodet].[idTasaCambioDet] AS [idTasaCambioDet], 
+    [vw_tasacambiodet].[tasaCambio] AS [tasaCambio], 
+    [vw_tasacambiodet].[fecha] AS [fecha], 
+    [vw_tasacambiodet].[tipoCambio] AS [tipoCambio], 
+    [vw_tasacambiodet].[estado] AS [estado]
+    FROM [dbo].[vw_tasacambiodet] AS [vw_tasacambiodet]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__ArqueoCaj__arque__6FE99F9F" Association="Self.FK__ArqueoCaj__arque__6FE99F9F">
       <End Role="ArqueoCaja" EntitySet="ArqueoCaja" />
