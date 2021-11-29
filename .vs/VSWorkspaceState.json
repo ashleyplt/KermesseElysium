@@ -3,10 +3,11 @@
     "",
     "\\KermesseElysium",
     "\\KermesseElysium\\Controllers",
+    "\\KermesseElysium\\Models",
     "\\KermesseElysium\\Views",
     "\\KermesseElysium\\Views\\Denominacions",
     "\\KermesseElysium\\Views\\Shared"
   ],
-  "SelectedNode": "\\KermesseElysium\\Controllers\\ArqueoCajasController.cs",
+  "SelectedNode": "\\KermesseElysium\\Models\\Model.edmx",
   "PreviewInSolutionExplorer": false
 }

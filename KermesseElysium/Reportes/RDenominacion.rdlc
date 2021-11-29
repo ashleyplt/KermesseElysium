@@ -6,18 +6,18 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.77022cm</Width>
+              <Width>1.53592in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.77022cm</Width>
+              <Width>1.53592in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.77022cm</Width>
+              <Width>1.53592in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.51562in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -29,7 +29,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Valor</Value>
-                              <Style />
+                              <Style>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -40,16 +42,16 @@
                       <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -62,7 +64,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Valor Letras</Value>
-                              <Style />
+                              <Style>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -76,6 +80,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -94,7 +99,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre</Value>
-                              <Style />
+                              <Style>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -108,6 +115,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -119,7 +127,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.51562in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -142,9 +150,11 @@
                       <rd:DefaultName>valor</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -174,9 +184,11 @@
                       <rd:DefaultName>valorLetras</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -206,9 +218,11 @@
                       <rd:DefaultName>nombre</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -239,24 +253,43 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSDenominacion</DataSetName>
-        <Top>0.78603cm</Top>
-        <Left>1.33065cm</Left>
-        <Height>1.2cm</Height>
-        <Width>14.31067cm</Width>
+        <Top>0.3627cm</Top>
+        <Left>2.94818cm</Left>
+        <Height>1.03124in</Height>
+        <Width>4.60776in</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Color>White</Color>
+            <Style>Solid</Style>
+            <Width>5pt</Width>
           </Border>
+          <TopBorder>
+            <Color>White</Color>
+          </TopBorder>
+          <BottomBorder>
+            <Color>White</Color>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>White</Color>
+          </LeftBorder>
+          <RightBorder>
+            <Color>White</Color>
+          </RightBorder>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.2194in</Height>
-    <Style />
+    <Height>1.34071in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+        <Width>10pt</Width>
+      </Border>
+    </Style>
   </Body>
-  <Width>6.61817in</Width>
+  <Width>6.42007in</Width>
   <Page>
     <PageHeader>
-      <Height>3.47059cm</Height>
+      <Height>3.66185cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -317,9 +350,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>1.08934cm</Top>
-          <Left>4.15903cm</Left>
+          <Left>5.11536cm</Left>
           <Height>1.0746cm</Height>
-          <Width>11.48229cm</Width>
+          <Width>8.45175cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
