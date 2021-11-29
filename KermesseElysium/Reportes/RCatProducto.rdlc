@@ -14,7 +14,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.81167cm</Height>
+              <Height>1.20854cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -29,6 +29,7 @@
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -40,9 +41,12 @@
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -64,6 +68,7 @@
                               <Style>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -75,9 +80,12 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -89,7 +97,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.81167cm</Height>
+              <Height>1.20854cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -112,9 +120,12 @@
                       <rd:DefaultName>nombre</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -144,9 +155,12 @@
                       <rd:DefaultName>descripcion</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -177,8 +191,8 @@
         </TablixRowHierarchy>
         <DataSetName>DSCatProducto</DataSetName>
         <Top>0.5986cm</Top>
-        <Left>1.24037cm</Left>
-        <Height>1.62334cm</Height>
+        <Left>1.796cm</Left>
+        <Height>2.41709cm</Height>
         <Width>14.65636cm</Width>
         <Style>
           <Border>
@@ -187,7 +201,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.88497in</Height>
+    <Height>1.30164in</Height>
     <Style />
   </Body>
   <Width>6.65475in</Width>
@@ -218,7 +232,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>2.16394cm</Top>
-          <Left>6.8319cm</Left>
+          <Left>7.1494cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
           <Style>
@@ -254,7 +268,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>1.08934cm</Top>
-          <Left>3.92148cm</Left>
+          <Left>4.23898cm</Left>
           <Height>1.0746cm</Height>
           <Width>11.48229cm</Width>
           <ZIndex>1</ZIndex>
@@ -274,7 +288,7 @@
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.3175cm</Top>
-          <Left>0.94863cm</Left>
+          <Left>1.26613cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
           <ZIndex>2</ZIndex>
@@ -307,6 +321,7 @@
                   <Value>=Globals!PageNumber</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -317,7 +332,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.68537cm</Top>
-          <Left>14.93132cm</Left>
+          <Left>14.9666cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.96542cm</Width>
           <Style>
@@ -340,6 +355,7 @@
                   <Value>=Globals!TotalPages</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -376,11 +392,44 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>©Elysium | 2021</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.40114cm</Top>
+          <Left>0.25622cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.23062cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>#0a131e</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>

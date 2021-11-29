@@ -37,6 +37,7 @@
                               <Value>Ingreso de la Comunidad</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -51,6 +52,8 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -71,6 +74,7 @@
                               <Value>Denominación</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -85,6 +89,8 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -105,6 +111,7 @@
                               <Value>Bono</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -119,6 +126,8 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -139,6 +148,7 @@
                               <Value>Cantidad</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -153,6 +163,8 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -173,6 +185,7 @@
                               <Value>Subtotal del Bono</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -187,6 +200,8 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -198,7 +213,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.15563cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -213,15 +228,20 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ingresoComunidad</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -243,15 +263,20 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>denominacion</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -273,15 +298,20 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>bono</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -303,15 +333,20 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cantidad</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -333,15 +368,20 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>subTotalBono</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -374,9 +414,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSIngresoComunidadDet</DataSetName>
-        <Top>0.71121cm</Top>
+        <Top>0.53482cm</Top>
         <Left>1.02743cm</Left>
-        <Height>1.62333cm</Height>
+        <Height>2.17896cm</Height>
         <Width>14.5827cm</Width>
         <Style>
           <Border>
@@ -385,7 +425,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.91911in</Height>
+    <Height>1.13786in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -436,7 +476,17 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Detalles de los ingresos de la comunidad</Value>
+                  <Value>I</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>22pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>ngresos de la comunidad(Detalle)</Value>
                   <Style>
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -472,7 +522,7 @@
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.76502cm</Top>
-          <Left>1.02743cm</Left>
+          <Left>1.34493cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
           <ZIndex>2</ZIndex>
@@ -505,6 +555,7 @@
                   <Value>=Globals!PageNumber</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -538,6 +589,7 @@
                   <Value>=Globals!TotalPages</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -570,15 +622,54 @@
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
+              <Color>White</Color>
               <Style>Solid</Style>
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox8">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>©Elysium | 2021</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.66573cm</Top>
+          <Left>0.05969cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.23062cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+              <Width>5pt</Width>
+            </Border>
+            <BackgroundColor>#0a131e</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>#0a131e</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>

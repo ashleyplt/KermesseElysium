@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.45923in</Width>
+              <Width>1.51952in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.45923in</Width>
+              <Width>1.51952in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.45923in</Width>
+              <Width>1.51952in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.45923in</Width>
+              <Width>1.51952in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -31,8 +31,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>kermesse</Value>
+                              <Value>Kermesse</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -50,12 +52,14 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -67,8 +71,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>moneda</Value>
+                              <Value>Moneda</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -86,12 +92,14 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -105,6 +113,8 @@
                             <TextRun>
                               <Value>Cantidad</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -122,12 +132,14 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -141,6 +153,8 @@
                             <TextRun>
                               <Value>Subtotal</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -158,12 +172,14 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -184,7 +200,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>kermesse</rd:DefaultName>
@@ -195,6 +213,7 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -216,7 +235,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>moneda</rd:DefaultName>
@@ -227,6 +248,7 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -248,7 +270,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -259,6 +283,7 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -280,7 +305,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Subtotal</rd:DefaultName>
@@ -291,6 +318,7 @@
                           <Width>5pt</Width>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -323,9 +351,9 @@
         </TablixRowHierarchy>
         <DataSetName>DSArqueoCajaDets</DataSetName>
         <Top>0.17639cm</Top>
-        <Left>1.48121cm</Left>
-        <Height>1.03125in</Height>
-        <Width>5.83692in</Width>
+        <Left>0.86868cm</Left>
+        <Height>1.03126in</Height>
+        <Width>6.07808in</Width>
         <Style>
           <Border>
             <Color>White</Color>
@@ -536,6 +564,38 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>©Elysium | 2021</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.97cm</Top>
+          <Left>0.5786cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.23062cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>

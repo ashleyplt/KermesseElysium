@@ -27,6 +27,8 @@
                             <TextRun>
                               <Value>Nombre</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -126,6 +128,8 @@
                             <TextRun>
                               <Value>Responsable</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -225,6 +229,8 @@
                             <TextRun>
                               <Value>Contribución</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -333,8 +339,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DsComunidadIndiv</DataSetName>
-        <Top>0.37151cm</Top>
-        <Left>7.06945cm</Left>
+        <Top>0.37152cm</Top>
+        <Left>6.09049cm</Left>
         <Height>3.20036cm</Height>
         <Width>8.57187cm</Width>
         <Style>
@@ -431,7 +437,7 @@
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.3175cm</Top>
-          <Left>0.86868cm</Left>
+          <Left>3.09118cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
           <ZIndex>2</ZIndex>
@@ -536,6 +542,38 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>©Elysium | 2021</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.97cm</Top>
+          <Left>0.37719cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.23062cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>

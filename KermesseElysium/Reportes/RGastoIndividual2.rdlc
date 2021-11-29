@@ -27,7 +27,9 @@
                             <TextRun>
                               <Value>Concepto</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -39,9 +41,12 @@
                       <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -71,9 +76,12 @@
                       <rd:DefaultName>Textbox22</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -98,7 +106,9 @@
                             <TextRun>
                               <Value>Monto</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -110,9 +120,12 @@
                       <rd:DefaultName>concepto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -142,9 +155,12 @@
                       <rd:DefaultName>monto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
+                          <Width>5pt</Width>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -174,7 +190,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSGasto2</DataSetName>
-        <Top>1.69943cm</Top>
+        <Top>0.58818cm</Top>
         <Left>1.45821cm</Left>
         <Height>1.80854cm</Height>
         <Width>12.82079cm</Width>
@@ -185,13 +201,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.13542in</Height>
     <Style />
   </Body>
   <Width>6.31788in</Width>
   <Page>
     <PageHeader>
-      <Height>4.59448cm</Height>
+      <Height>3.74761cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -217,7 +233,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Height>4.59448cm</Height>
+          <Left>0.00001cm</Left>
+          <Height>3.74761cm</Height>
           <Width>16.04741cm</Width>
           <Style>
             <Border>
@@ -230,21 +247,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image5">
-          <Source>Embedded</Source>
-          <Value>ID22</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.5079cm</Top>
-          <Left>1.45821cm</Left>
-          <Height>2.83559cm</Height>
-          <Width>3.51083cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox9">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -267,11 +269,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.31864cm</Top>
-          <Left>4.56512cm</Left>
+          <Top>1.39282cm</Top>
+          <Left>2.97762cm</Left>
           <Height>1.0746cm</Height>
           <Width>11.48229cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -283,6 +285,21 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image5">
+          <Source>Embedded</Source>
+          <Value>ID22</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.58208cm</Top>
+          <Left>1.77571cm</Left>
+          <Height>2.83559cm</Height>
+          <Width>3.51083cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
         <Textbox Name="ExecutionTime2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -303,8 +320,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>2.78239cm</Top>
-          <Left>7.75915cm</Left>
+          <Top>2.53907cm</Top>
+          <Left>6.17165cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
           <ZIndex>3</ZIndex>
@@ -326,7 +343,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.93146cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -340,6 +357,7 @@
                   <Value>=Globals!TotalPages</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -349,7 +367,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>2.01938cm</Top>
+          <Top>0.74938cm</Top>
           <Left>15.21429cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.83312cm</Width>
@@ -373,12 +391,14 @@
                   <Value>=Globals!PageNumber</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value>/</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Color>White</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -388,7 +408,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>2.01938cm</Top>
+          <Top>0.74938cm</Top>
           <Left>14.21359cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.96542cm</Width>
@@ -403,11 +423,49 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox7">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>©Elysium | 2021</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>0.6525cm</Top>
+          <Left>0.1459cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.23062cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+              <Width>5pt</Width>
+            </Border>
+            <BackgroundColor>#0a131e</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>#0a131e</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
