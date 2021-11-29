@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\KermesseElysium",
+    "\\KermesseElysium\\Controllers",
     "\\KermesseElysium\\Views",
     "\\KermesseElysium\\Views\\Denominacions",
     "\\KermesseElysium\\Views\\Shared"
   ],
-  "SelectedNode": "\\KermesseElysium\\Views\\Denominacions\\Index.cshtml",
+  "SelectedNode": "\\KermesseElysium\\Controllers\\ArqueoCajasController.cs",
   "PreviewInSolutionExplorer": false
 }

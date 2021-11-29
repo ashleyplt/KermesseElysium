@@ -180,7 +180,7 @@ namespace KermesseElysium.Controllers
             rpt.ReportPath = ruta;
 
             var arqueo = from m in db.vw_ArqueoCajaDetalle select m;
-           // arqueo = arqueo.Where(m => m.idArqueoCajaDet == id);
+            arqueo = arqueo.Where(m => m.idArqueoCajaDet == id);
 
             ReportDataSource rds = new ReportDataSource("DSArqueoCajaDets", arqueo.ToList());
             rpt.DataSources.Add(rds);

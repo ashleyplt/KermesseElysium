@@ -152,7 +152,10 @@ namespace KermesseElysium.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Reportearq(string tipo, string buscar = "")
+
+
+
+        public ActionResult ReporteArqueoCaja(string tipo, string buscar = "")
         {
 
             LocalReport rpt = new LocalReport();
@@ -160,7 +163,7 @@ namespace KermesseElysium.Controllers
             string[] s;
             Warning[] w;
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "Rarqueo.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RarqueoCaja.rdlc");
 
             rpt.ReportPath = ruta;
 
@@ -170,34 +173,37 @@ namespace KermesseElysium.Controllers
 
             if (!string.IsNullOrEmpty(buscar))
             {
-                arqueo = arqueo.Where(m => m.Kermesse.Contains(buscar));
+                arqueo = arqueo.Where(m => m.nombre.Contains(buscar));
             }
 
             List<VW_arqueoCaja> listaArq = new List<VW_arqueoCaja>();
             listaArq = arqueo.ToList();
 
-            ReportDataSource rds = new ReportDataSource("DSArqueo", listaArq);
+            ReportDataSource rds = new ReportDataSource("DSArqueoCaja", listaArq);
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
 
             return File(b, mt);
         }
-        public ActionResult ReporteGastoIndiv(int id)
+
+
+
+        public ActionResult ReporteArqueoCajaIndiv(int id)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
             Warning[] w;
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RGastoIndividual2.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RarqueoCaja.rdlc");
 
             rpt.ReportPath = ruta;
 
-            var Gasto = from m in db.Gasto select m;
-            Gasto = Gasto.Where(m => m.idGasto == id);
+            var ArqueoCajaIndiv = from m in db.VW_arqueoCaja select m;
+            ArqueoCajaIndiv = ArqueoCajaIndiv.Where(m => m.idArqueoCaja == id);
 
-            ReportDataSource rds = new ReportDataSource("DSGasto2", Gasto.ToList());
+            ReportDataSource rds = new ReportDataSource("DSArqueoCaja", ArqueoCajaIndiv.ToList());
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);

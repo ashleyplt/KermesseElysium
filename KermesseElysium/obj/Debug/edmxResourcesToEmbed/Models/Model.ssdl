@@ -258,15 +258,19 @@
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="VW_arqueoCaja">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="Kermesse" />
-      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="CreadoPor" />
+      <PropertyRef Name="fechCr" />
+      <PropertyRef Name="idArqueoCaja" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="userName" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="fecha" Type="datetime" />
-    <Property Name="Usuario" Type="nvarchar" MaxLength="91" Nullable="false" />
-    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreadoPor" Type="int" Nullable="false" />
+    <Property Name="fechCr" Type="datetime" Nullable="false" />
+    <Property Name="idArqueoCaja" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ArqueoCajaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -936,11 +940,13 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VW_arqueoCaja" EntityType="Self.VW_arqueoCaja" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
-    [VW_arqueoCaja].[ID] AS [ID], 
-    [VW_arqueoCaja].[Kermesse] AS [Kermesse], 
     [VW_arqueoCaja].[fecha] AS [fecha], 
-    [VW_arqueoCaja].[Usuario] AS [Usuario], 
-    [VW_arqueoCaja].[Total] AS [Total]
+    [VW_arqueoCaja].[total] AS [total], 
+    [VW_arqueoCaja].[CreadoPor] AS [CreadoPor], 
+    [VW_arqueoCaja].[fechCr] AS [fechCr], 
+    [VW_arqueoCaja].[idArqueoCaja] AS [idArqueoCaja], 
+    [VW_arqueoCaja].[nombre] AS [nombre], 
+    [VW_arqueoCaja].[userName] AS [userName]
     FROM [dbo].[VW_arqueoCaja] AS [VW_arqueoCaja]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="Self.vw_ArqueoCajaDetalle" store:Type="Views" store:Schema="dbo">

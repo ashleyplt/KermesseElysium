@@ -959,11 +959,11 @@
     <EntitySet Name="vw_listapreciodet" EntityType="DBKermesseElysiumModel.vw_listapreciodet" />
     <EntitySet Name="vw_producto" EntityType="DBKermesseElysiumModel.vw_producto" />
     <EntitySet Name="vw_rolusuario" EntityType="DBKermesseElysiumModel.vw_rolusuario" />
-    <EntitySet Name="VW_arqueoCaja" EntityType="DBKermesseElysiumModel.VW_arqueoCaja" />
     <EntitySet Name="vw_tasacambio" EntityType="DBKermesseElysiumModel.vw_tasacambio" />
     <EntitySet Name="vw_denominacion" EntityType="DBKermesseElysiumModel.vw_denominacion" />
     <EntitySet Name="vw_tasacambiodet" EntityType="DBKermesseElysiumModel.vw_tasacambiodet" />
     <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="DBKermesseElysiumModel.vw_ArqueoCajaDetalle" />
+    <EntitySet Name="VW_arqueoCaja" EntityType="DBKermesseElysiumModel.VW_arqueoCaja" />
   </EntityContainer>
   <EntityType Name="vw_rolopcion">
     <Key>
@@ -1077,18 +1077,6 @@
     <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="estado" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="VW_arqueoCaja">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="Kermesse" />
-      <PropertyRef Name="Usuario" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="fecha" Type="DateTime" Precision="3" />
-    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="91" FixedLength="false" Unicode="true" />
-    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-  </EntityType>
   <EntityType Name="vw_tasacambio">
     <Key>
       <PropertyRef Name="idTasaCambio" />
@@ -1142,5 +1130,21 @@
     <Property Name="moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="valorLetra" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="idArqueoCajaDet" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VW_arqueoCaja">
+    <Key>
+      <PropertyRef Name="CreadoPor" />
+      <PropertyRef Name="fechCr" />
+      <PropertyRef Name="idArqueoCaja" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreadoPor" Type="Int32" Nullable="false" />
+    <Property Name="fechCr" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idArqueoCaja" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

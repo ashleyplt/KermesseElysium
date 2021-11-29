@@ -2656,6 +2656,7 @@ C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\bin\pt\Microsoft.Rep
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.csproj.AssemblyReference.cache
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\obj\Debug\RdlCompile.cache
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\obj\Debug\RdlCompile.compiled
 C:\Users\Mike\source\repos\KermesseElysium2\KermesseElysium\obj\Debug\KermesseElysium.csproj.CoreCompileInputs.cache
