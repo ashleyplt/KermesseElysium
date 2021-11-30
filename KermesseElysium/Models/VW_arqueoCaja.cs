@@ -14,12 +14,10 @@ namespace KermesseElysium.Models
     
     public partial class VW_arqueoCaja
     {
+        public int ID { get; set; }
+        public string Kermesse { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
-        public Nullable<decimal> total { get; set; }
-        public int CreadoPor { get; set; }
-        public System.DateTime fechCr { get; set; }
-        public int idArqueoCaja { get; set; }
-        public string nombre { get; set; }
-        public string userName { get; set; }
+        public string Usuario { get; set; }
+        public Nullable<decimal> Total { get; set; }
     }
 }

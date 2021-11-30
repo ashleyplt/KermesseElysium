@@ -11,7 +11,8 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Comunidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,11 +21,30 @@ namespace KermesseElysium.Models
             this.IngresoComunidad = new HashSet<IngresoComunidad>();
             this.Producto = new HashSet<Producto>();
         }
-    
+
+        [Display(Name = "Id Comunidad")]
         public int idComunidad { get; set; }
+
+        [Display(Name = "Nombre Comunidad")]
+        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "Longitud máxima 45")]
         public string nombre { get; set; }
+
+        [Display(Name = "Responsable")]
+        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "Longitud máxima 45")]
         public string responsble { get; set; }
+
+        [Display(Name = "Descripción Contribución")]
+        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "Longitud máxima 100")]
         public string descContribucion { get; set; }
+
+        [Display(Name = "Estado")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

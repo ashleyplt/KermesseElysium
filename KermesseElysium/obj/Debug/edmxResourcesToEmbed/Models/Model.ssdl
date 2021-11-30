@@ -432,7 +432,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
       <PropertyRef Name="idRolUsuario" />
     </Key>
     <Property Name="idRolUsuario" Type="int" Nullable="false" />
-    <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="nombres" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="rolDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
     <Property Name="estado" Type="int" Nullable="false" />
   </EntityType>
@@ -1066,7 +1066,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
     <EntitySet Name="vw_rolusuario" EntityType="Self.vw_rolusuario" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [vw_rolusuario].[idRolUsuario] AS [idRolUsuario], 
-    [vw_rolusuario].[userName] AS [userName], 
+    [vw_rolusuario].[nombres] AS [nombres], 
     [vw_rolusuario].[rolDescripcion] AS [rolDescripcion], 
     [vw_rolusuario].[estado] AS [estado]
     FROM [dbo].[vw_rolusuario] AS [vw_rolusuario]</DefiningQuery>

@@ -393,9 +393,9 @@
     <EntitySetMapping Name="vw_rolusuario">
       <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolusuario">
         <MappingFragment StoreEntitySet="vw_rolusuario">
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
         </MappingFragment>
       </EntityTypeMapping>

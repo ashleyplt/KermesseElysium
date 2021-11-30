@@ -5160,8 +5160,8 @@
     <EmbeddedResource Include="Reportes\ROpcion.rdlc" />
     <EmbeddedResource Include="Reportes\RRolOpcionIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RRolUsuario.rdlc" />
-    <EmbeddedResource Include="Reportes\RRolUsuarioIndv.rdlc" />
     <EmbeddedResource Include="Reportes\RListap.rdlc" />
+    <EmbeddedResource Include="Reportes\RRolUsuarioIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RTasaCambio.rdlc" />
     <EmbeddedResource Include="Reportes\RTasaCambioIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RUsuario.rdlc" />

@@ -1073,9 +1073,9 @@
       <PropertyRef Name="idRolUsuario" />
     </Key>
     <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
-    <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="vw_tasacambio">
     <Key>

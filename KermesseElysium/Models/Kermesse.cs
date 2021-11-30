@@ -11,7 +11,8 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Kermesse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,19 +23,60 @@ namespace KermesseElysium.Models
             this.IngresoComunidad = new HashSet<IngresoComunidad>();
             this.ListaPrecio = new HashSet<ListaPrecio>();
         }
-    
+
+        [Display(Name = "Id Kermesse")]
         public int idKermesse { get; set; }
+
+        [Display(Name = "Parroquia")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int parroquia { get; set; }
+
+        [Display(Name = "Nombre Kermesse")]
+        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "Longitud máxima 45")]
         public string nombre { get; set; }
+
+        [Display(Name = "Fecha Inicio")]
+        [DataType(DataType.Date, ErrorMessage = "Por favor ingrese un fecha válida")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public System.DateTime fInicio { get; set; }
+
+        [Display(Name = "Fecha Final")]
+        [DataType(DataType.Date, ErrorMessage = "Por favor ingrese un fecha válida")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public System.DateTime fFinal { get; set; }
+
+        [Display(Name = "Descripción")]
+        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "Longitud máxima 100")]
         public string descripcion { get; set; }
+
+        [Display(Name = "Estado")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int estado { get; set; }
+
+        [Display(Name = "Usuario Creación")]
+        [Required(ErrorMessage = "Ingrese un dato válido")]
         public int usuarioCreacion { get; set; }
+
+        [Display(Name = "Fecha Creación")]
+        [DataType(DataType.DateTime, ErrorMessage = "Ingrese una fecha válida")]
+        [Required(ErrorMessage = "Ingrese un dato válido")]
         public System.DateTime fechaCreacion { get; set; }
+
+        [Display(Name = "Usuario Modificación")]
         public Nullable<int> usuarioModificacion { get; set; }
+
+        [Display(Name = "Fecha Modificación")]
         public Nullable<System.DateTime> fechaModificacion { get; set; }
+
+        [Display(Name = "Usuario Eliminación")]
         public Nullable<int> usuarioEliminacion { get; set; }
+
+        [Display(Name = "Fecha Eliminación")]
+        [DataType(DataType.DateTime, ErrorMessage = "Ingrese una fecha válida")]
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

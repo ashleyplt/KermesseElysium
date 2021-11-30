@@ -243,6 +243,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -433,7 +434,7 @@
         <DataSetName>DSIngresoComunidad</DataSetName>
         <Top>0.42016cm</Top>
         <Left>1.02743cm</Left>
-        <Height>5.01083cm</Height>
+        <Height>5.01085cm</Height>
         <Width>14.45514cm</Width>
         <Style>
           <Border>

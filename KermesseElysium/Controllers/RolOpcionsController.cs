@@ -61,9 +61,21 @@ namespace KermesseElysium.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.RolOpcion.Add(rolOpcion);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+
+                var existe = (from d in db.RolOpcion  where d.rol == rolOpcion.rol  && d.opcion == rolOpcion.opcion  select d).FirstOrDefault();
+                                
+                if (existe == null)
+                                
+                {         
+                    db.RolOpcion.Add(rolOpcion);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+
+                    return RedirectToAction("Index");
+                }
             }
 
             ViewBag.opcion = new SelectList(db.Opcion.Where(o => o.estado == 1 || o.estado == 2), "idOpcion", "opcionDescripcion", rolOpcion.opcion);

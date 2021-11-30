@@ -479,10 +479,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
             <PropertyRef Name="idRolUsuario" />
             
             
-            
           </Key>
           <Property Name="idRolUsuario" Type="int" Nullable="false" />
-          <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="nombres" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="rolDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="estado" Type="int" Nullable="false" />
         </EntityType>
@@ -1120,7 +1119,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
           <EntitySet Name="vw_rolusuario" EntityType="Self.vw_rolusuario" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vw_rolusuario].[idRolUsuario] AS [idRolUsuario], 
-    [vw_rolusuario].[userName] AS [userName], 
+    [vw_rolusuario].[nombres] AS [nombres], 
     [vw_rolusuario].[rolDescripcion] AS [rolDescripcion], 
     [vw_rolusuario].[estado] AS [estado]
     FROM [dbo].[vw_rolusuario] AS [vw_rolusuario]</DefiningQuery>
@@ -2370,9 +2369,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
             <PropertyRef Name="idRolUsuario" />
           </Key>
           <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
-          <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombres" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vw_tasacambio">
           <Key>
@@ -2842,9 +2841,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
           <EntitySetMapping Name="vw_rolusuario">
             <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_rolusuario">
               <MappingFragment StoreEntitySet="vw_rolusuario">
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
-                <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
               </MappingFragment>
             </EntityTypeMapping>

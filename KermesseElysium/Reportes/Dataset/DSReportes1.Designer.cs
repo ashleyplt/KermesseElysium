@@ -5582,7 +5582,7 @@ namespace KermesseElysium.Reportes.DataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class vw_rolusuarioDataTable : global::System.Data.TypedTableBase<vw_rolusuarioRow> {
             
-            private global::System.Data.DataColumn columnuserName;
+            private global::System.Data.DataColumn columnnombres;
             
             private global::System.Data.DataColumn columnrolDescripcion;
             
@@ -5621,9 +5621,9 @@ namespace KermesseElysium.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn userNameColumn {
+            public global::System.Data.DataColumn nombresColumn {
                 get {
-                    return this.columnuserName;
+                    return this.columnnombres;
                 }
             }
             
@@ -5672,10 +5672,10 @@ namespace KermesseElysium.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public vw_rolusuarioRow Addvw_rolusuarioRow(string userName, string rolDescripcion) {
+            public vw_rolusuarioRow Addvw_rolusuarioRow(string nombres, string rolDescripcion) {
                 vw_rolusuarioRow rowvw_rolusuarioRow = ((vw_rolusuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        userName,
+                        nombres,
                         rolDescripcion};
                 rowvw_rolusuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_rolusuarioRow);
@@ -5699,15 +5699,15 @@ namespace KermesseElysium.Reportes.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnuserName = base.Columns["userName"];
+                this.columnnombres = base.Columns["nombres"];
                 this.columnrolDescripcion = base.Columns["rolDescripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnuserName = new global::System.Data.DataColumn("userName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnuserName);
+                this.columnnombres = new global::System.Data.DataColumn("nombres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombres);
                 this.columnrolDescripcion = new global::System.Data.DataColumn("rolDescripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrolDescripcion);
             }
@@ -9647,17 +9647,17 @@ namespace KermesseElysium.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string userName {
+            public string nombres {
                 get {
                     try {
-                        return ((string)(this[this.tablevw_rolusuario.userNameColumn]));
+                        return ((string)(this[this.tablevw_rolusuario.nombresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'userName\' de la tabla \'vw_rolusuario\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombres\' de la tabla \'vw_rolusuario\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevw_rolusuario.userNameColumn] = value;
+                    this[this.tablevw_rolusuario.nombresColumn] = value;
                 }
             }
             
@@ -9679,14 +9679,14 @@ namespace KermesseElysium.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsuserNameNull() {
-                return this.IsNull(this.tablevw_rolusuario.userNameColumn);
+            public bool IsnombresNull() {
+                return this.IsNull(this.tablevw_rolusuario.nombresColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetuserNameNull() {
-                this[this.tablevw_rolusuario.userNameColumn] = global::System.Convert.DBNull;
+            public void SetnombresNull() {
+                this[this.tablevw_rolusuario.nombresColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

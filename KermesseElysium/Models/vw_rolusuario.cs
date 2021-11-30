@@ -15,8 +15,8 @@ namespace KermesseElysium.Models
     public partial class vw_rolusuario
     {
         public int idRolUsuario { get; set; }
-        public string userName { get; set; }
         public string rolDescripcion { get; set; }
         public int estado { get; set; }
+        public string nombres { get; set; }
     }
 }

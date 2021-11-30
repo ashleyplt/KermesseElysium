@@ -22,7 +22,7 @@ namespace KermesseElysium.Controllers
             var usuarioRol = from ur in db.vw_rolusuario select ur;
             if (!string.IsNullOrEmpty(buscar))
             {
-                usuarioRol = usuarioRol.Where(ur => ur.userName.Contains(buscar) || ur.rolDescripcion.Contains(buscar));
+                usuarioRol = usuarioRol.Where(ur => ur.nombres.Contains(buscar) || ur.rolDescripcion.Contains(buscar));
             }
             return View(usuarioRol.ToList());
         }
@@ -46,7 +46,7 @@ namespace KermesseElysium.Controllers
         public ActionResult Create()
         {
             ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion");
-            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName");
+            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "nombres");
             return View();
         }
 
@@ -59,13 +59,24 @@ namespace KermesseElysium.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.RolUsuario.Add(rolUsuario);
+                var existe = (from d in db.RolUsuario where d.rol == rolUsuario.rol && d.usuario == rolUsuario.usuario select d).FirstOrDefault();
+
+                if (existe == null)
+
+                {
+                    db.RolUsuario.Add(rolUsuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+                }
+                else
+                {
+
+                    return RedirectToAction("Index");
+                }
             }
 
             ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolUsuario.rol);
-            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", rolUsuario.usuario);
+            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "nombres", rolUsuario.usuario);
             return View(rolUsuario);
         }
 
@@ -82,7 +93,7 @@ namespace KermesseElysium.Controllers
                 return HttpNotFound();
             }
             ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolUsuario.rol);
-            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", rolUsuario.usuario);
+            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "nombres", rolUsuario.usuario);
             return View(rolUsuario);
         }
 
@@ -100,7 +111,7 @@ namespace KermesseElysium.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.rol = new SelectList(db.Rol.Where(r => r.estado == 1 || r.estado == 2), "idRol", "rolDescripcion", rolUsuario.rol);
-            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "userName", rolUsuario.usuario);
+            ViewBag.usuario = new SelectList(db.Usuario.Where(u => u.estado == 1 || u.estado == 2), "idUsuario", "nombres", rolUsuario.usuario);
             return View(rolUsuario);
         }
 
@@ -156,7 +167,7 @@ namespace KermesseElysium.Controllers
 
             if (!string.IsNullOrEmpty(buscar))
             {
-                rolusuario = rolusuario.Where(ro => ro.userName.Contains(buscar) || ro.rolDescripcion.Contains(buscar));
+                rolusuario = rolusuario.Where(ro => ro.nombres.Contains(buscar) || ro.rolDescripcion.Contains(buscar));
             }
 
             lista = rolusuario.ToList();
@@ -176,7 +187,7 @@ namespace KermesseElysium.Controllers
             string[] s;
             Warning[] w;
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RRolUsuarioIndv.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RRolUsuarioIndiv.rdlc");
 
             rpt.ReportPath = ruta;
 

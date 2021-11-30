@@ -2828,7 +2828,6 @@ C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\bin\p
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\KermesseElysium.csprojAssemblyReference.cache
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\RdlCompile.cache
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\RdlCompile.compiled
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\KermesseElysium.csproj.CoreCompileInputs.cache
