@@ -11,12 +11,17 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vw_rolusuario
     {
+        [Display(Name = "ID")]
         public int idRolUsuario { get; set; }
+        [Display(Name = "Rol")]
         public string rolDescripcion { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
+        [Display(Name = "Nombre")]
         public string nombres { get; set; }
     }
 }

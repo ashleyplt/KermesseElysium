@@ -11,20 +11,33 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vw_gasto
     {
+        [Display(Name = "ID")]
         public int idGasto { get; set; }
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
+        [Display(Name = "Categoría")]
         public string catGasto { get; set; }
+        [Display(Name = "Fecha de gasto")]
         public System.DateTime fechGasto { get; set; }
+        [Display(Name = "Concepto")]
         public string concepto { get; set; }
+        [Display(Name = "Monto")]
         public double monto { get; set; }
+        [Display(Name = "Usuario creación")]
         public string usuarioCreacion { get; set; }
+        [Display(Name = "Fecha creación")]
         public System.DateTime fechaCreacion { get; set; }
+        [Display(Name = "Usuario modificación")]
         public string usuarioModificacion { get; set; }
+        [Display(Name = "Fecha modificació")]
         public Nullable<System.DateTime> fechaModificacion { get; set; }
+        [Display(Name = "Usuario eliminación")]
         public string usuarioEliminacion { get; set; }
+        [Display(Name = "Fecha eliminación")]
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
     }
 }

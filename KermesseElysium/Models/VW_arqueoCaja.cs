@@ -11,13 +11,23 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class VW_arqueoCaja
     {
-        public int ID { get; set; }
-        public string Kermesse { get; set; }
+        [Display(Name = "Fecha")]
         public Nullable<System.DateTime> fecha { get; set; }
-        public string Usuario { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        [Display(Name = "Total")]
+        public Nullable<decimal> total { get; set; }
+        [Display(Name = "Creado por")]
+        public int CreadoPor { get; set; }
+        [Display(Name = "Fecha creación")]
+        public System.DateTime fechCr { get; set; }
+        [Display(Name = "ID")]
+        public int idArqueoCaja { get; set; }
+        [Display(Name = "Nombre")]
+        public string nombre { get; set; }
+        [Display(Name = "Usuario")]
+        public string userName { get; set; }
     }
 }

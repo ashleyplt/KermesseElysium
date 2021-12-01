@@ -1,0 +1,74 @@
+﻿@model KermesseElysium.Models.TasaCambioDet
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Detalle de tasa de cambio</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Detalle de tasa", "Index", "TasaCambioDets")</li>
+                    <li class="breadcrumb-item active">Crear</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">Añadir detalle a tasa de cambio</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card-body">
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tasaCambio, "tasaCambio", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("tasaCambio", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.tasaCambio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tipoCambio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.tipoCambio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.tipoCambio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Añadir" class="btn btn-secondary" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

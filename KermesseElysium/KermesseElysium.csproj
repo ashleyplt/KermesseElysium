@@ -169,7 +169,9 @@
     <Compile Include="Controllers\ParroquiasController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\RolOpcionsController.cs" />
+    <Compile Include="Controllers\RolsController.cs" />
     <Compile Include="Controllers\RolUsuariosController.cs" />
+    <Compile Include="Controllers\TasaCambioDetsController.cs" />
     <Compile Include="Controllers\TasaCambiosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\Seguridad.cs" />
@@ -5114,6 +5116,16 @@
     <Content Include="Views\Denominacions\Details.cshtml" />
     <Content Include="Views\Denominacions\Edit.cshtml" />
     <Content Include="Views\Denominacions\Index.cshtml" />
+    <Content Include="Views\TasaCambioDets\Create.cshtml" />
+    <Content Include="Views\TasaCambioDets\Delete.cshtml" />
+    <Content Include="Views\TasaCambioDets\Details.cshtml" />
+    <Content Include="Views\TasaCambioDets\Edit.cshtml" />
+    <Content Include="Views\TasaCambioDets\Index.cshtml" />
+    <Content Include="Views\Rols\Create.cshtml" />
+    <Content Include="Views\Rols\Delete.cshtml" />
+    <Content Include="Views\Rols\Details.cshtml" />
+    <Content Include="Views\Rols\Edit.cshtml" />
+    <Content Include="Views\Rols\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5136,6 +5148,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RRolIndiv.rdlc" />
+    <EmbeddedResource Include="Reportes\RRol.rdlc" />
+    <EmbeddedResource Include="Reportes\RTasaCambioDetIndiv.rdlc" />
+    <EmbeddedResource Include="Reportes\RTasaCambioDet.rdlc" />
     <EmbeddedResource Include="Reportes\RArqueoCajaDetsIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RarqueoCajaIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RarqueoCaja.rdlc" />

@@ -1458,7 +1458,6 @@ C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\bin\pt\Micro
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csprojAssemblyReference.cache
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.CoreCompileInputs.cache
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.CopyComplete
 C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.dll
@@ -2834,3 +2833,4 @@ C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\D
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\KermesseElysium.csproj.CopyComplete
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\KermesseElysium.dll
 C:\Users\isi24\Source\Repos\KermesseElysiumDisqueTerminado\KermesseElysium\obj\Debug\KermesseElysium.pdb
+C:\Users\Wendy Jácamo\Source\Repos\KermesseElysium\KermesseElysium\obj\Debug\KermesseElysium.csproj.AssemblyReference.cache

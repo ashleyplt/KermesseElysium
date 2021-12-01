@@ -11,8 +11,7 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class CategoriaProducto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,24 +19,10 @@ namespace KermesseElysium.Models
         {
             this.Producto = new HashSet<Producto>();
         }
-
-        [Display(Name = "Id Categoría Producto")]
+    
         public int idCatProd { get; set; }
-
-        [Display(Name = "Nombre de la Categoría")]
-        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-        [StringLength(45, ErrorMessage = "Longitud máxima 45")]
         public string nombre { get; set; }
-
-        [Display(Name = "Descripción")]
-        [DataType(DataType.MultilineText, ErrorMessage = "Por favor ingrese un dato de tipos texto")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
-        [StringLength(100, ErrorMessage = "Longitud máxima 100")]
         public string descripcion { get; set; }
-
-        [Display(Name = "Estado")]
-        [Required(ErrorMessage = "Este campo es requerido.")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

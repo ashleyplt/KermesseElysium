@@ -25,7 +25,7 @@ namespace KermesseElysium.Models
         [Display(Name = "Opción")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int opcion { get; set; }
-    
+
         public virtual Opcion Opcion1 { get; set; }
         public virtual Rol Rol1 { get; set; }
     }

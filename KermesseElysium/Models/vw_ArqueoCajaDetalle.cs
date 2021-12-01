@@ -16,27 +16,16 @@ namespace KermesseElysium.Models
     public partial class vw_ArqueoCajaDetalle
     {
         [Display(Name = "Cantidad")]
-        [DataType(DataType.Currency, ErrorMessage = "Por favor ingres un dato de tipo decimal")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public decimal Cantidad { get; set; }
-
         [Display(Name = "Subtotal")]
-        [DataType(DataType.Currency, ErrorMessage = "Por favor ingres un dato de tipo decimal")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public decimal Subtotal { get; set; }
-
         [Display(Name = "Kermesse")]
-        [Required(ErrorMessage = "Ingrese un dato válido")]
         public string kermesse { get; set; }
-
         [Display(Name = "Moneda")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public string moneda { get; set; }
-
-        [Display(Name = "")]
-        [Required(ErrorMessage = "Ingrese un dato válido")]
-
+        [Display(Name = "Valor Letra")]
         public string valorLetra { get; set; }
+        [Display(Name = "ID")]
         public int idArqueoCajaDet { get; set; }
     }
 }

@@ -15,15 +15,11 @@ namespace KermesseElysium.Models
 
     public partial class vw_rolopcion
     {
-        [Display(Name = "Rol Descripción")]
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Rol")]
         public string rolDescripcion { get; set; }
-
-        [Display(Name = "Opción Descripción")]
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Opción")]
         public string opcionDescripcion { get; set; }
-
-        
+        [Display(Name = "ID")]
         public int idRolOpcion { get; set; }
     }
 }

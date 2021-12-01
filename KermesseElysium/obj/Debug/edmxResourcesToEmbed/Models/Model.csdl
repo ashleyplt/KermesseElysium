@@ -1117,11 +1117,6 @@
   </EntityType>
   <EntityType Name="vw_ArqueoCajaDetalle">
     <Key>
-      <PropertyRef Name="Cantidad" />
-      <PropertyRef Name="Subtotal" />
-      <PropertyRef Name="kermesse" />
-      <PropertyRef Name="moneda" />
-      <PropertyRef Name="valorLetra" />
       <PropertyRef Name="idArqueoCajaDet" />
     </Key>
     <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
@@ -1133,11 +1128,7 @@
   </EntityType>
   <EntityType Name="VW_arqueoCaja">
     <Key>
-      <PropertyRef Name="CreadoPor" />
-      <PropertyRef Name="fechCr" />
       <PropertyRef Name="idArqueoCaja" />
-      <PropertyRef Name="nombre" />
-      <PropertyRef Name="userName" />
     </Key>
     <Property Name="fecha" Type="DateTime" Precision="3" />
     <Property Name="total" Type="Decimal" Precision="18" Scale="2" />

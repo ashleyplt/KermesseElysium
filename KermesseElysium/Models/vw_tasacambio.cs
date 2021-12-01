@@ -15,25 +15,17 @@ namespace KermesseElysium.Models
 
     public partial class vw_tasacambio
     {
+        [Display(Name = "ID")]
         public int idTasaCambio { get; set; }
-
-        [Display(Name = "Moneda O")]
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Moneda origen")]
         public string monedaO { get; set; }
-
-        [Display(Name = "Moneda C")]
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Moneda cambio")]
         public string monedaC { get; set; }
-
         [Display(Name = "Mes")]
-        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(15, ErrorMessage = "Longitud máxima 15")]
         public string mes { get; set; }
-
         [Display(Name = "Año")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public int anio { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     }
 }

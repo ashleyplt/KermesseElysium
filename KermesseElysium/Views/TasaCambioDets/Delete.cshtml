@@ -1,0 +1,76 @@
+﻿@model KermesseElysium.Models.TasaCambioDet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    string titulo = "eliminar";
+    string boton = "Eliminar";
+}
+@if (Model.estado.Equals(3))
+{
+    titulo = "habilitar";
+    boton = "Habilitar";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Detalle de tasa de cambio</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="breadcrumb-item"> @Html.ActionLink("Detalle de tasa", "Index", "TasaCambioDets")</li>
+                    <li class="breadcrumb-item active">@boton</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row mb-2">
+
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="card card-secondary">
+    <div class="card-header">
+        <h3 class="card-title">¿Estás seguro que deseas @titulo esta tasa de cambio?</h3>
+    </div>
+    <div class="card-body">
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.fecha, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.fecha)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.tipoCambio, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">@Html.DisplayFor(model => model.tipoCambio)</span>
+            </div>
+        </div>
+        <div class="info-box bg-light">
+            <div class="info-box-content">
+                @Html.LabelFor(model => model.tasaCambio, htmlAttributes: new { @class = "info-box-number mb-0" })
+                <span class="info-box-text">
+                    @Html.DisplayFor(model => model.TasaCambio1.Moneda.nombre) -
+                    @Html.DisplayFor(model => model.TasaCambio1.Moneda1.nombre)
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="@boton" class="btn btn-secondary" />
+                <a class="btn btn-default" href="@Url.Action("Index", "TasaCambioDets")">Volver</a>
+            </div>
+        }
+    </div>
+</div>

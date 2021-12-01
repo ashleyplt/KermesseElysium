@@ -11,13 +11,19 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vw_denominacion
     {
+        [Display(Name = "ID")]
         public int idDenominacion { get; set; }
+        [Display(Name = "Valor")]
         public decimal valor { get; set; }
+        [Display(Name = "Valor Letras")]
         public string valorLetras { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
     }
 }

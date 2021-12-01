@@ -15,37 +15,21 @@ namespace KermesseElysium.Models
 
     public partial class vw_producto
     {
-        [Display(Name = "ID Producto")]
+        [Display(Name = "ID")]
         public int idProducto { get; set; }
-
         [Display(Name = "Comunidad")]
         public string comunidad { get; set; }
-
-        [Display(Name = "Categoría Producto")]
+        [Display(Name = "Categoría")]
         public string catProd { get; set; }
-
-        [Display(Name = "Nombre Producto")]
-        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(45, ErrorMessage = "Longitud máxima 45")]
+        [Display(Name = "Producto")]
         public string nombre { get; set; }
-
         [Display(Name = "Descripción")]
-        [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(100, ErrorMessage = "Longitud máxima 100")]
         public string descripcion { get; set; }
-
         [Display(Name = "Cantidad")]
         public Nullable<int> cantidad { get; set; }
-
-        [Display(Name = "Precio Venta Sugerido")]
-        [DataType(DataType.Currency, ErrorMessage = "Por favor ingrese un dato de tipo decimal")]
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Precio venta sugerido")]
         public double precioVSugerido { get; set; }
-
         [Display(Name = "Estado")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public int estado { get; set; }
     }
 }

@@ -159,6 +159,8 @@ namespace KermesseElysium.Controllers
             List<vw_tasacambio> lista = new List<vw_tasacambio>();
             var Tasacambio = from p in db.vw_tasacambio select p;
 
+            Tasacambio = Tasacambio.Where(tc => tc.estado == 1 || tc.estado == 2);
+
             if (!string.IsNullOrEmpty(buscar))
             {
                 Tasacambio = Tasacambio.Where((tc => tc.anio.Equals(buscar) || tc.monedaO.Contains(buscar) || tc.monedaC.Contains(buscar) || tc.mes.Contains(buscar)));

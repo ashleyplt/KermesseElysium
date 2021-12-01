@@ -258,11 +258,7 @@
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="VW_arqueoCaja">
     <Key>
-      <PropertyRef Name="CreadoPor" />
-      <PropertyRef Name="fechCr" />
       <PropertyRef Name="idArqueoCaja" />
-      <PropertyRef Name="nombre" />
-      <PropertyRef Name="userName" />
     </Key>
     <Property Name="fecha" Type="datetime" />
     <Property Name="total" Type="decimal" Precision="18" Scale="2" />
@@ -276,11 +272,6 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tien
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ArqueoCajaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_ArqueoCajaDetalle">
     <Key>
-      <PropertyRef Name="Cantidad" />
-      <PropertyRef Name="Subtotal" />
-      <PropertyRef Name="kermesse" />
-      <PropertyRef Name="moneda" />
-      <PropertyRef Name="valorLetra" />
       <PropertyRef Name="idArqueoCajaDet" />
     </Key>
     <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />

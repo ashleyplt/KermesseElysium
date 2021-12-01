@@ -12,7 +12,6 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
     public partial class Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +21,10 @@ namespace KermesseElysium.Models
             this.RolUsuario = new HashSet<RolUsuario>();
         }
 
-        [Display(Name = "ID Rol")]
+        [Display(Name = "ID")]
         public int idRol { get; set; }
 
-        [Display(Name = "Descripción Rol")]
+        [Display(Name = "Descripción del rol")]
         [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
         [Required(ErrorMessage = "Este campo es requerido")]
         [StringLength(100, ErrorMessage = "Longitud máxima 100")]
@@ -34,7 +33,7 @@ namespace KermesseElysium.Models
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int estado { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RolOpcion> RolOpcion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
