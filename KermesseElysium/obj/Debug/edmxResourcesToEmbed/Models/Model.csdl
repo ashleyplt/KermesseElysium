@@ -964,6 +964,9 @@
     <EntitySet Name="vw_tasacambiodet" EntityType="DBKermesseElysiumModel.vw_tasacambiodet" />
     <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="DBKermesseElysiumModel.vw_ArqueoCajaDetalle" />
     <EntitySet Name="VW_arqueoCaja" EntityType="DBKermesseElysiumModel.VW_arqueoCaja" />
+    <EntitySet Name="vw_resumeningresos" EntityType="DBKermesseElysiumModel.vw_resumeningresos" />
+    <EntitySet Name="vw_resumengasto" EntityType="DBKermesseElysiumModel.vw_resumengasto" />
+    <EntitySet Name="vw_resumenkermesse" EntityType="DBKermesseElysiumModel.vw_resumenkermesse" />
   </EntityContainer>
   <EntityType Name="vw_rolopcion">
     <Key>
@@ -1137,5 +1140,33 @@
     <Property Name="idArqueoCaja" Type="Int32" Nullable="false" />
     <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_resumeningresos">
+    <Key>
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="comunidad" />
+    </Key>
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="totalBono" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_resumengasto">
+    <Key>
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="nombreCategoria" />
+    </Key>
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombreCategoria" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="monto" Type="Double" />
+  </EntityType>
+  <EntityType Name="vw_resumenkermesse">
+    <Key>
+      <PropertyRef Name="idKermesse" />
+      <PropertyRef Name="kermesse" />
+    </Key>
+    <Property Name="idKermesse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ingresos" Type="Int32" />
+    <Property Name="egresos" Type="Double" />
   </EntityType>
 </Schema>

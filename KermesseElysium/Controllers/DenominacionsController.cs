@@ -126,7 +126,14 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Denominacion denominacion = db.Denominacion.Find(id);
-            denominacion.estado = 3;
+            if (denominacion.estado.Equals(1) || denominacion.estado.Equals(2))
+            {
+                denominacion.estado = 3;
+            }
+            else
+            {
+                denominacion.estado = 2;
+            }
             db.Entry(denominacion).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -64,6 +64,9 @@ namespace KermesseElysium.Models
         public virtual DbSet<vw_tasacambiodet> vw_tasacambiodet { get; set; }
         public virtual DbSet<vw_ArqueoCajaDetalle> vw_ArqueoCajaDetalle { get; set; }
         public virtual DbSet<VW_arqueoCaja> VW_arqueoCaja { get; set; }
+        public virtual DbSet<vw_resumeningresos> vw_resumeningresos { get; set; }
+        public virtual DbSet<vw_resumengasto> vw_resumengasto { get; set; }
+        public virtual DbSet<vw_resumenkermesse> vw_resumenkermesse { get; set; }
     
         public virtual int sp_updatemoneda(Nullable<int> id, string nombre, string signo, Nullable<int> estado)
         {

@@ -263,7 +263,11 @@
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VW_arqueoCaja">
           <Key>
+            
+            
             <PropertyRef Name="idArqueoCaja" />
+            
+            
           </Key>
           <Property Name="fecha" Type="datetime" />
           <Property Name="total" Type="decimal" Precision="18" Scale="2" />
@@ -277,6 +281,11 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.VW_arqueoCaja' no tien
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_ArqueoCajaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vw_ArqueoCajaDetalle">
           <Key>
+            
+            
+            
+            
+            
             <PropertyRef Name="idArqueoCajaDet" />
           </Key>
           <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -452,6 +461,40 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_producto' no tiene 
           <Property Name="estado" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumengasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_resumengasto">
+          <Key>
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="nombreCategoria" />
+          </Key>
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombreCategoria" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="monto" Type="float" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumeningresos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_resumeningresos">
+          <Key>
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="comunidad" />
+          </Key>
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="totalBono" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumenkermesse' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_resumenkermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+            <PropertyRef Name="kermesse" />
+          </Key>
+          <Property Name="idKermesse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ingresos" Type="int" />
+          <Property Name="egresos" Type="float" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolopcion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vw_rolopcion">
           <Key>
@@ -468,6 +511,7 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolusuario' no tien
         <EntityType Name="vw_rolusuario">
           <Key>
             <PropertyRef Name="idRolUsuario" />
+            
             
             
           </Key>
@@ -1099,6 +1143,28 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
     [vw_producto].[precioVSugerido] AS [precioVSugerido], 
     [vw_producto].[estado] AS [estado]
     FROM [dbo].[vw_producto] AS [vw_producto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_resumengasto" EntityType="Self.vw_resumengasto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_resumengasto].[kermesse] AS [kermesse], 
+    [vw_resumengasto].[nombreCategoria] AS [nombreCategoria], 
+    [vw_resumengasto].[monto] AS [monto]
+    FROM [dbo].[vw_resumengasto] AS [vw_resumengasto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_resumeningresos" EntityType="Self.vw_resumeningresos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_resumeningresos].[kermesse] AS [kermesse], 
+    [vw_resumeningresos].[comunidad] AS [comunidad], 
+    [vw_resumeningresos].[totalBono] AS [totalBono]
+    FROM [dbo].[vw_resumeningresos] AS [vw_resumeningresos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_resumenkermesse" EntityType="Self.vw_resumenkermesse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_resumenkermesse].[idKermesse] AS [idKermesse], 
+    [vw_resumenkermesse].[kermesse] AS [kermesse], 
+    [vw_resumenkermesse].[ingresos] AS [ingresos], 
+    [vw_resumenkermesse].[egresos] AS [egresos]
+    FROM [dbo].[vw_resumenkermesse] AS [vw_resumenkermesse]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_rolopcion" EntityType="Self.vw_rolopcion" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2251,6 +2317,9 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
           <EntitySet Name="vw_tasacambiodet" EntityType="DBKermesseElysiumModel.vw_tasacambiodet" />
           <EntitySet Name="vw_ArqueoCajaDetalle" EntityType="DBKermesseElysiumModel.vw_ArqueoCajaDetalle" />
           <EntitySet Name="VW_arqueoCaja" EntityType="DBKermesseElysiumModel.VW_arqueoCaja" />
+          <EntitySet Name="vw_resumeningresos" EntityType="DBKermesseElysiumModel.vw_resumeningresos" />
+          <EntitySet Name="vw_resumengasto" EntityType="DBKermesseElysiumModel.vw_resumengasto" />
+          <EntitySet Name="vw_resumenkermesse" EntityType="DBKermesseElysiumModel.vw_resumenkermesse" />
         </EntityContainer>
         <EntityType Name="vw_rolopcion">
           <Key>
@@ -2424,6 +2493,34 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
           <Property Name="idArqueoCaja" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_resumeningresos">
+          <Key>
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="comunidad" />
+          </Key>
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="totalBono" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_resumengasto">
+          <Key>
+            <PropertyRef Name="kermesse" />
+            <PropertyRef Name="nombreCategoria" />
+          </Key>
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nombreCategoria" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="Double" />
+        </EntityType>
+        <EntityType Name="vw_resumenkermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+            <PropertyRef Name="kermesse" />
+          </Key>
+          <Property Name="idKermesse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ingresos" Type="Int32" />
+          <Property Name="egresos" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2886,6 +2983,34 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
                 <ScalarProperty Name="CreadoPor" ColumnName="CreadoPor" />
                 <ScalarProperty Name="total" ColumnName="total" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_resumeningresos">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumeningresos">
+              <MappingFragment StoreEntitySet="vw_resumeningresos">
+                <ScalarProperty Name="totalBono" ColumnName="totalBono" />
+                <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_resumengasto">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumengasto">
+              <MappingFragment StoreEntitySet="vw_resumengasto">
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_resumenkermesse">
+            <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumenkermesse">
+              <MappingFragment StoreEntitySet="vw_resumenkermesse">
+                <ScalarProperty Name="egresos" ColumnName="egresos" />
+                <ScalarProperty Name="ingresos" ColumnName="ingresos" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

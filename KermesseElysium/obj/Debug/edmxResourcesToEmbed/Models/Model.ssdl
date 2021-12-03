@@ -407,6 +407,40 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_producto' no tiene 
     <Property Name="estado" Type="int" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumengasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_resumengasto">
+    <Key>
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="nombreCategoria" />
+    </Key>
+    <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreCategoria" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="monto" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumeningresos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_resumeningresos">
+    <Key>
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="comunidad" />
+    </Key>
+    <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="totalBono" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_resumenkermesse' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_resumenkermesse">
+    <Key>
+      <PropertyRef Name="idKermesse" />
+      <PropertyRef Name="kermesse" />
+    </Key>
+    <Property Name="idKermesse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ingresos" Type="int" />
+    <Property Name="egresos" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_rolopcion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_rolopcion">
     <Key>
@@ -1046,6 +1080,28 @@ advertencia 6002: La tabla o vista 'DBKermesseElysium.dbo.vw_tasacambiodet' no t
     [vw_producto].[precioVSugerido] AS [precioVSugerido], 
     [vw_producto].[estado] AS [estado]
     FROM [dbo].[vw_producto] AS [vw_producto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_resumengasto" EntityType="Self.vw_resumengasto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_resumengasto].[kermesse] AS [kermesse], 
+    [vw_resumengasto].[nombreCategoria] AS [nombreCategoria], 
+    [vw_resumengasto].[monto] AS [monto]
+    FROM [dbo].[vw_resumengasto] AS [vw_resumengasto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_resumeningresos" EntityType="Self.vw_resumeningresos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_resumeningresos].[kermesse] AS [kermesse], 
+    [vw_resumeningresos].[comunidad] AS [comunidad], 
+    [vw_resumeningresos].[totalBono] AS [totalBono]
+    FROM [dbo].[vw_resumeningresos] AS [vw_resumeningresos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_resumenkermesse" EntityType="Self.vw_resumenkermesse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_resumenkermesse].[idKermesse] AS [idKermesse], 
+    [vw_resumenkermesse].[kermesse] AS [kermesse], 
+    [vw_resumenkermesse].[ingresos] AS [ingresos], 
+    [vw_resumenkermesse].[egresos] AS [egresos]
+    FROM [dbo].[vw_resumenkermesse] AS [vw_resumenkermesse]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_rolopcion" EntityType="Self.vw_rolopcion" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

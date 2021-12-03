@@ -17,10 +17,6 @@ namespace KermesseElysium.Controllers
         private DBKermesseElysiumEntities db = new DBKermesseElysiumEntities();
 
         // GET: ArqueoCajaDets
-
-        
-  
-
         public ActionResult Index(string buscar = "")
         {
             var arqueoCajaDet = db.ArqueoCajaDet.Include(a => a.ArqueoCaja1).Include(a => a.Denominacion1).Include(a => a.Moneda1);

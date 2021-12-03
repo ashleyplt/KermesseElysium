@@ -20,7 +20,6 @@ namespace KermesseElysium.Controllers
         public ActionResult Index(string buscar)
         {
             var tasacambio = from t in db.vw_tasacambio select t;
-            tasacambio = tasacambio.Where(t => t.estado.Equals(1) || t.estado.Equals(2));
             if (!string.IsNullOrEmpty(buscar))
             {
                 tasacambio = tasacambio.Where(tc => tc.anio.Equals(buscar) || tc.monedaO.Contains(buscar) || tc.monedaC.Contains(buscar) || tc.mes.Contains(buscar));
@@ -129,7 +128,14 @@ namespace KermesseElysium.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             TasaCambio tasaCambio = db.TasaCambio.Find(id);
-            tasaCambio.estado = 3;
+            if (tasaCambio.estado.Equals(1) || tasaCambio.estado.Equals(2))
+            {
+                tasaCambio.estado = 3;
+            }
+            else
+            {
+                tasaCambio.estado = 2;
+            }
             db.Entry(tasaCambio).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -150,6 +150,13 @@ namespace KermesseElysium.Controllers
             Warning[] w;
 
             string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RUsuario.rdlc");
+            string deviceInfo = @"<DeviceInfo>
+                      <MarginTop>0cm</MarginTop>
+                      <MarginLeft>0cm</MarginLeft>
+                      <MarginRight>0cm</MarginRight>
+                      <MarginBottom>0cm</MarginBottom>
+                        <EmbedFonts>None</EmbedFonts>
+                    </DeviceInfo>";
 
             rpt.ReportPath = ruta;
 
@@ -169,7 +176,7 @@ namespace KermesseElysium.Controllers
             ReportDataSource rds = new ReportDataSource("DSUsuario", listaUser);
             rpt.DataSources.Add(rds);
 
-            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            var b = rpt.Render(tipo, deviceInfo, out mt, out enc, out f, out s, out w);
 
             return File(b, mt);
         }

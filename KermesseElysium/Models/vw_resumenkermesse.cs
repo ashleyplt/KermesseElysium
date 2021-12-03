@@ -11,21 +11,12 @@ namespace KermesseElysium.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class vw_ArqueoCajaDetalle
+    
+    public partial class vw_resumenkermesse
     {
-        [Display(Name = "Cantidad")]
-        public decimal Cantidad { get; set; }
-        [Display(Name = "Subtotal")]
-        public decimal Subtotal { get; set; }
-        [Display(Name = "Kermesse")]
+        public int idKermesse { get; set; }
         public string kermesse { get; set; }
-        [Display(Name = "Moneda")]
-        public string moneda { get; set; }
-        [Display(Name = "Valor letra")]
-        public string valorLetra { get; set; }
-        [Display(Name = "ID")]
-        public int idArqueoCajaDet { get; set; }
+        public Nullable<int> ingresos { get; set; }
+        public Nullable<double> egresos { get; set; }
     }
 }

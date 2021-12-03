@@ -14,7 +14,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.99687cm</Height>
+              <Height>1.31437cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -27,13 +27,14 @@
                             <TextRun>
                               <Value>Ingreso de la comunidad</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -104,13 +105,14 @@
                             <TextRun>
                               <Value>Denominación</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -181,13 +183,14 @@
                             <TextRun>
                               <Value>Bono</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -258,13 +261,14 @@
                             <TextRun>
                               <Value>Cantidad</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -335,13 +339,14 @@
                             <TextRun>
                               <Value>Subtotal del bono</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -423,7 +428,7 @@
         <DataSetName>DSIngresoComunidad</DataSetName>
         <Top>0.57891cm</Top>
         <Left>3.63594cm</Left>
-        <Height>4.64041cm</Height>
+        <Height>4.95791cm</Height>
         <Width>10.00604cm</Width>
         <Style>
           <Border>
@@ -432,7 +437,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.29443in</Height>
+    <Height>2.38818in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>

@@ -65,7 +65,16 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
+                        string estado = "table-default";
+                        string imgEstado = "fa-ban";
+                        string titleEstado = "Eliminar";
+                        if (item.estado.Equals(3))
+                        {
+                            estado = "table-danger";
+                            imgEstado = "fa-check";
+                            titleEstado = "Habilitar";
+                        }
+                    <tr class="@estado">
                         <td>
                             @Html.DisplayFor(modelItem => item.monedaO)
                         </td>
@@ -80,9 +89,12 @@
                         </td>
                         <td>
                             <span style="cursor:pointer;" title="Ver detalles"><a href="@Url.Action("Details", "TasaCambios", new { id = item.idTasaCambio })" style="color:black;"><i class="fas fa-eye"></i></a></span>
-                            <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "TasaCambios", new { id = item.idTasaCambio })" style="color:black;"><i class="fas fa-edit"></i></a></span>
-                            <span style="cursor:pointer;" title="Eliminar"><a href="@Url.Action("Delete", "TasaCambios", new { id = item.idTasaCambio })" style="color:darkred;"><i class="fas fa-trash"></i></a></span>
-                            <span style="cursor:pointer;" title="Exportar a PDF"><a href="@Url.Action("VerReporteTasaCambioIndiv", "TasaCambios", new { id = item.idTasaCambio })" style="color:black;"><i class="fas fa-file-export"></i></a></span>
+                            @if (!item.estado.Equals(3))
+                            {
+                                <span style="cursor:pointer;" title="Editar"><a href="@Url.Action("Edit", "TasaCambios", new { id = item.idTasaCambio })" style="color:black;"><i class="fas fa-edit"></i></a></span>
+                                <span style="cursor:pointer;" title="Exportar a PDF"><a href="@Url.Action("VerReporteTasaCambioIndiv", "TasaCambios", new { id = item.idTasaCambio })" style="color:black;"><i class="fas fa-file-export"></i></a></span>
+                            }
+                            <span style="cursor:pointer;" title="@titleEstado"><a href="@Url.Action("Delete", "TasaCambios", new { id = item.idTasaCambio })" style="color:darkred;"><i class="fas @imgEstado"></i></a></span>
                         </td>
                     </tr>
                 }

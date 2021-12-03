@@ -191,7 +191,7 @@
         </TablixRowHierarchy>
         <DataSetName>DSGasto2</DataSetName>
         <Top>0.48235cm</Top>
-        <Left>1.63912cm</Left>
+        <Left>4.2585cm</Left>
         <Height>2.39062cm</Height>
         <Width>12.82079cm</Width>
         <Style>
@@ -204,48 +204,13 @@
     <Height>1.23958in</Height>
     <Style />
   </Body>
-  <Width>6.33177in</Width>
+  <Width>6.89427in</Width>
   <Page>
     <PageHeader>
       <Height>3.72635cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox10">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value xml:space="preserve"> </Value>
-                  <Style>
-                    <FontSize>22pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextDecoration>None</TextDecoration>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Height>3.72635cm</Height>
-          <Width>16.04741cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>#0a131e</BackgroundColor>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox9">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -269,10 +234,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>1.31864cm</Top>
-          <Left>2.97762cm</Left>
+          <Left>5.20012cm</Left>
           <Height>1.0746cm</Height>
           <Width>11.48229cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -289,10 +253,10 @@
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.5079cm</Top>
-          <Left>2.09321cm</Left>
+          <Left>4.63321cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -320,10 +284,10 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>2.46489cm</Top>
-          <Left>6.48915cm</Left>
+          <Left>8.07665cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -339,6 +303,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>#0a131e</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>

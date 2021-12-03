@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>15.80854cm</Width>
+              <Width>11.96384cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -109,9 +109,9 @@
         </TablixRowHierarchy>
         <DataSetName>DSOpcion</DataSetName>
         <Top>0.74001cm</Top>
-        <Left>0.47308cm</Left>
+        <Left>5.6407cm</Left>
         <Height>2.04666cm</Height>
-        <Width>15.80854cm</Width>
+        <Width>11.96384cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -122,7 +122,7 @@
     <Height>1.34722in</Height>
     <Style />
   </Body>
-  <Width>6.5168in</Width>
+  <Width>7.25638in</Width>
   <Page>
     <PageHeader>
       <Height>3.59516cm</Height>

@@ -459,5 +459,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_resumeningresos">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumeningresos">
+        <MappingFragment StoreEntitySet="vw_resumeningresos">
+          <ScalarProperty Name="totalBono" ColumnName="totalBono" />
+          <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_resumengasto">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumengasto">
+        <MappingFragment StoreEntitySet="vw_resumengasto">
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_resumenkermesse">
+      <EntityTypeMapping TypeName="DBKermesseElysiumModel.vw_resumenkermesse">
+        <MappingFragment StoreEntitySet="vw_resumenkermesse">
+          <ScalarProperty Name="egresos" ColumnName="egresos" />
+          <ScalarProperty Name="ingresos" ColumnName="ingresos" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

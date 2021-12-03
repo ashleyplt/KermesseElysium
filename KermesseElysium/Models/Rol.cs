@@ -12,6 +12,7 @@ namespace KermesseElysium.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     public partial class Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,10 @@ namespace KermesseElysium.Models
             this.RolUsuario = new HashSet<RolUsuario>();
         }
 
-        [Display(Name = "ID")]
+        [Display(Name = "ID Rol")]
         public int idRol { get; set; }
 
-        [Display(Name = "Descripción del rol")]
+        [Display(Name = "Descripción Rol")]
         [DataType(DataType.Text, ErrorMessage = "Por favor ingrese un dato de tipo texto")]
         [Required(ErrorMessage = "Este campo es requerido")]
         [StringLength(100, ErrorMessage = "Longitud máxima 100")]

@@ -292,6 +292,15 @@
     <Compile Include="Models\vw_producto.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\vw_resumengasto.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_resumeningresos.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_resumenkermesse.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vw_rolopcion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -5148,6 +5157,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RKermesse.rdlc" />
+    <EmbeddedResource Include="Reportes\RKermesseIndiv.rdlc" />
+    <EmbeddedResource Include="Reportes\RReporteResumen.rdlc" />
     <EmbeddedResource Include="Reportes\RRolIndiv.rdlc" />
     <EmbeddedResource Include="Reportes\RRol.rdlc" />
     <EmbeddedResource Include="Reportes\RTasaCambioDetIndiv.rdlc" />

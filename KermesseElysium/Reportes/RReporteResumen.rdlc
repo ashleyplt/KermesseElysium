@@ -2,30 +2,33 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix3">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.34985cm</Width>
+              <Width>4.29917cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.4736cm</Width>
+              <Width>4.29917cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.29917cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.9175cm</Height>
+              <Height>1.10271cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox13">
+                    <Textbox Name="Textbox20">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Rol</Value>
+                              <Value>Kermesse</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -38,7 +41,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>White</Color>
@@ -57,14 +60,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox22">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Opción</Value>
+                              <Value>Ingresos</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -77,7 +80,46 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>White</Color>
+                          <Style>Solid</Style>
+                          <Width>5pt</Width>
+                        </Border>
+                        <BackgroundColor>#0a131e</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox24">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Egresos</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>White</Color>
@@ -97,25 +139,31 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.04979cm</Height>
+              <Height>1.20854cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="rolDescripcion">
+                    <Textbox Name="kermesse">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!rolDescripcion.Value</Value>
+                              <Value xml:space="preserve"> </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!kermesse.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>rolDescripcion</rd:DefaultName>
+                      <rd:DefaultName>kermesse</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>White</Color>
@@ -134,21 +182,66 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="opcionDescripcion">
+                    <Textbox Name="ingresos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!opcionDescripcion.Value</Value>
+                              <Value xml:space="preserve"> </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!ingresos.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>opcionDescripcion</rd:DefaultName>
+                      <rd:DefaultName>ingresos</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>White</Color>
+                          <Style>Solid</Style>
+                          <Width>5pt</Width>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="egresos">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!egresos.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>egresos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>White</Color>
@@ -173,6 +266,7 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -185,11 +279,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSRolOpcion</DataSetName>
-        <Top>0.21276cm</Top>
-        <Left>4.46701cm</Left>
-        <Height>1.96729cm</Height>
-        <Width>14.82345cm</Width>
+        <DataSetName>DsResumenKermesse</DataSetName>
+        <Top>1.15644cm</Top>
+        <Left>4.49474cm</Left>
+        <Height>2.31125cm</Height>
+        <Width>12.8975cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -197,13 +291,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.92773in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.85764in</Width>
+  <Width>7.52041in</Width>
   <Page>
     <PageHeader>
-      <Height>3.68226cm</Height>
+      <Height>4.18496cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -227,8 +321,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>2.25213cm</Top>
-          <Left>6.9107cm</Left>
+          <Top>2.48144cm</Top>
+          <Left>8.33541cm</Left>
           <Height>0.6cm</Height>
           <Width>5.75641cm</Width>
           <Style>
@@ -248,7 +342,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Opciones del rol</Value>
+                  <Value>Resumen de Kermesse</Value>
                   <Style>
                     <FontSize>22pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -263,8 +357,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.17753cm</Top>
-          <Left>4.00028cm</Left>
+          <Top>1.40684cm</Top>
+          <Left>5.39919cm</Left>
           <Height>1.0746cm</Height>
           <Width>11.48229cm</Width>
           <ZIndex>1</ZIndex>
@@ -283,8 +377,8 @@
           <Source>Embedded</Source>
           <Value>ID22</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.40569cm</Top>
-          <Left>2.61493cm</Left>
+          <Top>0.635cm</Top>
+          <Left>2.85535cm</Left>
           <Height>2.83559cm</Height>
           <Width>3.51083cm</Width>
           <ZIndex>2</ZIndex>
@@ -303,7 +397,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.66688cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -327,8 +421,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.76219cm</Top>
-          <Left>14.60562cm</Left>
+          <Top>1.01651cm</Top>
+          <Left>17.26801cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.96542cm</Width>
           <Style>
@@ -361,8 +455,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.76219cm</Top>
-          <Left>15.60632cm</Left>
+          <Top>1.01651cm</Top>
+          <Left>18.26871cm</Left>
           <Height>0.52062cm</Height>
           <Width>0.83312cm</Width>
           <ZIndex>1</ZIndex>
@@ -377,8 +471,8 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>0.74855cm</Top>
-          <Left>15.85089cm</Left>
+          <Top>1.00287cm</Top>
+          <Left>18.51328cm</Left>
           <Height>0.53425cm</Height>
           <Width>-0.27985cm</Width>
           <ZIndex>2</ZIndex>
@@ -389,7 +483,7 @@
             </Border>
           </Style>
         </Line>
-        <Textbox Name="Textbox8">
+        <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -402,24 +496,18 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>0.53343cm</Top>
-          <Left>0.34191cm</Left>
+          <Top>0.97cm</Top>
           <Height>0.6cm</Height>
           <Width>6.23062cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
-              <Width>5pt</Width>
             </Border>
-            <BackgroundColor>#0a131e</BackgroundColor>
-            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -450,29 +538,33 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>69452132-b1b7-49c2-ba41-40fdc8f325d4</rd:DataSourceID>
+      <rd:DataSourceID>fe9a34e2-a93e-43f9-b74f-5a171dc51ff4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSRolOpcion">
+    <DataSet Name="DsResumenKermesse">
       <Query>
         <DataSourceName>DSreportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="opcionDescripcion">
-          <DataField>opcionDescripcion</DataField>
+        <Field Name="kermesse">
+          <DataField>kermesse</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="rolDescripcion">
-          <DataField>rolDescripcion</DataField>
+        <Field Name="ingresos">
+          <DataField>ingresos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="egresos">
+          <DataField>egresos</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSreportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\isi24\source\repos\KermesseElysium2\KermesseElysium1\KermesseElysium\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
-        <rd:TableName>vw_rolopcion</rd:TableName>
+        <rd:SchemaPath>C:\Users\isi24\Source\Repos\KermesseElysiumFinal\KermesseElysium\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:TableName>vw_resumenkermesses</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -516,5 +608,5 @@ S5ZaWx0w1TXAXN8Ac9051JrrcKamFrc6O0WnEXkUDjpRH41WBiMqMrx34CMjwhARPhHDAgJEp0mC0+lE
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>c4b1b579-c158-49a1-8388-2c91afb92d88</rd:ReportID>
+  <rd:ReportID>f51c9724-2bd0-4ede-bb97-63576b80c663</rd:ReportID>
 </Report>
